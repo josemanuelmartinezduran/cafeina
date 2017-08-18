@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Formulario -->
+		<record model="ir.ui.view" id="socioeconomico_edit">
+			<field name="name">socioeconomica.edit</field>
+			<field name="model">sofom.socioeconomica</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="" version="7.0">
+					<sheet>
+						<h1>
+							<h4>
+								<label for="name" />
+							</h4>
+							<field name="name" required="True" />
+						</h1>
+						<group>
+							<group string="Ingresos del Negocio">
+								<field name="lunes" />
+								<field name="martes" />
+								<field name="miercoles" />
+								<field name="jueves" />
+								<field name="viernes" />
+								<field name="sabado" />
+								<field name="domingo" />
+								<field name="itotal" />
+								<field name="ingreso_promedio" />
+							</group>
+							<group string="Gastos del Negocio">
+								<field name="telefono" />
+								<field name="renta" />
+								<field name="sueldos" />
+								<field name="cuotas" />
+								<field name="gas" />
+								<field name="agua" />
+								<field name="gasolina" />
+								<field name="etotal" />
+							</group>
+						</group>
+						<group>
+							<group string="Ingresos Familiares">
+								<field name="salario" />
+								<field name="conyugue" />
+								<field name="pension" />
+								<field name="rentas" />
+								<field name="otros" />
+								<field name="iftotal" />
+							</group>
+							<group string="Gastos Familiares">
+								<field name="ftelefono" />
+								<field name="frenta" />
+								<field name="fgas" />
+								<field name="fgasolina" />
+								<field name="fdiversion" />
+								<field name="fcolegiaturas" />
+								<field name="ftotal" />
+							</group>
+						</group>
+						<notebook>
+							<page string="">
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

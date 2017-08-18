@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Accion -->
+		<record model="ir.actions.act_window" id="actn_evluacion">
+			<field name="name">Evaluación Microcrédito</field>
+			<field name="res_model">sofom.evaluacion</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+			
+		<!-- Menu 
+		<menuitem id="evaluacion_menu" parent="" name="Evaluaciones Microcrédito" action="" sequence="8" />-->
+		
+		<!--  Formulario -->
+		<record model="ir.ui.view" id="evaluacion_edti">
+			<field name="name">evaluacion.edit</field>
+			<field name="model">sofom.evaluacion</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="" version="7.0">
+					<header>
+						<button name="obten_total" string="Calcula Puntaje" type="object"/>
+					</header>
+					<sheet>
+						<h1>
+							<field name="name" placeholder="Descripción"/>							 
+						</h1>
+						<group>
+							<group>
+								<field name="tipo" invisible="True"/>
+								<field name="genero" />
+								<field name="estadoc" />
+								<field name="nlocal" />
+								<field name="nttelefono" />
+								<field name="nntiempo" />
+								<field name="ntiempo" />
+								<field name="notro" />
+								<field name="tviv" />
+								<field name="tasen" />
+								<field name="ttviv" />
+								<field name="total" />
+							</group>
+							<group>
+								<field name="total" readonly="True"/>
+								<field name="nacimiento" />
+								<field name="hijos" />
+								<field name="hijos" />
+								<field name="dependientes" />
+								<field name="estudios" />
+								<field name="nemp" />
+								<field name="neemp" />
+								<field name="nsalario" />
+								<field name="npension" />
+								<field name="napoyo" />
+								<field name="experiencia" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Resultados">
+								<field name="resultado">
+									<tree name="resultados">
+										<field name="name" />
+										<field name="valor" />
+										<field name="maximo" sum="Suma" />
+										<field name="puntaje" sum="Suma" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="evaluacion_view">
+			<field name="name">evaluacion.view</field>
+			<field name="model">sofom.evaluacion</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="" toolbar="1" colors="">
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Accion -->
+		<record model="ir.actions.act_window" id="actn_evluacionn">
+			<field name="name">Evaluación Nómina</field>
+			<field name="res_model">sofom.evaluacion</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+			
+		<!-- Menu 
+		<menuitem id="evaluacionn_menu" parent="" name="Evaluaciones Nómina" action="" sequence="9" />-->
+		
+		<!--  Formulario -->
+		<record model="ir.ui.view" id="evaluacionn_edti">
+			<field name="name">evaluacionn.edit</field>
+			<field name="model">sofom.evaluacionn</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="" version="7.0">
+					<header>
+						<button name="obten_total" string="Calcula Puntaje" type="object"/>
+					</header>
+					<sheet>
+						<h1>
+							<field name="name" placeholder="Descripción"/>							 
+						</h1>
+						<group>
+							<group>
+								<field name="lead_id" invisible="True" />
+								<field name="genero" />
+								<field name="estadoc" />
+								<field name="tviv" />
+								<field name="tasen" />
+								<field name="ttviv" />
+							</group>
+							<group>
+								<field name="total" readonly="True"/>
+								<field name="nacimiento" />
+								<field name="experiencia" />
+								<field name="ciclo" />
+								<field name="estado_credito" />
+								<field name="templeo" />
+								<field name="ttempleo" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Resultados">
+								<field name="resultado">
+									<tree name="resultados">
+										<field name="name" />
+										<field name="valor" />
+										<field name="maximo" sum="Suma" />
+										<field name="puntaje" sum="Suma" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="">
+			<field name="name"></field>
+			<field name="model"></field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="" toolbar="1" colors="">
+				</tree>
+			</field>
+		</record>
+	</data>
+</openerp>

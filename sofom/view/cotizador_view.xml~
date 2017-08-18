@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Formulario -->
+		<record model="ir.ui.view" id="cotizador_edit">
+			<field name="name">cotizador.edit</field>
+			<field name="model">sofom.calculator</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="Cotizador" version="7.0">
+					<header>
+						<button name="c_payment" string="Calcular" type="object"/>
+						<button name="c_delete" string="Eliminar Calculo" type="object"/>
+					</header>
+					<sheet>
+						<h1>
+							<h4>
+								<label for="name" />
+							</h4>
+							<field name="name" required="True" />
+						</h1>
+						<group>
+							<group string="Datos Leidos">
+								<field name="lead" invisible="True" />
+								<field name="ciclo" readonly="True"  />
+								<field name="producto" readonly="True"/>
+								<field name="tipo" required="True"/>
+								<field name="tasa" domain="[('producto', '=', producto), ('ciclo', '=', ciclo), ('tipo', '=', tipo)]" required="True"/>								
+								<field name="partner_id" invisible="True" />
+								<field name="ciclo_principal" attrs="{'invisible': [('tipo','!=', 'interciclo')]}" domain="[('titular', '=',  partner_id), ('state', '=', 'iniciado')]"/>
+								<field name="destino" domain="[('producto', '=', producto), ('interciclo', '=', tipo)]" required="True"/>
+								<field name="comision" />
+							</group>
+							<group string="Datos por Capturar">
+								<field name="frecuencia" required="True"/>
+								<field name="plazo" domain="[('producto', '=', producto), ('frecuencia', '=', frecuencia), ('destino', '=', destino)]" required="True"/>
+								<field name="tope" readonly="True"/>
+								<field name="monto" required="True"/>
+								<field name="monto_letra" readonly="True" />
+								<field name="total" readonly="True" />
+								<field name="inicio" required="True"/>
+								<field name="pago" />
+								<field name="apertura" invisible="True" />
+								<field name="cat" invisible="False"/>
+							</group>
+						</group>
+						<notebook>
+							<page string="Tabla de Amortización">
+								<field name="lineas">
+									<tree string="X" editble="bottom">
+										<field name="fecha" />
+										<field name="monto" sum="Suma" />
+										<field name="npago" />
+										<field name="capital" sum="Suma" />
+										<field name="intereses" sum="Suma" />
+										<field name="iva"  sum="Suma" />
+										<field name="total" sum="Suma" />
+										<field name="restante" invisible="True" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="cotizador_view">
+			<field name="name">cotizador.view</field>
+			<field name="model">sofom.calculator</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="C">
+					<field name="monto" />
+					<field name="producto" />
+					<field name="frecuencia" />
+					<field name="tasa" />
+					<field name="lead" string="Prospecto" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Accion Cotizador -->
+		<record model="ir.actions.act_window" id="cotizador_actn">
+			<field name="name">Cotización</field>
+			<field name="res_model">sofom.calculator</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!--  
+		<menuitem id="menu_cotizador" parent="" name="C" action="" sequence="4" />-->
+
+	
+	</data>
+</openerp>

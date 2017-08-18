@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="dictamen_repo">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<h2>SPARI SISTEMA PARAMETRIZADO DE ANALISIS DE RIESGO</h2>
+                    		<p>Solicitud <span t-field="o.name"/></p>
+                    		<p>Cliente <span t-field="o.partner_id.name"/></p>
+                    		<hr />
+                    		<table width="100%" border="2px">
+                    			<tr style="padding:'2px'">
+                    				<td style="">Criterio de Desición</td>
+                    				<td>Hombres</td>
+                    				<td>Mujeres</td>
+                    			</tr>
+                    			<tr>
+                    				<td>Autorización Cualitativa Aceptable</td>
+                    				<td>135 - 73</td>
+                    				<td>125 - 63</td>
+                    			</tr>
+                    			<tr>
+                    				<td>Autorización Cualitativa Aun Viable</td>
+                    				<td>72 - 63</td>
+                    				<td>62 - 53</td>
+                    			</tr>
+                    			<tr>
+                    				<td>Autorización Cualitativa Condicionada Instancia Mayor</td>
+                    				<td>65 - 56</td>
+                    				<td>52 - 46</td>
+                    			</tr>
+                    			<tr>
+                    				<td>Rechazo Automático</td>
+                    				<td>55 - (3)</td>
+                    				<td>45 - (13)</td> 
+                    			</tr>
+                    		</table>
+                    		<hr />
+                    		<table width="100%" border="2px">
+                    			<tr>
+                    				<td> Monto de Crédito Aprobado </td>
+                    				<td> $<t t-esc="round(o.credito_solicitado.monto, 2)"/> </td>
+                    			</tr>
+                    			<tr>
+                    				<td> Pago mensual SMART </td>
+                    				<td> $<t t-esc="round(o.credito_solicitado.pago, 2)"/> </td>
+                    			</tr>
+                    			<tr>
+                    				<td> Ingreso Neto del Cliente</td>
+                    				<td> $<t t-esc="round(o.ingreso, 2)"/> </td>
+                    			</tr>
+                    			<tr>
+                    				<td> Ingreso Neto Menos Pago </td>
+                    				<td> $<t t-esc="round(o.ingreso - o.credito_solicitado.pago, 2)"/> </td>
+                    			</tr>
+                    			<tr>
+                    				<td> 25% Del Ingreso Neto del Cliente</td>
+                    				<td> $<t t-esc="round(o.ingreso * 0.25, 2)"/> </td>
+                    			</tr>
+                    			<tr>
+                    				<td> Plazo del Crédito </td>
+                    				<td> <t t-esc="o.credito_solicitado.plazo.name"/> </td>
+                    			</tr>
+                    			
+                    			<tr>
+                    				<td> Puntaje </td>
+                    				<td> <t t-esc="o.puntaje"/> </td>
+                    			</tr>
+                    		</table>
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="dictamen_report"
+    		model="crm.lead"
+    		string="Dictámen"
+    		report_type="qweb-html"
+    		name="sofom.dictamen_repo"
+    		file="dictamen.pdf"
+    		attachment_use="False"
+		/>
+	</data>
+</openerp>

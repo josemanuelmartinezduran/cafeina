@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Modificaciones a la vista:	Tareas -->
+		<record id="task_edit" model="ir.ui.view">
+			<field name="name">task.edit</field>
+			<field name="model">project.task</field>
+			<field name="inherit_id" ref="project_timesheet.view_task_form2_inherited"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='account_id']" position="after">
+					<field name="start" readonly="True"/>
+					<field name="end" readonly="True"/>
+					<button name="timer_start" type="object" string="I" />
+               <button name="timer_stop" type="object" string="F" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

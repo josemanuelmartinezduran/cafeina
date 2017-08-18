@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>		
+	<data noupdate="1">
+	
+        <record id="seq_sofom_solicitud" model="ir.sequence">
+            <field name="name">Solicitud Microcredito</field>
+            <field name="code">sofom.solicitud</field>
+            <field name="prefix">M</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+         <record id="seq_sofom_solicitudn" model="ir.sequence">
+            <field name="name">Solicitud Nomina</field>
+            <field name="code">sofom.solicitudn</field>
+            <field name="prefix">N</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</openerp>

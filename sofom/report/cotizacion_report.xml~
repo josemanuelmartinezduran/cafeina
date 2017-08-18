@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="reporte_cotizacion">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<h2>Cotización</h2>
+                    		<p>Cliente: <span t-field="o.partner_id.nombre"/> <span t-field="o.partner_id.paterno"/> <span t-field="o.partner_id.materno"/> </p>
+                    		<p> Monto Solicitado: $<span t-field="o.credito_solicitado.monto" /> </p>
+                    		<p> Plazo: <span t-field="o.credito_solicitado.plazo.name" /> </p>
+                    		<hr />
+                    		<table width="100%">
+									<tr style="backgound-color='#EEEEEE'">
+										<td>Fecha</td>
+										<td>Monto</td>
+										<td>Capital</td>
+										<td>Intereses</td>
+									</tr>
+                    		<t t-foreach="o.credito_solicitado.lineas" t-as="i">
+									<tr>
+										<td><t t-esc="i.fecha"/></td>
+										<td>$<t t-esc="round(i.monto, 2)" /></td>
+										<td>$<t t-esc="round(i.capital, 2)" /></td>
+										<td>$<t t-esc="round(i.intereses, 2)" /></td>
+									</tr>    							
+							</t>
+							</table>
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		
+		<report
+    		id="sofom_cotizaion_rep"
+    		model="crm.lead"
+    		string="Cotizaciones de Crédito"
+    		report_type="qweb-html"
+    		name="sofom.reporte_cotizacion"
+    		file="Cotizacion"
+    		attachment_use="False"
+		/>
+		
+		<template id="reporte_cotizacion_cot">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<h2>Cotización</h2>
+                    		<hr />
+                    		<table width="100%">
+									<tr style="backgound-color='#EEEEEE'">
+										<td>Fecha</td>
+										<td>Monto</td>
+										<td>Capital</td>
+										<td>Intereses</td>
+									</tr>
+                    		<t t-foreach="o.lineas" t-as="i">
+									<tr>
+										<td><t t-esc="i.fecha"/></td>
+										<td>$<t t-esc="i.monto"/></td>
+										<td>$<t t-esc="i.capital"/></td>
+										<td>$<t t-esc="i.intereses"/></td>
+									</tr>    							
+							</t>
+							</table>
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		
+		<report
+    		id="sofom_cotizaion_cot_rep"
+    		model="sofom.calculator"
+    		string="Cotizaciones de Crédito"
+    		report_type="qweb-html"
+    		name="sofom.reporte_cotizacion_cot"
+    		file="Cotizacion"
+    		attachment_use="False"
+		/>
+		
+	</data>
+</openerp>

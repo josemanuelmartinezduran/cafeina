@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Accion -->
+		<record model="ir.actions.act_window" id="plazo_actn">
+			<field name="name">Plazo</field>
+			<field name="res_model">sofom.plazo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+			
+		<!-- Menu -->
+		<menuitem id="plazo_menu" parent="base.menu_base_config" name="Plazos" action="plazo_actn" />
+		
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="plazo_view">
+			<field name="name">plazo.view</field>
+			<field name="model">sofom.plazo</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="X" editable="top">
+					<field name="name" />
+					<field name="producto" />
+					<field name="frecuencia" />
+					<field name="ciclos_anio" />
+					<field name="dias_ciclo" />
+					<field name="meses_ciclo" />
+					<field name="pagos" />
+				</tree>
+			</field>
+		</record>
+	</data>
+</openerp>

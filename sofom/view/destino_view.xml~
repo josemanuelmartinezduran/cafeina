@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Accion -->
+		<record model="ir.actions.act_window" id="destino_actn">
+			<field name="name">Destino de Crédito</field>
+			<field name="res_model">sofom.destino</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+			
+		<!-- Menu -->
+		<menuitem id="destino_menu" parent="base.menu_base_config" name="Destino de Crédito" action="destino_actn" />
+		
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="destino_view">
+			<field name="name">destino.view</field>
+			<field name="model">sofom.destino</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="X" toolbar="1" editable="bottom">
+					<field name="name" />
+					<field name="destino" />
+					<field name="producto" />
+					<field name="interciclo" />
+				</tree>
+			</field>
+		</record>
+	</data>
+</openerp>

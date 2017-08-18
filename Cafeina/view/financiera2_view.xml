@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--  Busqueda Corrida finanaciera  -->
+		<record model="ir.ui.view" id="cf_financiera_search">
+			<field name="name">cf.financiera.search</field>
+			<field name="model">cf.financiera</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Buscar">
+					<field name="name" />
+					<filter icon="terp-document-new" name="" string="" domain="[('','','')]" help=""/>
+					<group expand="0" string="Agrupar por...">
+						<filter string="" icon="terp-partner" domain="[]" context="{'group_by':''}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- Accion  Corrida finanaciera -->
+		<record model="ir.actions.act_window" id="cf_financiera_actn">
+			<field name="name">Corrida Fiananciera</field>
+			<field name="res_model">cf.financiera</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!--  Formulario  Corrida finanaciera -->
+		<record model="ir.ui.view" id="cf_financiera_edit">
+			<field name="name">cf.financiera.edit</field>
+			<field name="model">cf.financiera</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<header>
+						<button name="calculate" string="Calcular" type="object"/>
+					</header>
+					<sheet>
+						<h1>
+							<field name="name" />
+						</h1>
+						<group>
+							<group string="Parametros">
+								<field name="fecha" />
+								<field name="elaborado" />
+								<field name="revisado" />
+								<field name="cliente" />
+							</group>
+							<group string="Datos fianancieros">
+								<field name="preventa" />
+								<field name="meses" />
+								<field name="inicio_preventa" />
+								<field name="costo" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Costos">
+								<field name="lineas_costo">
+									<tree string="X" editable="bottom">
+										<field name="name" />
+										<field name="nivel" />
+										<field name="cantidad" />
+										<field name="metros" />
+										<field name="terraza_techado" />
+										<field name="terraza_no_techado" />
+										<field name="techado" />
+										<field name="no_techado" />
+										<field name="cajones" />
+										<field name="apilados" />
+										<field name="costo_metro" />
+										<field name="costo_descubierto" />
+										<field name="costo_unidad" />
+										<field name="costo_total" />
+										<field name="precio_unitario" />
+										<field name="precio_total" />
+									</tree>
+								</field>
+							</page>
+							<page string="Gastos">
+								<field name="lineas_gasto">
+									<tree string="X" editable="bottom">
+										<field name="name" />
+										<field name="costo_base" />
+										<field name="metros" />
+										<field name="costo_metro" />
+										<field name="unidades" />
+										<field name="costo_unidad" />
+										<field name="costo_total" />
+										<field name="inversion" />
+									</tree>
+								</field>
+							</page>
+							<page string="Aportaciones">
+								<field name="lineas_calculadas">
+									<tree string="X" editable="bottom">
+										<field name="name" />
+										<field name="monto" />
+									</tree>
+								</field>
+							</page>							
+						</notebook>			
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!--  Lista   Corrida finanaciera -->
+		<record model="ir.ui.view" id="cf_financiera_view">
+			<field name="name">cf.financiera.view</field>
+			<field name="model">cf.financiera</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="">
+					<field name="name" />
+					<field name="cliente" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Menu  Corrida finanaciera -->
+		<menuitem id="cf_financiera_menu" parent="obra_sub" name="Corrida Financiera" action="cf_financiera_actn" />
+	</data>
+</openerp>

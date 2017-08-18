@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+{
+    "name": "SOFOM",
+    "version": "1.0",
+    "author": "Jose M Martz",
+    "category": "Account",
+    "description": """
+    Sistema de crédito y cobranza
+    """,
+    "website": "http://hackeando.net",
+    "license": "AGPL-3",
+    "depends": [
+         'product',
+         'crm',
+    ],
+    "demo": [
+    ],
+    "data": [
+        "sequence/solicitud_sequence.xml",
+        "sequence/cotizacion_sequence.xml",
+        "view/colonia_view.xml",
+        "view/producto_view.xml",
+        "view/partner_view.xml",
+        "view/lead_view.xml",
+        "view/cotizador_view.xml",
+        "view/solicitud_view.xml",
+        "view/spari_view.xml",
+        "view/tasa_view.xml",
+        "view/plazo_view.xml",
+        #"view/credito_view.xml",
+        "workflow/credito_workflow.xml",
+        "report/cotizacion_report.xml",
+        "report/solicitud_report.xml",
+        "report/dictamen_report.xml",
+    ],
+    'css': [],
+    'test': [],
+    "installable": True,
+    "active": False,
+}

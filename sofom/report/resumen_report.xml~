@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="resumen_report2">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<h1> Resumen del contenido del Contrato de Crédito Simple </h1>
+							<h2> Número de Contrato: <span t-field="o.name" /> </h2>
+							<div> Fecha de celebración del Contrato: </div> 
+							<div> Nombre de la Financiera: Smart Quo S.A. de C.V. SOFOM ENR</div>
+							<div> Nombre del Acreditado: <spam t-field="o.partner_id.name" />. </div>
+							<div> Monto Principal: $ <t t-esc="round(o.credito_solicitado.monto, 2)" />. </div>
+							<div> Monto del Crédito: $ <t t-esc="round(o.credito_solicitado.total, 2)" />. </div>
+							<div> Destino del crédito: <span t-field="o.credito_solicitado.destino.name" /> ( <t t-esc="o.credito_solicitado.destino.destino" /> ) </div>
+						    <div> Comisión por apertura: $ <t t-esc="o.credito_solicitado.comision" />. </div>
+							<div> Tasa de Interés Mensual: <span t-field="o.credito_solicitado.tasa" /> </div>
+							<div> Forma de Disposición: <span t-field="o.forma_disposicion" />. </div>
+							<div> Interés Moratorio: Tasa contractual + 8 pts.</div>
+							<div> Obligado Solidario: <t t-foreach="o.solicitud" t-as="s"> <t t-esc="s.snombre" /> </t></div>
+							<div> Garantía Prendaria: <t t-foreach="o.solicitud" t-as="s"> <t t-esc="s.garantia" /> </t>. </div>
+							<div> Plazo forzoso: <span t-field="o.credito_solicitado.plazo.name" />. </div>
+							<div> Fechas de pago: Segun la tabla de amortización. </div> 
+							<div> Forma de pago: El Acreditado deberá pagar el monto del crédito a la Financiera de conformidad con la tabla de amortización, bien en el domicilio de la Financiera, o bien mediante cheque, depósito o transferencia electrónica a la cuenta bancaria 0897684574, con cuenta CLABE 072650008976845740 de la Institución Bancaria denominada Banco Mercantil del Norte, S.A., Institución de Banca Múltiple, Grupo Financiero BANORTE.
+							<br />
+							<br />
+							Cesión: EL Acreditado no podrá ceder las obligaciones y/o derechos del Contrato.
+							<br />
+							<br />
+							Estado de cuenta: El Acreditado tendrá acceso a su estado de cuenta vía correo electrónico.
+							<br />
+							<br /> 
+							Quejas: El Acreditado podrá presentar alguna queja o aclaración por escrito a la Unidad Especializada de la Financiera, con domicilio en retorno quinto edificio 10, Col. Villas Atlixcayotl, vía telefónica al número 2222141200, o mediante correo electrónico smartquo.atencionaclientes@gmail.com. No obstante lo anterior, el Acreditado podrá acudir directamente ante la Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF), con domicilio en Boulevard Libramiento San Juan, número 2702, Local B, de la Colonia Ampliación Reforma Sur, Puebla, Pue., C.P. 72160; o vía telefónica a los teléfonos (222) 230 31 79, (222) 230 31 78, (222) 249 11 50 o al teléfono LADA sin costo 01800 999 80 80, o vía electrónica a la dirección de correo electrónico puecond@condusef.gob.mx o consultar la página electrónica en Internet www.condusef.gob.mx
+							<br />
+							<br />
+							Competencia para ejecución y cumplimiento del contrato: Jueces y Tribunales de la Ciudad de Puebla.
+							<br />
+							<br />
+							En el entendido que el Acreditado conoce el alcance y contenido del Contrato de Crédito Simple, éste acepta que la presente hoja es únicamente de carácter informativo, a través de la cual se expresan algunos de los términos y condiciones de dicho contrato de Crédito Simple celebrado con Smart Quo, S.A. de C.V. SOFOM ENR.							
+							</div>
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="resumen_repo"
+    		model="crm.lead"
+    		string="Resúmen del Contrato"
+    		report_type="qweb-html"
+    		name="sofom.resumen_report2"
+    		file="Resumen"
+    		attachment_use="False"
+		/>
+	</data>
+</openerp>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="pago_report">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<h2>Comprobante de Pago</h2>
+                    		<p> <span t-field="o.partner_id.name"/></p>
+                    		<hr />
+                    		<p> Desglose del Pago </p>
+                    		<table width="100%" border="2">
+									<tr style="backgound-color='#EEEEEE'">
+										<td>Concepto</td>
+										<td>Monto</td>
+									</tr>
+                    		<t t-foreach="o.invoice_line" t-as="i">
+									<tr>
+										<td><t t-esc="i.name"/></td>
+										<td>$<t t-esc="i.price_unit"/></td>
+									</tr>    							
+							</t>
+								<tr>
+									<td>Total</td>
+									<td>$<t t-esc="o.amount_total"/></td>
+								</tr>
+								<tr>
+									<td>Saldo</td>
+									<td>$<t t-esc="o.residual"/></td>
+								</tr>
+							</table>
+							
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="comprobante_repo"
+    		model="account.invoice"
+    		string="Comprobante de Pago"
+    		report_type="qweb-html"
+    		name="sofom.pago_report"
+    		file="Pago"
+    		attachment_use="False"
+		/>
+	</data>
+</openerp>

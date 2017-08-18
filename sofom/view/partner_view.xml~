@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Modificaciones a la vista	-->
+		<record id="partner_jmd_edit" model="ir.ui.view">
+			<field name="name">partner.jmd.inherit</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base_geolocalize.view_crm_partner_geo_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@string='Contacts']" position="after">
+					
+				</xpath>
+				<xpath expr="//field[@name='phone']" position="before">
+					<field name="paterno" />
+					<field name="materno" />
+					<field name="nombre" />
+					<field name="ncliente" />
+					<field name="calle" />
+					<field name="ext" />
+					<field name="inte" />
+					<field name="cp" />
+					<field name="col" domain="[('cp', '=', cp)]" />
+					<field name="ciudad" />
+					<field name="estado" />
+					<field name="ciclo" readonly="False" />
+					<field name="gmap" widget="link" />
+				</xpath>
+
+				<xpath expr="//field[@name='partner_longitude']" position="after">
+					<field name="gmap" />
+				</xpath>				
+				
+				<xpath expr="//field[@name='name']" position="attributes">
+					<attribute name="readonly"> False </attribute>
+					<attribute name="class"> oe_read_only </attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='street']" position="attributes">
+					<attribute name="readonly"> False </attribute>
+					<attribute name="class"> oe_read_only </attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='street2']" position="attributes">
+					<attribute name="readonly"> False </attribute>
+					<attribute name="class"> oe_read_only </attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='city']" position="attributes">
+					<attribute name="readonly"> False </attribute>
+					<attribute name="class"> oe_read_only </attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='state_id']" position="attributes">
+					<attribute name="readonly"> False </attribute>
+					<attribute name="class"> oe_read_only </attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='zip']" position="attributes">
+					<attribute name="readonly"> False </attribute>
+					<attribute name="class"> oe_read_only </attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='country_id']" position="attributes">
+					<attribute name="readonly"> False </attribute>
+					<attribute name="class"> oe_read_only </attribute>
+				</xpath>
+			</field>
+		</record>	
+	</data>
+</openerp>

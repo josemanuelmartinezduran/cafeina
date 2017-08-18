@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sofom_contrato_nomina_repo">
+		<style>
+			td{
+				padding: 7px !important;
+				text-align: justify;
+				vertical-align: top;
+			}
+			.clear{
+				float: none;
+				clear: both;
+				diplay: block;
+			}
+		</style>
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                		<t t-if="o.producto == 'nom'">
+                			<table width="100%">
+                			<td width="50%">
+                    			<strong>CONTRATO DE NÓMINA (en adelante el “Contrato”) QUE CELEBRAN POR UNA PARTE SMART QUO, SA. DE C.V., SOFOM ENR, REPRESENTADA EN ESTE ACTO POR  EL C. CARLOS EDUARDO TAPIA CAMINO (EN LO SUCESIVO LA “Financiera”), POR OTRA PARTE Y POR SU PROPIO DERECHO LA PERSONA QUE HA QUEDADO DEBIDAMENTE IDENTIFICADA COMO EL ACREDITADO EN LA CARÁTULA DEL CONTRATO (EN LO SUCESIVO EL “ACREDITADO”), A QUIENES EN SU CONJUNTO SE LES DENOMINARÁ COMO LAS “Partes”, AL TENOR DE LAS SIGUIENTES DECLARACIONES Y CLAUSULAS. ASIMISMO COMPARECEN A ESTE ACTO LA PERSONA CUYOS DATOS SE DETALLAN EN EL ANEXO “A” DEL CONTRATO (EN LO SUCESIVO EL “Obligado Solidario”) Y LA PERSONAL MORAL GRUPO INDICO SOLUCIONES EMPRESARIALES S.C., POR CONDUCTO DE SU APODERADO LEGAL EL C. Carlos Eduardo Tapia Camino (EN ADELANTE LA “Empresa”).
+DECLARACIONES</strong>
+<br />
+I. Declara la Financiera  por conducto de su representante:
+<br />
+a) Ser una Sociedad Anónima de Capital Variable, Financiera de Objeto Múltiple Entidad No Regulada, según consta en la escritura pública 7,412, de fecha veintinueve de septiembre de dos mil once, otorgada ante el Licenciado Francisco Javier Lara Mendoza, Corredor Público Número 1 en la Plaza de Puebla, inscrita en el Registro Público de Comercio de Puebla, bajo el folio mercantil electrónico 46178*2, teniendo como objeto principal la realización habitual y profesional de operaciones de crédito.
+<br />
+a) En términos de los dispuesto por los artículos 87K y 87N de la Ley General de Organizaciones y Actividades Auxiliares del Crédito; así como en lo dispuesto por los artículos 6, 11, 12 y demás relativos y aplicables de la Ley para la Transparencia y Ordenamiento de los Servicios Financieros, su representada se encuentra bajo la supervisión y vigilancia de la Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (en lo sucesivo “CONDUSEF”), y se encuentra registrada en el Sistema de Registro de Prestadores de Servicios Financieros (SIPRES) de dicha autoridad.
+<br />
+b) En términos de lo dispuesto por la Disposición Única de la CONDUSEF aplicable a las Entidades Financieras a que se refieren los artículos 11, 12 y 13 de la Ley Para la Transparencia y Ordenamiento de los Servicios Financieros aplicable a los Contratos de Adhesión, publicidad, estados de cuenta y comprobantes de operación de las Sociedades Financieras de Objeto Múltiple Entidades No Reguladas expedida por CONDUSEF, publicada en el Diario Oficial de la Federación el día 19 de agosto del 2010 (en lo sucesivo la “Disposición Única”), el presente contrato, se considera de los denominados de Adhesión y en tal virtud, se encuentra inscrito ante el Registro de Contratos de Adhesión (RECA) de la CONDUSEF bajo el número señalado en la parte superior del Contrato.
+                    			<br />
+c) Que es su deseo otorgar en crédito al Acreditado las cantidades referidas en este contrato en los términos y condiciones señalados en el mismo.
+<br />
+d) Que cuenta con las facultades para celebrar el presente contrato en nombre y representación de la Financiera, según consta en la escritura pública referida en el primer punto de las presentes declaraciones.
+<br /> 
+e) Que para los efectos del Contrato, señala como domicilio el ubicado en la calle 11 Sur Número 1-A, Colonia Mayorazgo, Puebla, Pue.
+<br />
+f) Que mediante la celebración del presente Contrato otorga al Acreditado el crédito establecida en la Carátula del Contrato, de conformidad con los términos y condiciones contenidas en el Contrato y los documentos que lo integran.
+<br />
+<strong> II. Declara el Acreditado, bajo protesta de decir verdad:</strong>
+<br />
+a) Que es una persona física con plena capacidad jurídica y económica para celebrar y obligarse en los términos y condiciones establecidas por el Contrato, y cuyos datos generales se encuentran contenidos en la Carátula del Contrato.
+<br /> 
+b) Trabajar para la Empresa, con la antigüedad, puesto y salario señalado en la Carátula del Contrato.
+<br /> 
+c) Que ha sido previamente informado sobre la contraprestación; monto de los pagos parciales, la forma y periodicidad para liquidarlos; cargas
+financieras; accesorios; monto y detalle de todos y cada uno de los cargos a pagar; número de pagos a realizar, su periodicidad; el derecho que tiene a liquidar anticipadamente el monto del crédito que se documenta mediante el presente instrumento, así como de las condiciones para ello y, la tasa de intereses ordinarios y el monto a pagar en cada período, la tasa de intereses moratorios y la forma de calcularlos y el costo anual total.
+d) Que es su deseo celebrar el presente Contrato en los términos y condiciones contenidos en el mismo.
+<br /> 
+                    		</td>
+                    		<td width="50%">
+
+<strong> III. Declara la Empresa.</strong>
+<br /> 
+a) Es una sociedad debidamente constituida conforme a las leyes de los Estados Unidos Mexicanos.
+<br />
+b) Que el Acreditado es su trabajador, con la antigüedad y puesto establecidos en la Carátula del Contrato.
+<br />
+c) Que cuenta con un convenio con la Financiera para fungir como retenedora de los pagos correspondientes de los contratos de crédito celebrados entre la Financiera y el personal que se encuentra dentro de su nómina.
+<br />
+<strong>IV. Declara el Obligado Solidario, bajo protesta de decir verdad:</strong>
+<br /> 
+b) Que sus datos generales contenidos en el Anexo “A” del Contrato, son verdaderos, dentro de los cuales de, manera enunciativa más no limitativa, se señala su nombre completo, nacionalidad, domicilio, estado civil, números de contacto, entre otros.
+<br /> 
+c) Que manifiesta tener capacidad legal y económica para celebrar el presente contrato y obligarse y en los términos establecidos por el mismo.
+<br />
+d) Que está de acuerdo en suscribir el presente Contrato en carácter de Obligado Solidario del Acreditado, asumiendo las obligaciones de pago que se deriven del Contrato.
+<br />
+Expuesto lo anterior las partes que en este contrato intervienen, convienen en sujetarse a las siguientes:
+<h3> CLÁUSULAS </h3>
+<br />
+<strong>Cláusula Primera. Definiciones.</strong> Para los efectos del presente Contrato y los demás documentos que lo integren, los términos mencionados en tales documentos, tendrán los siguientes significados,
+<br />
+sean insertos en plural y/o en singular:
+<br />
+<u>“Anexo”</u>significa, el o los documentos que, debidamente firmados por las Partes, forman parte integrante del presente Contrato.
+<br />
+<u>“Carátula del Contrato”</u> significa, la primera hoja del Contrato en la cual se determina de manera sucinta y a manera de detalle, los aspectos financieros del Contrato.
+<br /> 
+<u>“CAT”</u> significa, el Costo Anual Total de financiamiento expresado en términos porcentuales anuales que, para fines informativos y de comparación, incorpora la totalidad de los costos y gastos inherentes a los Créditos.
+<br />
+<u>“Comisión por Apertura”</u> significa, la tasa de comisión por apertura señalada en la Carátula del Contrato, misma que se deberá adicionar al monto del crédito, salvo que el Acreditado opte por que dicha comisión no sea financiada, es decir que tal cantidad no forme parte integrante del Crédito.
+<br />  
+<u>“Comisiones”</u> significa, cualquier cargo, independientemente de su denominación o modalidad, diferente al interés y/o a la Tasa Anual Fija que la Financiera cobre al Acreditado.
+<br /> 
+<u>“Datos Personales”</u> significa, la información que la Financiera obtendrá del Acreditado y en virtud de la celebración del presente Contrato, información con la cual se identificará plenamente al Acreditado.
+<br /> 
+<u>“Disposición del Crédito”</u> significa, la entrega-recepción del Crédito que la Financiera otorga en favor del Acreditado de conformidad con lo dispuesto por el Contrato.
+<br /> 
+<u>“Estado de Cuenta”</u> significa, el documento físico o digital que emite la Financiera con el fin de informarle al Acreditado el saldo del Crédito a la fecha del corte respectivo, mismo que podrá ser entregado en el domicilio del Acreditado y/o al correo electrónico del Acreditado y/o a través de los medios electrónicos que designe la Financiera, pudiendo el Acreditado acceder para consultarlo con su respectivo usuario y contraseña.
+<br /> 
+<u>“Incumplimiento Generalizado”</u> significará, la situación de hecho en la que el Acreditado se encuentre por haber incumplido en dos o más pagos, consecutivos o no, a los que se encuentre obligado en virtud de las obligaciones derivadas del presente Contrato.
+<br /> 
+<u>“Interés Moratorio” o “Intereses Moratorios”</u> significará, la cantidad que resulte de aplicar la tasamoratoria establecida en la Caratula del Contrato entre la base un año de 360 (trescientos sesenta) días por el número de días en los que el Acreditado incurra en mora.
+<br />
+<u>“IVA”</u> significa, el Impuesto al Valor Agregado.
+<br />
+<u>“Monto Principal”</u> significa, el monto total del crédito que la Financiera otorga al Acreditado a través de la celebración del Contrato, sin considerar las comisiones, intereses ni algún otro cargo relacionado con el otorgamiento del crédito, monto que ha quedado debidamente señalado en la Carátula del Contrato.
+“Monto del Crédito”, que se integra por el Monto Principal más la Comisión por Apertura, mismo que ha quedado debidamente señalado en la Carátula del Contrato, salvo que el Acreditado opte por que dicha comisión no sea financiada.
+<br />
+                    		</td>
+                    		</table>
+  <hr />
+  <table>
+  	<tr>
+  		<td width="50%">
+	  		<u>“Recibo de Disposición”</u> significa, documento a través del cual se documenta la entrega material y jurídica del Crédito otorgada al Acreditado por parte de la Financiera, documento que se incluye al presente instrumento como Anexo “C” del mismo.
+	  		<br /> 
+			<u>“Tabla de Amortización”</u> significa, la tabla en la que se detalla el proceso de pagos a los que se deberá sujetar el Acreditado, tabla que contiene debidamente desglosados los importes, fechas y conceptos a pagar por el Acreditado, así como el importe de intereses, comisiones y demás cargos a los que se haga acreedor el Acreditado, así como los importes respectivos por pagos anticipados y/o por terminación anticipada al Contrato, tabla que se incluye en el Anexo B.
+			<br />
+			<u>“Tasa Anual Fija”</u> significa, el porcentaje señalado en la Carátula del Contrato, mismo que será aplicable al Monto del Crédito objeto del Contrato y el cual será aplicado de conformidad con la Tabla de Amortización.
+			<br /> 
+			<u>“Unidad Especializada”</u> significa, el departamento de la Financiera dedicado para la atención cualquier aclaración y/o queja que pueda tener el Acreditado respecto del Estado de Cuenta y/o del Contrato.
+			<br /> 
+			<strong>Cláusula Segunda.</strong>- Objeto del Contrato. Por virtud del Contrato la Financiera otorga al Acreditado el Monto del Crédito establecido en la Carátula del Contrato, mismo que será destinado según lo dispuesto en la Cláusula Cuarta del Contrato, por lo que el Acreditado acepta obligarse a los términos y condiciones contenidos en el Contrato y los demás documentos que lo integren.
+  			<br />  
+			<strong>Cláusula Tercera.</strong>- Disposición del Crédito. A partir de la fecha de celebración del Contrato y los demás documentos que lo integren, el Acreditado podrá disponer de la totalidad del Monto Principal, disposición que se efectuará en una sola exhibición, por lo anterior la Financiera, le hace entrega en este acto al Acreditado del Monto Principal, mediante transferencia bancaria a la cuenta del Acreditado  o en su defecto, mediante la entrega de un cheque nominativo que emita la Financiera en favor del Acreditado por la cantidad total del Monto Principal, o mediante cualquier otra forma o medio de disposición que en un futuro autorice la Financiera para tal efecto. Así mismo, el Acreditado por la disposición que haga del Monto Principal, deberá suscribir, a favor de la Financiera el pagaré contemplado en el Anexo E del Contrato, el cual deberá ser suscrito por el importe equivalente al Monto del Crédito. No obstante lo anterior y salvo lo dispuesto por la Cláusula Décima Cuarta de Contrato, el Acreditado acepta obligarse a los términos y condiciones del Contrato, quedando obligado al pago de las amortizaciones correspondientes, intereses devengados, comisiones, así como cualquier otra cantidad accesoria o derivada de las obligaciones a las que se encuentra sujeto el Acreditado.
+			<br />
+			<strong>Cláusula Cuarta.</strong>- Destino.-  Las Partes convienen que el Acreditado destinará el Monto Principal para fines diversos de consumo, no obstante lo anterior el Acreditado no podrá destinar el Monto Principal a fines ilícitos ni distintos al destino del crédito pactado por las Partes, en caso contrario, la Financiera podrá rescindir, sin responsabilidad alguna a su cargo, los efectos del Contrato y demás documentos que lo integren, en el entendido que el Acreditado será acreedor al pago de la pena convencional contenida en la Cláusula Décima Sexta del presente instrumento. No obstante lo anterior el Acreditado se obliga a sacar a la Financiera en paz y a salvo de todo juicio o reclamación que pudiera derivarse del mal uso o del destino ilícito que el Acreditado efectúe respecto del Monto Principal. En virtud de lo anterior, el Acreditado responderá respecto de los gastos en que la Financiera pueda incurrir, incluyendo honorarios de abogados relacionados con tales juicios o reclamaciones, debiendo el Acreditado rembolsar tales erogaciones, en un periodo no mayor de cinco días posteriores a la fecha en que la Financiera realice dicha erogación y le requiera por escrito, mediante comprobación de los gastos erogados, al Acreditado en el reembolso de tales erogaciones.
+  		</td>
+  		<td width="50%">
+  			<strong>Cláusula Quinta.</strong> - Plazo Forzoso. Las Partes aceptan que el plazo forzoso del presente instrumento será el contemplado y señalado en la Carátula del Contrato, debiendo para tal efecto  y durante dicho periodo el Acreditado sujetarse a la forma, monto y fecha de pagos a las que se encuentra obligado de conformidad con lo contemplado por el Contrato y los demás documentos que lo integran.
+  			<br /> 
+			<strong>Cláusula Sexta.</strong>- Pagos y forma de pago.  El Acreditado se obliga a pagar a la Financiera el Monto del Crédito, y sus respectivos intereses y /o Comisiones conforme a lo establecido en la Tabla de Amortización, y que deberán comprender amortizaciones de capital y pago de intereses de acuerdo a lo pactado en el presente Contrato.
+			<br /> 
+			El Acreditado en este acto manifiesta expresamente su consentimiento e instruye a la Empresa para que ésta le retenga, de las percepciones periódicas de ingresos que le corresponden por virtud de las actividades que desempeña en la misma por la relación laboral que los une (en adelante las “Percepciones”), las cantidades respectivas a cargo del Acreditado para cumplimentar las obligaciones de pago periódicas a las que se encuentra obligado el Acreditado en virtud del presente Contrato, conforme a lo especificado en la Tabla de Amortización, asimismo el Acreditado autoriza e instruye expresamente a la Empresa para que una vez efectuada la retención correspondiente, la Empresa pague a nombre y representación del Acreditado, en el domicilio de la Financiera, o bien mediante cheque, depósito o transferencia electrónica a la siguiente cuenta bancaria 0897684574, cuenta CLABE 072650008976845740 de la Institución Bancaria denominada Banco Mercantil del Norte, S.A., Institución de Banca Múltiple, Grupo Financiero BANORTE, a nombre de Smart Quo, S.A. de C.V. SOFOM ENR, los montos correspondientes a los que se encuentre obligado el Acreditado, lo anterior de conformidad con la autorización por parte del Acreditado a la Empresa contemplada en el Anexo D del Contrato.
+			<br /> 
+			En caso que el día en que deba efectuarse el pago, de conformidad con la Tabla de Amortización, sea día inhábil, el Acreditado deberá realizar el pago del día hábil inmediato posterior.
+			<br /> 
+			El Acreditado deberá pagar la totalidad de los gastos, derechos e impuestos a los que se encuentre obligado. No obstante lo anterior y en caso que por cualquier causa la Financiera llegare a realizar pago alguno por cualquiera de los conceptos mencionados en el presente párrafo, el Acreditado se obliga a reintegrar a la Financiera tal erogación dentro de un plazo no mayor a cinco días hábiles posteriores a la fecha en que la Financiera efectúe tal erogación y le sea notificada al Acreditado, previa comprobación de las erogaciones efectuadas.
+			<br />
+			<strong>Cláusula Séptima.</strong>- Aplicación de Pagos. Todo pago que realice el Acreditado será aplicado contra el adeudo de la siguiente forma y hasta cuanto alcance el importe del pago: i) En su caso, contra los Intereses Moratorios; ii) Intereses Ordinarios; iii) Comisiones; iv) al pago del saldo insoluto vencido del Monto Principal; y v) al pago del saldo insoluto del Monto Principal no vencido. En el supuesto que existan más de dos pagos vencidos y el Acreditado efectúe sólo el pago de uno de ellos, la Financiara aplicará dicho pago contra el pago vencido con mayor anterioridad hasta el más reciente, aplicando el orden de la prelación antes mencionado, por lo que el Acreditado acepta que sea aplicado todos los pagos de esta forma.
+			<br />
+			<strong> Cláusula Octava.</strong>- Pagaré. Para garantizar el cumplimiento de las obligaciones del presente Contrato y los demás documentos que lo integren, el Acreditado se obliga a suscribir un pagaré en favor de la Financiera, por el importe correspondiente al Monto del Crédito, mismo que se incluye en el Anexo E del Contrato. Las Partes acuerdan que la suscripción del pagaré es condición esencial para el otorgamiento y/o disposición del Monto del Crédito y del Monto Principal respectivamente, situación que no podrá ser dispensada por la Financiera. En este sentido, las Partes aceptan que en caso que el  
+			<br />  
+  		</td>
+  	</tr>
+  </table>
+  <hr />
+  <table>
+  	<tr>
+  		<td width="50%">
+  			Acreditado incumpla con dos o más pagos consecutivos o no, de conformidad con la Tabla de Amortización, en dicho caso, las Partes aceptan que se tenga por vencido anticipadamente el Pagaré antes referido, pudiendo la Financiera requerir vía judicial el pago de la cantidad total que dicho título de crédito ampara.
+  			<br />
+  			<strong>Cláusula Novena.</strong>- Del Obligado Solidario. El Obligado Solidario teniendo capacidad económica suficiente, por este mismo acto acepta que será solidariamente responsable del Acreditado respecto de las obligaciones que se deriven, ya sea de manera directa o indirecta del presente Contrato, por lo que renuncia por este mismo acto y de manera expresa e irrevocablemente a los beneficios de orden y excusión contemplados por los artículos 2754, 2755, 2756, 2757 y demás relativos y aplicables al Código Civil para el Estado de Puebla, así como sus correlativos aplicables, artículos que a la letra se transcriben en el Anexo G del presente instrumento.
+  			<br />
+  			<strong>Cláusula Décima.</strong>- Comisión por apertura. El Acreditado pagará a la Financiera por única ocasión, una Comisión por Apertura, misma que será, para el caso de créditos iguales o menores a $8,000.00 M.N. (ocho mil pesos 00/100 Moneda Nacional) otorgados por la Financiera al Acreditado como Monto del Crédito, la cantidad que resulte de aplicar 3% (tres por ciento) de Comisión por Apertura por el Monto Principal, y al importe que resulte se le incluye el IVA correspondiente. No obstante lo anterior y en caso que el Monto del Crédito otorgado por la Financiera sea mayor a $8,000.00 M.N. (ocho mil pesos 00/100 Moneda Nacional) el Acreditado pagará la cantidad de $406.00 M.N. (cuatrocientos seis pesos 00/100 Moneda Nacional) IVA incluido. Por tratarse de un crédito a plazo fijo, no podrán modificarse comisiones ni tasas de interés.
+  			<br />
+			<strong>Cláusula Décima Primera.</strong>-Intereses ordinarios.-  El Monto del Crédito causará el interés anual establecido en la Carátula del Contrato e identificado como Tasa Anual Fija sobre saldos insolutos más su respectivo IVA, en el entendido que el Acreditado, de conformidad con lo dispuesto en la Tabla de Amortización, deberá de pagar las cantidades en la forma, periodicidad y monto en ella señaladas. Los intereses que se causen en virtud del otorgamiento del crédito, serán calculados aplicando el porcentaje de la Tasa Anual Fija sobre el Monto del Crédito por el número de días que dure el plazo forzoso contemplado en la Carátula del Contrato y de conformidad con lo dispuesto en la Cláusula Quinta del presente instrumento.
+			<br /> 
+			<strong>Cláusula Décima Segunda.</strong>- Intereses Moratorios.- En caso de incumplimiento de cualquiera de las obligaciones de pago a cargo del Acreditado al amparo del presente Contrato, por causas imputables al Acreditado, éste deberá pagar a la Financiera el Interés Moratorio señalado y contemplado en la Carátula del Contrato, mismo que se aplicará contra el saldo insoluto del crédito vencido y no pagado, la tasa moratoria establecido
+  		</td>
+  		<td width="50%">
+  			en la Carátula del Contrato. Los intereses moratorios a que se refiere la presente cláusula se causarán durante todo el tiempo en que dure el incumplimiento y hasta la fecha en que sea cubierto en su totalidad el saldo vencido. Adicionalmente el Acreditado deberá pagar a la Financiera, únicamente en caso de incumplimiento, en su caso, los siguientes conceptos: a) los gastos de cobranza en que la Financiera haya incurrido y erogado desde la fecha en que se originó el incumplimiento y hasta la fecha en que el Acreditado cumplimente con la obligación de pago respecto de los saldos vencidos, no obstante lo anterior y en caso que el Acreditado incurra en un Incumplimiento Generalizado respecto a sus obligaciones de pago, las Partes aceptan que dicha situación sea considerada como causal de rescisión de conformidad con lo dispuesto en la Cláusula Décima Sexta del Contrato, debiendo para tal efecto la Financiera y hasta en tanto el Acreditado no liquide la totalidad del Monto del Crédito más sus accesorios, retener los documentos que soportan y/o garantizan el crédito; b) en su caso, un cargo adicional al importe del saldo del 20% (veinte por ciento) de la cantidad amparada por cada cheque devuelto que, en su caso, haya sido entregado para el pago total o parcial del Monto del Crédito. La Financiera no efectuará cargos ni cobranza por comisiones o gastos distintos a los especificados en el presente Contrato. El Acreditado deberá cubrir, además, el IVA en términos de la ley aplicable, sobre los intereses ordinarios, moratorios, comisiones y gastos a que se refiere la presente cláusula. 
+  			<br />
+  			<strong>Cláusula Décima Tercera.</strong>- Estado de Cuenta. La Financiera enviará mensualmente al domicilio y/o correo electrónico del Acreditado el Estado de Cuenta del crédito objeto del Contrato, mismo que se enviará dentro de los primeros diez días hábiles de cada mes. El Acreditado contará con noventa días posteriores a la fecha en que le sea enviado el Estado de Cuenta para objetar cualquier concepto, en los términos y condiciones de la cláusula del Contrato relativa las consultas y reclamaciones. No obstante lo anterior y en caso que el Acreditado no reciba el Estado de Cuenta, ya sea en su domicilio, en su correo electrónico y/o a través del portal de internet que para tal efecto ponga a su disposición la Financiera, el Acreditado podrá solicitarlo directamente en el domicilio de  la Financiera.
+  			<br />
+			<strong>Cláusula Décima Cuarta.</strong>- Cancelación. Las Partes convienen que, el Acreditado podrá, en un periodo de diez días hábiles posteriores a la firma del Contrato, cancelar los efectos del mismo sin responsabilidad alguna a su cargo, siempre y cuando el Acreditado no haya hecho uso del Monto Principal. 
+			<br />
+			<strong>Cláusula Décima Quinta.</strong>- Causas de vencimiento anticipado. Las Partes aceptan que se deberá considerar como causas de vencimiento anticipado al Contrato,  cualquiera de las siguientes: i) Por acuerdo mutuo entre las Partes celebrado por escrito; ii) Si el Acreditado con al menos con 60 (sesenta) días previos a la fecha deseada de terminación, solicitara a la Financiera su deseo de concluir anticipadamente la vigencia del Contrato; o iii) Cuando la Financiera así lo estime oportuno y previamente le notifique al Acreditado, con al menos 30 (treinta) días de anticipación a la fecha en que surtirá efectos la terminación anticipada del Contrato.
+  		</td>
+  	</tr>
+  </table>
+  <hr />
+  <table width="100%">
+  	<tr>
+  		<td width="50%">
+  			Las anteriores causas de vencimiento anticipado operarán y serán aplicables, siempre y cuando el Acreditado liquide en su totalidad cualquier adeudo que tenga en favor de la Financiera en virtud del presente instrumento, obligándose el Acreditado a exhibir ante la Financiera y dentro de los siguientes cinco días hábiles posteriores a la fecha en que haya sido notificado el deseo de terminar anticipadamente los efectos del Contrato, los comprobantes de pago a través de los cuales se acredite cabalmente que el Acreditado ha liquidado en su totalidad cualquier adeudo que pueda tener en favor de la Financiera, de lo contrario las Partes aceptan que no se tendrá por terminada anticipadamente la vigencia del Contrato y por consiguiente, seguirá surtiendo sus efectos.
+			<strong>Cláusula Décima Sexta.</strong>- Causas de Rescisión. La Financiera podrá dar por rescindido el Contrato y los documentos que lo integren inmediatamente y sin necesidad de requerimiento ni declaración judicial previa, si el Acreditado incurre en cualquiera de los siguientes supuestos: i) Falta de pago oportuno de más de dos pagos a los que se encuentre obligado a realizar de conformidad con la Tabla de Amortización, pudiendo ser dichos pagos consecutivos o no; ii) Si el Acreditado deja de formar parte de la Empresa, es decir, concluye la relación laboral que lo une con la Empresa, y que por tal motivo no resulte posible para la Financiera, que se realice la retención de las Percepciones y por causa directa de ello, la amortización del Crédito; iii) El destino del crédito sea empleado a un uso distinto
+			<br />
+			al convenido en la Cláusula Primera del Contrato o bien que el mismo sea destinado a un hecho ilícito; iv) Si cualquier declaración hecha por el Acreditado y/o por el Obligado Solidario en el presente Contrato y/o en los documentos que formen parte de este, resultare falsa o incorrecta; v) Por no informar inmediatamente por escrito a la Financiera de cualquier situación que pueda afectar su capacidad de pago; vi) En caso que el Acreditado sea acreedor al pago de un Interés Moratorio equivalente al 10% (diez por ciento) o más del Monto del Crédito autorizado por la Financiera; o vii) Si el Acreditado es sujeto a cualquier controversia judicial que ponga en riesgo su capacidad de pago.
+			<br /> 
+			No obstante lo anterior, y en caso que el Acreditado deje de formar parte de la Empresa por concluir su relación laboral con la misma, el Acreditado autoriza y expresamente instruye a la Empresa para que ésta retenga de las Percepciones a las que, en su caso, tuviere derecho el Acreditado por virtud de dicha terminación laboral, los montos necesarios o hasta donde las Percepciones alcancen para efectos de pagar el total del Monto del Crédito y los demás accesorios a la Financiera, en caso que dicha cantidad no sea suficiente para liquidar la cantidad adeudada, el Acreditado se sujetará a lo establecido en el siguiente párrafo.
+			<br />
+			Las Partes acuerdan que en caso de rescisión del Contrato, el Acreditado estará obligado a cubrir los daños y/o perjuicios que cause a la Financiera, asimismo y de darse alguna de las causas de rescisión antes mencionadas, la Financiera podrá declarar vencida y pagadera la suma insoluta del Monto del Crédito y de sus accesorios, así como cualquier otro pago que por concepto del Contrato esté obligado el Acreditado a cubrir, saldo insoluto que deberá ser pagado en favor de la Financiera en una sola exhibición y dentro de los diez días naturales posteriores a la fecha en que tenga verificativo la causa de rescisión respectiva, más el pago de una pena convencional equivalente al 10% (diez por ciento) del Monto del Crédito.
+			<br />
+			<strong>Cláusula Décima Séptima.</strong>- Cesión. El Acreditado no podrá ceder las obligaciones y/o derechos del presente instrumento a persona alguna, no obstante lo anterior la Financiera podrá ceder, en cualquier momento y persona y cuando así lo considere pertinente, los derechos y obligaciones que se deriven del Contrato, de cualquiera de los documentos que lo integren y/o del pagaré que haya suscrito el Acreditado en favor de la Financiera.
+  		</td>
+  		<td width="50%">
+  			<strong>Cláusula Décima Octava.</strong>- Modificaciones.  La Financiera podrá realizar modificaciones al Contrato, siempre y cuando ésta le notifique tales modificaciones al Acreditado, notificación que deberá efectuarse con al menos con treinta días de anticipación a la fecha en que comiencen a surtir efectos dichas modificaciones, pudiendo la Financiera realizar las notificaciones en comento, a través de un aviso inserto en el Estado de Cuenta del Acreditado. En caso que el Acreditado no esté de acuerdo con las modificaciones propuestas, éste podrá solicitar a la Financiera la terminación del Contrato dentro de los treinta días naturales inmediatos posteriores a la fecha de la notificación de las modificaciones, sin responsabilidad ni comisión alguna a su cargo, debiendo para tal efecto cubrir, en su caso, los adeudos que ya se hubieren generado a la fecha en que se solicite la terminación del Contrato por esta causa. En caso que la Financiera no reciba comunicación alguna por parte del Acreditado, las Partes acuerdan que se entenderá como una aceptación tácita por parte del Acreditado, a dichas modificaciones al Contrato, obligándose a sujetarse a los nuevos términos y condiciones aplicables al Contrato y/o a los documentos que lo integren.
+  			<br />  
+			<strong>Cláusula Décima Novena.</strong>- Consultas y Reclamaciones. En caso de que el Acreditado desee presentar a la Financiera alguna aclaración o queja respecto del Contrato, podrá presentarla por escrito a la Unidad Especializada de la Financiera con domicilio en retorno quinto edificio 10 col. reserva terrirtoril Atlixcayotl, C.P. 72810 o vía telefónica al teléfono 2222141200  ext 22 o bien mediante correo electrónico a smartquo.atencionaclientes@gmail.com. El proceso y los requisitos para la presentación de solicitudes, consultas, aclaraciones, inconformidades y quejas relacionadas con el presente Contrato será el siguiente: i) Cuando el Acreditado no esté de acuerdo con alguno de los movimientos que se reflejen en el Estado de Cuenta, podrá presentar una solicitud de aclaración dentro del plazo de noventa días naturales contados a partir de la fecha de corte, o en su caso, de la realización de la operación; ii) Una vez entregada la solicitud de aclaración, la Financiera le proporcionará al Acreditado un acuse de recibo de la solicitud de aclaración y un folio, el cual el Acreditado debe conservar para futuras aclaraciones. Tratándose de cantidades que tenga que pagar el Acreditado, éste no tendrá el derecho de no realizar el pago por la cantidad cuya aclaración solicita, así como de cualquier otra cantidad que se relacione con la misma, hasta que dicha aclaración no haya sido resuelta por la Financiera en términos de la presente cláusula; iii) Una vez recibida la solicitud de aclaración, la Financiera contará con un plazo máximo de cuarenta y cinco días para entregar al Acreditado el dictamen correspondiente, al cual anexará copia simple del documento o evidencia de las razones que se consideraron para la emisión de dicho dictamen, con base en la información que obren en su poder, así como un informe detallado en el que se respondan todos los hechos contenidos en la solicitud presentada por el Acreditado. El dictamen e informe, antes mencionados, serán entregados al Acreditado en el domicilio de la Financiera. En caso que el dictamen determine que procede el cargo, así como sus accesorios, el Acreditado deberá realizar dicho pago de inmediato, a más tardar de dentro de los dos días hábiles siguientes, sin embargo, en ningún momento causará intereses moratorios. En caso que el Acreditado presente una aclaración que resulte improcedente, por  cada  evento, éste se obliga a pagar a la Financiera una  comisión por la cantidad de $1,500.00 M.N. (un mil quinientos pesos 00/100 Moneda Nacional), cantidad que deberá ser cubierta por el Acreditado a más tardar dentro de los dos días hábiles siguientes a la fecha en que se le notifique el respectivo dictamen al Acreditado; iv) Dentro del plazo de cuarenta y cinco días naturales, contados a partir de la entrega del dictamen, la Financiera pondrá a disposición del Acreditado el expediente en el que conste todo el proceso de investigación realizado con motivo de la aclaración, asimismo, dicho expediente contendrá toda aquella documentación que se haya tomado en consideración para la emisión del dictamen.
+  		</td>
+  	</tr>  	
+  </table>
+  <hr />
+  <table width="100%">
+  	<tr>
+  		<td width="50%">
+  			Hasta que el procedimiento de aclaración no quede resuelto, la Financiera no reportará como vencidas las cantidades sujetas a dicha aclaración a las sociedades de información crediticia. El procedimiento descrito en esta cláusula, es sin perjuicio del derecho que tiene el Acreditado de acudir ante la CONDUSEF o ante la autoridad jurisdiccional competente. Sin embargo, cabe mencionar que el procedimiento anteriormente descrito quedará sin efectos a partir del momento en que el Acreditado presente, ya sea su demanda ante el órgano jurisdiccional o su reclamación ante la CONDUSEF. De conformidad con lo dispuesto por el artículo 23 de la Ley para la Transparencia y Ordenamiento de los Servicios Financieros, en la que el Acreditado no está de acuerdo con alguno de los movimientos que aparezcan en el Estado de Cuenta que emita la Financiera, podrá presentar una aclaración, inconformidad o queja dentro del plazo de 90 (noventa) días naturales contados a partir de la fecha de corte o, en su caso, de la realización de la operación, de lo contrario, en caso que dicha reclamación sea presentada fuera del mencionado término, las Partes acuerdan que no será procedente la tramitación de tal reclamación. 
+  			<br />
+  			<strong>Cláusula Vigésima.</strong> CONDUSEF. En caso que el Acreditado tenga alguna duda, queja o reclamación que no deseé presentar directamente ante la Financiera de conformidad con lo dispuesto en la cláusula del Contrato relativa las consultas y reclamaciones, podrá acudir ante la CONDUSEF, con domicilio en Boulevard Libramiento San Juan, número 2702, Local B, de la Colonia Ampliación Reforma Sur, Puebla, Pue., C.P. 72160; o vía telefónica a los teléfonos (222) 230 31 79, (222) 230 31 78, (222) 249 11 50 o al teléfono LADA sin costo 01800 999 80 80, o vía electrónica a la dirección de correo electrónico puecond@condusef.gob.mx o consultar la página electrónica en Internet www.condusef.gob.mx
+  		</td>
+  		<td width="50%">
+  			<strong>Cláusula Vigésima Primera. </strong>Datos Personales. El Acreditado podrá solicitar, en cualquier momento, el acceso, rectificación, cancelación y/u oposición respecto de los Datos Personales que le conciernen y a los que la Financiera tuvo acceso en virtud del presente Contrato. La solicitud que el Acreditado deseé realizar, deberá notificarla por escrito a la Financiera, ya sea en el domicilio de ésta o vía correo electrónico dirigido al departamento de Datos Personales de la Financiera a la dirección de correo electrónico smartquo.atencionaclientes@gmail.com. La solicitud del ejercicio que el Acreditado haga respecto de los derechos antes referidos, deberá contener la especificación del derecho a ejercer por parte de la Financiera relativo a sus Datos Personales. No obstante lo anterior, la Financiera no podrá transmitir a empresas oferentes de bienes o servicios mediante medios masivos impresos, electrónicos o telefónicos, los Datos Personales referentes al objeto, montos, plazos, intereses y/o cualquier dato o condición pactada en este Contrato, la Carátula del Contrato y/o sus respectivos Anexos, salvo que medie autorización expresa por parte del Acreditado.
+  			<br />
+			<strong>Cláusula Vigésima Segunda.</strong>- Información crediticia. El Acreditado autorizó a la Financiera en términos de lo dispuesto por los artículos 28 y 29 de la Ley General para Regular a las Sociedades de Información Crediticia, para que en cualquier momento solicite y proporcione información crediticia a cualquiera de las Sociedades de Información Crediticia y a que utilice cualquier otro medio o base de datos autorizadas en términos de ley, que considere pertinente para obtener información del historial crediticio de los que celebran el presente Contrato y verificar la información asentada en el presente Contrato, para tales efectos el Acreditado otorga la autorización contemplada en el Anexo F del Contrato.
+			<br /> 
+			<strong>Cláusula Vigésima Tercera.</strong>- Competencia y Jurisdicción. Para la ejecución y cumplimiento del Contrato, las Partes acuerdan someterse a la jurisdicción de los jueces y tribunales de la Ciudad de Puebla, Puebla, renunciando expresamente a cualquier otro fuero que pudiera corresponderles en razón de sus domicilios presentes o futuros o por cualquier otra causa.
+  		</td>
+  	</tr>
+  </table>
+  <div>
+	  Leído que fue el presente Contrato y enteradas las Partes de sus alcances y efectos legales, lo firman de común acuerdo en la Ciudad de Puebla, Puebla, <t t-esc="o.fecha_contrato" />.
+  </div>
+  
+  <hr />
+  <table width="100%">
+  	<tr>
+  		<td width="25%">
+  		</td>
+  		<td style="text-align: center" width="25%">
+  			La Financiera
+  			<br />
+  			<br />
+  			<br />
+  			<br />
+  			C. Carlos Eduardo Tapia Camino
+  			<br />
+ 			Apoderado Legal
+ 			<br />
+			Smart Quo, S.A. de C.V. SOFOM E.N.R.
+			<br />
+
+  		</td>
+  		<td style="text-align: center" width="25%">
+  		El Acreditado
+  		<br />
+  		<br />
+  		<br />
+  		<spam t-field="o.partner_id.name" />
+  		<br />
+  		Por Su Propio Derecho
+  		</td>
+  		<td width="25%">
+  		</td>
+  	</tr>
+  </table>
+  <br />
+  <br />
+  <table width="100%"> 
+  		<tr>
+  		<td width="20%">
+  		</td>
+  		<td width="60%" style="text-align: center">
+  			Compareciente
+			<br />
+			La Empresa
+			<br />
+			<br />
+			<br />
+			<br />
+			Carlos Francisco Tapia Carlín
+			<br />
+			Apoderado Legal
+			<br />
+			Grupo Indico Soluciones Empresariales, S.C.
+  		</td>
+  		<td width="20%">
+  		</td>
+  	</tr>
+  </table>
+  </t>
+  <t t-if="o.producto=='micro'" >
+  	<p>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>CONTRATO
+DE
+                  APERTURA DE CRÉDITO SIMPLE (EL “Contrato”), QUE CELEBRAN POR
+                  UNA PARTE LA PERSONA QUE HA QUEDADO DEBIDAMENTE IDENTFICADA
+                  COMO EL
+                  ACREDITADO EN LA CARÁTULA DEL CONTRATO (EN LO SUCESIVO EL
+                  “Acreditado”), POR OTRA PARTE EN SU CARÁCTER DE OBLIGADO
+                  SOLIDARIO LA PERSONA CUYOS DATOS SE DETALLAN EN EL ANEXO “A”
+                  DEL
+                  CONTRATO (EN LO SUCESIVO EL “Obligado Solidario”), Y POR OTRA
+                  PARTE SMART QUO, S.A DE C.V. SOFOM ENR, EN SU CARÁCTER DE
+                  ACREDITANTE (EN LO SUCESIVO LA “Financiera”), REPRESENTADA POR
+                  SU
+                  APODERADO LEGAL EL C.CARLOS EDUARDO TAPIA CAMINO, A QUIENES EN SU
+                  CONJUNTO
+                  SE LES DENOMINARÁ COMO LAS “Partes”, AL TENOR DE LAS
+                  SIGUIENTES:</b></font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="center">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>DECLARACIONES</b></font></font></font></font></font></p>
+    <ol type="I">
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1"><b>Declara la Financiera por conducto de su
+                      apoderado legal:</b></font></font></font></font></font></p>
+      </li>
+    </ol>
+    <ol type="a">
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Ser una sociedad financiera de objeto múltiple,
+                    entidad no regulada, constituida conforme a las Leyes de la
+                    República Mexicana, mediante Escritura No. de fecha 29 de
+                    septiembre de 2011, otorgada ante la fe del Lic. Francisco
+                    Javier Lara Mendoza, Corredor Público No. 1 de la Ciudad de
+                    Puebla, escritura que fue inscrita ante el Registro Público
+                    de Comercio de la Ciudad de Puebla;</font></font></font></font></font></p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que su Apoderado Legal cuenta con capacidad legal y
+                    facultades suficientes para la celebración del presente
+                    instrumento, mismas que a la fecha del presente no les han
+                    sido revocadas, modificadas, ni en forma alguna limitadas.</font></font></font></font></font></p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que para los efectos del Contrato, señala como
+                    domicilio el ubicado en la calle 5TO retorno, edificio 10
+                    nivel 2, reserva territorial Atlixcayotl</font></font></font></font></font></p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que de conformidad con lo que establece el artículo
+                    87-J de la Ley General de Organizaciones y Actividades
+                    Auxiliares del Crédito no requiere autorización de la
+                    Secretaría de Hacienda y Crédito Público para constituirse y
+                    operar y su operación no está sujeta a la supervisión y
+                    vigilancia de la Comisión Nacional Bancaria y de Valores,
+                    artículo que a la letra se transcribe en el Anexo “E” del
+                    presente instrumento.</font></font></font></font></font></p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que el Contrato se encuentra inscrito en el
+                    Registro de Contratos de Adhesión de la Comisión Nacional
+                    para la Protección y Defensa de los Usuarios de Servicios
+                    Financieros (CONDUSEF) con el número indicado en la parte
+                    superior derecha de cada página del Contrato.</font></font></font></font></font></p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que mediante la celebración del presente Contrato
+                    otorga al Acreditado el monto del crédito establecida en la
+                    Carátula del Contrato, y que es su voluntad celebrar el
+                    presente Contrato de conformidad con los términos y
+                    condiciones contemplados por el mismo, por la Carátula del
+                    Contrato y/o sus respectivos Anexos. </font></font></font></font></font>
+        </p>
+      </li>
+    </ol>
+    <ol start="2" type="I">
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1"><b>Declara el Acreditado bajo protesta de decir
+                      verdad y por su propio derecho:</b></font></font></font></font></font></p>
+      </li>
+    </ol>
+    <ol type="a">
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que es una persona física con plena capacidad
+                    jurídica para celebrar y obligarse en los términos y
+                    condiciones establecidas por el Contrato, y cuyos datos
+                    generales se encuentran contenidos en la Carátula del
+                    Contrato. </font></font></font></font></font> </p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que cuenta con la capacidad económica suficiente
+                    para pagar el monto del crédito y sus accesorios, así como
+                    cualquier otra cantidad que en su caso proceda.</font></font></font></font></font></p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que manifiesta conocer que el importe del crédito
+                    que la Financiera le otorga en virtud del presente
+                    instrumento al Acreditado, está basado en un análisis
+                    económico a través del cual se considera que el importe
+                    otorgado en crédito representa no más del 75% (setenta y
+                    cinco por ciento) del total de los ingresos que obtiene el
+                    Acreditado, por lo que en caso que dichos ingresos
+                    disminuyen, el Acreditado manifiesta sujetarse a lo
+                    dispuesto por la Cláusula Décima Tercera. </font></font></font></font></font>
+        </p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que previo a la celebración del Contrato, la
+                    Financiera le informó del contenido del mismo, en particular
+                    lo referente a las cláusulas financieras, así como los
+                    cargos, Comisiones o gastos que se generan por la
+                    celebración del Contrato; por lo cual el Acreditado
+                    manifiesta haber leído, comprendido y aceptado los términos
+                    y condiciones contemplados por el presente instrumento, su
+                    Carátula y/o los respectivos Anexos al mismo, y por lo tanto
+                    es su voluntad celebrar el presente Contrato.</font></font></font></font></font></p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que los recursos con los cuales ha de pagar los
+                    servicios o productos recibidos, así como las obligaciones
+                    contraídas, han sido o serán obtenidas o generadas a través
+                    de una fuente de origen lícito. Asimismo, que el destino de
+                    los recursos obtenidos al amparo del presente Contrato de
+                    crédito será destinado tan solo a fines permitidos por la
+                    ley, y que no se encuentran dentro de los supuestos
+                    establecidos en los artículos 139 y 148 bis del Código Penal
+                    Federal. </font></font></font></font></font> </p>
+      </li>
+    </ol>
+    <ol start="3" type="I">
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1"><b>Declara el Obligado Solidario por su propio
+                      derecho:</b></font></font></font></font></font></p>
+      </li>
+    </ol>
+    <ol type="a">
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que manifiesta bajo protesta de decir verdad que
+                    sus datos generales contenidos en el Anexo “A” son
+                    verdaderos dentro de los cuales, de manera enunciativa más
+                    no limitativa, se encuentran su nombre completo,
+                    nacionalidad, domicilio, estado civil, contacto, entre
+                    otros. </font></font></font></font></font> </p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que manifiesta tener capacidad legal y económica
+                    para celebrar el presente contrato y obligarse y en los
+                    términos establecidos por el mismo.</font></font></font></font></font></p>
+      </li>
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que está de acuerdo en suscribir el presente
+                    Contrato en carácter de obligado solidario del Acreditado,
+                    asumiendo las obligaciones de pago que se deriven del
+                    Contrato.</font></font></font></font></font></p>
+      </li>
+    </ol>
+    <ol start="4" type="I">
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1"><b>Declaran las Partes:</b></font></font></font></font></font></p>
+      </li>
+    </ol>
+    <ol type="a">
+      <li>
+        <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+          <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+                color="#000000"><font face="Calibri"><font style="font-size: 8pt"
+                    size="1">Que se reconocen la personalidad con la que
+                    comparecen a la celebración del presente instrumento,
+                    manifestando que no existe vicio del consentimiento alguno
+                    que pueda invalidarlo. </font></font></font></font></font>
+        </p>
+      </li>
+    </ol>
+    <p class="western" style="margin-bottom: 0cm"><font face="Calibri"><font style="font-size: 8pt"
+          size="1">Una
+          vez expresadas las declaraciones que anteceden, las Partes de común
+          acuerdo se sujetan a las siguientes:</font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="center">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>CLÁUSULAS</b></font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Primera.
+                  </b></font></font></font><font face="Calibri"><font style="font-size: 8pt"
+              size="1"><span lang="es-MX"><b>Definiciones.
+                </b></span></font></font><font face="Calibri"><font style="font-size: 8pt"
+              size="1">Para
+              los efectos del presente Contrato, la Carátula del Contrato y/o
+              los
+              Anexos que lo integren, los términos mencionados en dichos
+              documentos, tendrán los siguientes significados ya sea que sean
+              insertos en plural y/o en singular:</font></font></font></font></p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Anexo”
+significa,
+              el o los documentos que, debidamente firmados por las
+              Partes, integran el presente Contrato.</font></font></font></font></p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Carátula
+del
+              Contrato” significa, la primera hoja del Contrato en la cual se
+              determina de manera sucinta y a manera de detalle se describen los
+              aspectos financieros del Contrato. </font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">CAT”:
+El
+              Costo Anual Total de financiamiento expresado en términos
+              porcentuales anuales que, para fines informativos y de
+              comparación,
+              incorpora la totalidad de los costos y gastos inherentes a los
+              créditos.”</font></font></font></font></p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Comisión
+por
+              Apertura” significa, la tasa de comisión por apertura señalada
+              en la Carátula del Contrato, misma que se deberá adicionar al
+              Monto
+              Principal, salvo que el Acreditado opte por que dicha comisión no
+              sea financiada, es decir que tal cantidad no forme parte
+              integrante
+              al Monto del Crédito. </font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Comisiones”
+significa,
+              cualquier cargo, independientemente de su denominación o
+              modalidad, diferente al interés y/o a la Tasa Anual Fija que la
+              Financiera cobre al Acreditado. </font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Datos
+Personales”
+              significa, la información que la Financiera obtendrá
+              del Acreditado y en virtud de la celebración del presente
+              Contrato,
+              información con la cual se identificará plenamente al Acreditado.
+            </font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <span style="letter-spacing: 0.2pt"> “<font face="Times New Roman"><font style="font-size: 10pt"
+            size="2"><font face="Calibri"><font style="font-size: 8pt" size="1">Estado
+de
+                Cuenta” significa, el documento físico o digital que emite la
+                Financiera con el fin de informarle al Acreditado el saldo del
+                crédito a la fecha del corte respectivo, mismo que podrá ser
+                entregado en el domicilio del Acreditado y/o al correo
+                electrónico
+                del Acreditado y/o a través de los medios electrónicos que
+                designe
+                la Financiera, pudiendo el Acreditado tener acceso para
+                consultarlo
+                con su respectivo usuario y contraseña. </font></font></font></font></span>
+    </p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Interés
+Moratorio”
+              y/o “Intereses Moratorios” significará, la cantidad
+              que resulte de aplicar la tasa moratoria establecida en la
+              Caratula
+              del Contrato entre la base un año de 360 (trescientos sesenta)
+              días
+              por el número de días en los que el Acreditado incurra en mora.</font></font></font></font></p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Monto
+del
+              Crédito” significa, el importe que la Financiera otorga en
+              crédito al Acreditado, mismo que se integra por el Monto Principal
+              más la Comisión por Apertura, mismo que ha quedado debidamente
+              señalado en la Carátula del Contrato, salvo que el Acreditado opte
+              por que dicha comisión no sea financiada, es decir que tal
+              cantidad
+              no forme parte integrante al Monto del Crédito. </font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Monto
+Principal”
+              significa, la cantidad que la Financiera otorga como
+              crédito en favor del Acreditado sin considerar comisiones,
+              intereses
+              ni algún otro cargo relacionado con el otorgamiento del crédito,
+              Monto Principal que ha quedado debidamente señalado en la Carátula
+              del Contrato. </font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Plazo
+Forzoso”
+              significa, el periodo de tiempo por el cual las Partes
+              acuerdan sujetarse de manera forzosa a los efectos del Contrato. </font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm"><font color="#000000">“<font face="Times New Roman"><font
+            style="font-size: 12pt" size="3"><font face="Calibri"><font style="font-size: 8pt"
+                size="1">Recibo
+                de Disposición” significa, documento a través del cual se
+                documenta la entrega material y jurídica del Monto del Crédito
+                otorgada al Acreditado por parte de la Financiera, documento que
+                se
+                incluye al presente instrumento como Anexo “B” del mismo. </font></font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Tabla
+de
+              Amortización” significa, </font></font><font face="Calibri"><font
+              style="font-size: 8pt" size="1">la
+              tabla en la que se detalla el proceso de distribución de los
+              pagos,
+              de acuerdo a las fechas establecidas</font></font><font face="Calibri"><font
+              style="font-size: 8pt" size="1">
+              hasta el cumplimiento de las obligaciones de pago del Contrato.</font></font></font></font></p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Tasa
+Anual
+              Fija” significa, el porcentaje señalado en la Carátula del
+              Contrato, mismo que será aplicable al crédito adeudado objeto del
+              Contrato y el cual será aplicado de conformidad con la Tabla de
+              Amortización misma que se detalla el Anexo “C”. </font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm">“<font face="Times New Roman"><font style="font-size: 12pt"
+          size="3"><font face="Calibri"><font style="font-size: 8pt" size="1">Unidad
+Especializada”
+              significa, el departamento de la Financiera dedicado
+              para la atención cualquier aclaración y/o queja que pueda tener el
+              Acreditado respecto del Estado de Cuenta y/o del Contrato. </font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Segunda.
+                  Monto</b></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1"><span style="letter-spacing: 0.8pt"><b>
+                  </b></span></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1"><b>del</b></font></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><span
+                  style="letter-spacing: 0.5pt"><b>
+                  </b></span></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1"><b>Crédito.-</b></font></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><span
+                  style="letter-spacing: 1.0pt"><b>
+                  </b></span></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1">En
+                virtud de la celebración del presente Contrato las Partes
+                acuerdan
+                que la Financiera otorgue el Monto del Crédito establecido en la
+                Carátula del Contrato al Acreditado y que éste último acepte
+                dicho
+                crédito debiendo sujetarse a los términos y condiciones
+                contempladas por el Contrato, la Carátula del Contrato y/o sus
+                Anexos.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+                  Tercera.</b></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1"><span style="letter-spacing: 0.7pt"><b>
+                  </b></span></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1"><b>Disposición
+                  del Crédito.-</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1"><span style="letter-spacing: 0.6pt"><b>
+                  </b></span></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1">El
+                Monto Principal, de conformidad con lo señalado en la Carátula
+                del
+                Contrato, podrá ser dispuesto por el Acreditado previa firma del
+                presente instrumento, entrega del cheque emitido por la
+                Financiera
+                que ampare el Monto del Crédito, la celebración del Pagaré
+                respectivo por parte del Acreditado y la firma del Recibo de
+                Disposición correspondiente, debiéndose entender que la
+                disposición
+                del Monto del Crédito se realiza una vez cumplidos los
+                requisitos
+                previamente señalados. No obstante lo anterior y en caso que el
+                Acreditado no haga disposición de dicho Monto Principal aun
+                cuando
+                hayan sido cumplimentados todos los requisitos antes señalados,
+                el
+                Acreditado queda obligado al pago de las amortizaciones
+                correspondientes, intereses devengados, comisiones, así como
+                cualquier otra cantidad accesoria o derivada al Monto del
+                Crédito. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">De
+conformidad
+                con lo señalado en el párrafo inmediato anterior, el
+                Acreditado podrá disponer del Monto del Crédito bien mediante el
+                cheque nominativo que emita la Financiera en favor del
+                Acreditado,
+                bien mediante transferencia bancaria a la cuenta del Acreditado
+                o
+                bien por cualquier otra forma o medio de disposición que en un
+                futuro autorice la Financiera. Asimismo, al momento de la
+                disposición
+                del crédito, el Acreditado deberá suscribir a favor de la
+                Financiera un pagaré que contendrá los requisitos que estipula
+                La
+                Ley General de Títulos y Operaciones de Crédito y el pagaré
+                contemplado por la Cláusula Novena del Contrato, a contra
+                entrega de
+                la disposición del Monto del Crédito al Acreditado y que éste
+                haya
+                suscrito el pagaré antes referido, deberá el Acreditado firmar
+                de
+                aceptación el Recibo de Disposición correspondiente. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+                  Cuarta.</b></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1"><span style="letter-spacing: 0.8pt"><b>
+                    Del </b></span></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1"><b>Destino.-</b></font></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><span
+                  style="letter-spacing: 0.9pt"><b>
+                  </b></span></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1">Las
+                Partes acuerdan que el Acreditado única y exclusivamente podrá
+                destinar el Monto del Crédito para los fines establecidos en la
+                Carátula del Contrato, crédito que no podrá ser destinado a
+                fines
+                ilícitos ni distintos al destino del crédito pactado por las
+                Partes, en caso contrario, la Financiera podrá rescindir, sin
+                responsabilidad alguna a su cargo, los efectos del Contrato y
+                demás
+                documentos que lo integren, en el entendido que el Acreditado
+                será
+                acreedor al pago de la pena convencional contenida en la
+                Cláusula
+                Décima Cuarta del presente instrumento. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Quinta.
+                  De la Amortización.-</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+                De conformidad con lo dispuesto tanto en la Carátula del
+                Contrato
+                como en lo contenido en el Anexo “C” del Contrato, el Acreditado
+                se obliga a pagar el Monto del Crédito, Comisiones, intereses y
+                demás accesorios, conforme al monto y número de amortizaciones
+                que
+                se establecen en la Tabla de Amortización. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Sexta.
+                  Del Plazo Forzoso del Monto del Crédito.-</b></font></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">
+                El Plazo Forzoso al que se sujetará el Acreditado para liquidar
+                en
+                su totalidad el Monto del Crédito y sus accesorios, será el
+                establecido en la Carátula del Contrato, debiendo sujetarse a
+                los
+                términos y condiciones establecidas por el presente Contrato y
+                los
+                documentos que lo integren. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">El
+Acreditado
+                podrá solicitar, en todo momento, la terminación
+                anticipada del presente Contrato, para tal efecto la Financiera
+                informará al Acreditado el monto insoluto del Monto del Crédito
+                a
+                fin de que éste pueda cubrir el monto total del adeudo,
+                incluyendo
+                todos los accesorios financieros que éste hubiera generado a la
+                fecha en que se solicite la terminación. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Séptima.
+                  Pago.-</b></font></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1">
+                El Acreditado pagará las amortizaciones del Monto del Crédito
+                así
+                como cualquier otra cantidad que en su caso proceda a la
+                Financiera,
+                pagos que se realizarán conforme a los siguientes términos: i)
+                El
+                Acreditado deberá efectuar cualquiera de dichos pagos en el
+                domicilio de la Financiera o mediante depósito o transferencia
+                bancaria a la cuenta bancaria de la Financiera; ii) Todos los
+                pagos
+                deberán efectuarse en moneda nacional; iii) De conformidad con
+                la
+                Tabla de Amortización contenida en el Anexo “C” cada uno de los
+                pagos deberá efectuarse por el Acreditado en la fecha acordada,
+                en
+                caso que el día en que deba de efectuarse el pago sea día
+                inhábil,
+                el Acreditado deberá realizar el pago el día hábil inmediato
+                posterior; iv) Los intereses que genere el saldo insoluto del
+                Monto
+                del Crédito, serán pagaderos conjuntamente con los abonos del
+                Monto
+                Principal del mismo, y se harán por las cantidades y con la
+                periodicidad previstas en el Recibo de Disposición y la Tabla de
+                Amortización. v) Se aplicará el Impuesto al Valor Agregado que
+                se
+                cause; vi) En caso que la Financiera, de conformidad con las
+                disposiciones fiscales aplicables, deba efectuar el cobro de
+                alguna
+                contribución de carácter fiscal al Acreditado, en relación con
+                el
+                crédito objeto del Contrato, dicho cobro será efectuado por la
+                Financiera independientemente del cobro que realice por la
+                disposición del Monto del Crédito y sus accesorios; vii) En caso
+                que cualquiera de los pagos a los que esté obligado el
+                Acreditado no
+                sea realizado de conformidad con la Tabla de Amortizaciones del
+                Contrato dentro del Plazo Forzoso acordado, el saldo total
+                insoluto
+                del Monto del Crédito generará un Interés Moratorio mensual
+                equivalente a la Tasa de Interés Interbancaria de Equilibrio
+                (TIIE)
+                más los puntos establecidos en la Carátula del Contrato, más el
+                correspondiente Impuesto al Valor Agregado (IVA), mismos que se
+                devengarán desde la fecha de incumplimiento hasta la del pago
+                total
+                del Monto del Crédito. Los Intereses Moratorios que se devenguen
+                bajo el presente Contrato, se calcularán por los días
+                efectivamente
+                transcurridos sobre la base de un mes de 30 (treinta) días;
+                viii)
+                Todo pago adicional al abono mensual de conformidad con la Tabla
+                de
+                Amortización que el Acreditado efectúe será aplicado por la
+                Financiera contra el pago de la(s) última(s) amortización(es)
+                contenidas en la Tabla de Amortización; y xi) Todo pago al que
+                el
+                Acreditado esté obligado, deberá efectuarlo sin necesidad de
+                interpelación o declaración judicial o extrajudicial.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">La
+Financiera
+                acreditará el pago correspondiente realizado por el
+                Acreditado de conformidad con el medio de pago empleado y de la
+                manera siguiente: i) Si el pago se realiza en efectivo, se
+                acreditará
+                el mismo día, ii) Si se trata de una institución bancaria
+                distinta
+                a aquella que la Financiera maneja para recibir los pagos, ya
+                sea
+                tratándose de cheque o depósito y el pago fue depositado antes
+                de
+                las dieciséis horas se acreditará a más tardar el día hábil
+                inmediato posterior; iii) si se trata de transferencias a través
+                del
+                Sistema de Pagos Electrónicos Interbancarios (SPEI), se
+                acreditará
+                el mismo día, siempre y cuando se haga en horarios bancarios
+                disponibles para dicho sistema.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">El
+Acreditado
+                conviene en pagar la totalidad de los gastos, derechos e
+                impuestos en vigor, así como en los que en el futuro pudieran
+                establecerse por cualquier autoridad, respecto a la ejecución y
+                cumplimiento del presente Contrato, por lo que desde ahora
+                acepta que
+                la Financiera no efectúe erogación alguna por tales conceptos.
+                No
+                obstante lo anterior y en caso que por cualquier causa la
+                Financiera
+                llegare a realizar pago alguno por cualquiera de los conceptos
+                mencionados en el presente párrafo, el Acreditado se obliga a
+                reintegrar a la Financiera tal erogación dentro de un plazo no
+                mayor
+                a cinco días hábiles posteriores a la fecha en que la Financiera
+                efectúe tal erogación. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Octava.
+                  Forma de Pago.</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+                Todos los abonos al crédito que el Acreditado realice, de
+                conformidad con lo previsto en el Contrato, los hará pagando
+                íntegramente la cantidad cierta y determinada por la Tabla de
+                Amortización y/o por los conceptos que previamente así le
+                indique
+                la Financiera, sin derecho de retener o deducir importe alguno,
+                obligándose el Acreditado a efectuar cada uno de los abonos al
+                crédito, objeto del Contrato, bien en el domicilio de la
+                Financiera,
+                o bien mediante cheque, depósito o transferencia electrónica en
+                la
+                siguiente cuenta bancaria: 0897684574, con cuenta CLABE
+                072 650 00897684574 0 de
+                la Institución Bancaria denominada Banco Mercantil del Norte,
+                S.A.,
+                Institución de Banca Múltiple, Grupo Financiero BANORTE. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Novena.
+                  Pagaré.- </b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">Para
+                garantizar el cumplimiento de las obligaciones del presente
+                Contrato,
+                la Carátula del Contrato y/o Anexos, el Acreditado se obliga a
+                suscribir un pagaré en favor de la Financiera por el importe
+                correspondiente al Monto del Crédito, mismo que se incluye en el
+                Anexo “D” del Contrato. Las Partes acuerdan que la suscripción
+                del Pagaré es condición esencial para el otorgamiento y/o
+                disposición del crédito, situación que no podrá ser dispensada
+                por la Financiera. La suscripción y entrega del pagaré que
+                realice
+                el Acreditado al momento de disponer del Monto del Crédito, no
+                se
+                considerará como pago de la contraprestación a cargo del
+                Acreditado, ni constituye el recibo de dicha contraprestación
+                por
+                parte de la Financiera; dicho título de crédito servirá para
+                documentar y garantizar el crédito por parte del Acreditado y
+                será
+                devuelto a éste una vez que realice el último pago en tiempo y
+                forma de conformidad la Tabla de Amortización contenida en el
+                Anexo
+                “C”. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Décima.
+                  Garantía Prendaria. </b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">A
+                efecto de garantizar el fiel y exacto cumplimiento de las
+                obligaciones a cargo del Acreditado en razón de la celebración
+                del
+                Contrato y los documentos que lo integren, el Acreditado
+                constituye a
+                través del presente acto y a favor de la Financiera prenda sin
+                transmisión de la posesión (la “Prenda”) sobre el o los bienes
+                muebles descritos en el Anexo "F” del presente Contrato, en el
+                entendido que dicha garantía real se regirá por lo establecido
+                en
+                el Título I, capítulo IV, Sección Séptima de la Ley General de
+                Títulos y Operaciones de Crédito. Aunado a lo anterior el
+                Acreditado manifiesta expresamente su consentimiento para que la
+                Prenda sea inscrita en el Registro Único de Garantías
+                Mobiliarias a
+                cargo de la Secretaría de Economía, obligándose a entregar a la
+                Financiera toda la documentación que sea necesaria para la
+                consecución de tales fines y aceptando desde este momento que si
+                existiere algún costo derivado de tal inscripción, éste será a
+                cargo y por cuenta del Acreditado. En razón de lo anterior, las
+                Partes convienen en designar al Acreditado como depositario de
+                los
+                bienes otorgados en Prenda, por lo que para fines de
+                responsabilidad
+                civil y/o penal, el Acreditado será considerado como depositario
+                judicial de tales bienes, en el entendido que en caso que, por
+                incumplimiento a las obligaciones derivadas del Contrato a cargo
+                del
+                Acreditado, sea procedente la ejecución de la Prenda, el
+                Acreditado
+                se obliga a entregar en el domicilio de la Financiera el bien
+                objeto
+                de la Prenda sin necesidad de requerimiento ni declaración
+                judicial
+                previa. El Acreditado manifiesta bajo protesta de decir verdad
+                que el
+                o los bienes objeto de la Prenda no han sido otorgados por el
+                Acreditado para garantizar el pago de otras obligaciones a su
+                cargo,
+                distintas a las adquiridas mediante la celebración del presente
+                Contrato.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Décima
+                  Primera. Obligado Solidario.</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+                El Obligado Solidario teniendo capacidad económica suficiente,
+                por
+                este mismo acto acepta que será solidariamente responsable del
+                Acreditado respecto de las obligaciones que se deriven, ya sea
+                de
+                manera directa o indirecta del presente Contrato, por lo que
+                renuncia
+                por este mismo acto y de manera expresa e irrevocablemente a los
+                beneficios de orden y excusión contemplados por los artículos
+                2754,
+                2755, 2756, 2757 y demás relativos y aplicables al Código Civil
+                para el Estado de Puebla, así como sus correlativos aplicables
+                para
+                otros Estados, artículos que a la letra se transcriben en el
+                Anexo
+                “E” del presente instrumento.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Décima
+                  Segunda. Estado de Cuenta.-</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+              </font></font></font><font face="Calibri"><font style="font-size: 8pt"
+              size="1"><span style="letter-spacing: 0.2pt">La
+                Financiera enviará mensualmente al domicilio y/o al correo
+                electrónico del Acreditado el Estado de Cuenta del crédito
+                objeto
+                del Contrato, mismo que se enviará dentro de los diez días
+                siguientes a la fecha de corte correspondiente. El Acreditado
+                contará
+                con noventa días posteriores a la fecha de corte, para objetar
+                cualquier concepto que esté reflejado en el Estado de Cuenta, en
+                los
+                términos y condiciones de la cláusula del Contrato relativa las
+                consultas y reclamaciones. No obstante lo anterior y en caso que
+                el
+                Acreditado no reciba el Estado de Cuenta, ya sea en su domicilio
+                y/o
+                en su correo electrónico, podrá solicitarlo directamente en el
+                domicilio de la Financiera.</span></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Décima
+                  Tercera.- Causas de Vencimiento Anticipado.-</b></font></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">
+                La Financiera podrá dar por vencido anticipadamente el Plazo
+                Forzoso
+                para el pago del Crédito y sus accesorios, en caso que ocurra
+                cualquiera de los siguientes supuestos: i) Por acuerdo mutuo
+                entre
+                las Partes; ii) Si este Contrato y/o el Pagaré dejaren por
+                cualquier
+                razón, de contar con plena fuerza legal y efecto o si el
+                Acreditado
+                así lo declarara. iii) En caso que la Financiera previamente lo
+                requiera y por su parte, el Acreditado no pudiese comprobar
+                ingresos
+                iguales o superiores a los comprobados al momento de celebración
+                del
+                presente Contrato. iv) Si el Acreditado con al menos 60
+                (sesenta)
+                días previos a la fecha deseada de terminación, hiciera del
+                conocimiento de la Financiera su deseo de concluir
+                anticipadamente la
+                vigencia del Contrato; o v) Cuando la Financiera así lo estime
+                oportuno y previamente le notifique al Acreditado, con al menos
+                30
+                (treinta) días de anticipación a la fecha en que surtirá efectos
+                la terminación anticipada del Contrato.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">Las
+anteriores
+                causas de vencimiento anticipado operarán y serán
+                aplicables, siempre y cuando el Acreditado efectúe el pago total
+                de
+                las disposiciones realizadas respecto del Monto del Crédito, así
+                como también de todos y cada uno de sus accesorios, obligándose
+                el
+                Acreditado a cubrir cualquier adeudo en favor de la Financiera,
+                a más
+                tardar dentro de los siguientes cinco días hábiles posteriores a
+                la
+                fecha en que se notifique a la contraparte cualquiera de las
+                causas
+                contempladas en la presente cláusula que motive el deseo de
+                terminar
+                anticipadamente el Contrato, en el entendido que dicha
+                terminación
+                anticipada surtirá sus efectos sin necesidad de previa
+                interpelación
+                judicial, demanda, diligencia judicial u otra notificación de
+                carácter judicial, a los cuales el Acreditado renuncia
+                expresamente.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Décima
+                  Cuarta: Causas de Rescisión.</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+                La Financiera podrá dar por rescindido el Contrato y los
+                documentos
+                que lo integren inmediatamente y sin necesidad de declaración
+                judicial previa, si el Acreditado incurre en cualquiera de los
+                siguientes supuestos: i) Por falta de pago puntual de cualquiera
+                de
+                las cantidades que deban ser pagadas de conformidad con el
+                Contrato;
+                ii) Por no dar aviso inmediato a la Financiera de cualquier
+                situación
+                que pueda afectar su capacidad de pago; iii) Si cualquier
+                declaración
+                hecha o que se considere hecha por el Acreditado en el presente
+                Contrato o en cualquier otro documento o certificado derivado
+                del
+                crédito resultare falsa o incorrecta iv) Por incumplimiento a
+                cualquier obligación derivada de este Contrato; v) Si solicita o
+                le
+                solicitan someterse a cualquier procedimiento concursal, de
+                quiebra o
+                de suspensión de pagos o se encuentre en las condiciones que
+                establecen las leyes correspondientes para ubicarse en
+                cualquiera de
+                las situaciones antes señaladas; vi) Por destinar el crédito
+                otorgado por la Financiera a un fin distinto al pactado por las
+                Partes en la Carátula del Contrato; vii) En caso que el
+                Acreditado
+                incumpla en efectuar en tiempo y forma, más de dos pagos a los
+                que
+                se encuentre obligado a realizar, pudiendo ser dichos pagos
+                consecutivos o no; viii) En caso que el Acreditado sea acreedor
+                al
+                pago de un interés moratorio equivalente al 10% (diez por
+                ciento) o
+                más del Monto del Crédito autorizado por la Financiera; ix) Si
+                el
+                Acreditado admite por escrito su incapacidad general de pago o
+                cede ,
+                con fecha posterior a la celebración del Contrato, sus bienes a
+                favor de sus acreedores y/o terceras personas; x) Si queda
+                sujeto el
+                Acreditado a cualquier intervención ordenada por cualquier
+                autoridad.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">En
+caso
+                de rescisión del Contrato, el Acreditado estará obligado a
+                cubrir los daños y/o perjuicios que cause a la Financiera,
+                además
+                de la totalidad de los saldos que se encuentren insolutos a la
+                fecha
+                de rescisión del Contrato, saldos que deberán ser cubiertos en
+                favor de la Financiera en una sola exhibición y dentro de los
+                diez
+                días posteriores a la fecha en que tenga verificativo de
+                rescisión
+                respectiva. En caso que la rescisión se derive por causas
+                imputables
+                al Acreditado, éste deberá pagar en favor de la Financiera y de
+                manera adicional a lo antes mencionado, una pena convencional
+                equivalente al 10% (diez por ciento) del Monto del Crédito
+                contemplado en la Carátula del Contrato. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Décima
+                  Quinta. Intereses Moratorios. </b></font></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">En
+caso
+                que el Acreditado no efectúe en tiempo y forma cualquier abono
+                al crédito objeto del Contrato y/o cualquier cantidad o comisión
+                que deba efectuar con motivo al Contrato, el Acreditado deberá
+                cubrir los Intereses Moratorios sobre los pagos vencidos y no
+                cubiertos, debiéndose aplicar la tasa de Interés Moratorio sobre
+                el
+                número de días en los que el Acreditado incurra en mora y hasta
+                alcanzar un máximo aplicable del 10% (diez por ciento) del Monto
+                del
+                Crédito, situación que de alcanzarse el monto máximo aplicable
+                por
+                concepto de Intereses Moratorios podrá ser considerado por la
+                Financiera como causal de rescisión, de conformidad con lo
+                dispuesto
+                en la cláusula inmediata anterior. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+                Décima Sexta.- Cancelación.- </b></font></font><font face="Calibri"><font
+              style="font-size: 8pt" size="1">Las
+              Partes convienen que, el Acreditado podrá, en un periodo de diez
+              días hábiles posteriores a la firma del Contrato, cancelar los
+              efectos del mismo sin responsabilidad alguna a su cargo, siempre y
+              cuando el Acreditado no haya hecho uso del Monto Principal.</font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Décima
+                  Séptima. Responsabilidad.</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+                El Acreditado se obliga a sacar a la Financiera en paz y a salvo
+                de
+                todo juicio o reclamación que pudiera derivarse del mal uso o
+                del
+                destino ilícito que el Acreditado efectúe respecto del crédito
+                otorgado objeto del Contrato. En virtud de lo anterior, el
+                Acreditado
+                responderá respecto de los gastos en que la Financiera pueda
+                incurrir, incluyendo honorarios de abogados relacionados con
+                tales
+                juicios o reclamaciones, debiendo el Acreditado rembolsar tales
+                erogaciones, en un periodo no mayor de cinco días posteriores a
+                la
+                fecha en que la Financiera realice dicha erogación.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Décima
+                  </b></font></font></font><font face="Calibri"><font style="font-size: 8pt"
+              size="1"><span lang="es-MX"><b>Octava</b></span></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>.
+                  Notificaciones.</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+                Todas las notificaciones que deban hacerse entre las Partes con
+                relación al Contrato, deberán efectuarse por escrito y dirigirse
+                a
+                los domicilios que se establecieron en el apartado de
+                declaraciones
+                y/o en la Carátula del Contrato. Dichas notificaciones deberán
+                ser
+                entregadas personalmente o por servicios de mensajería
+                especializada, con acuse de recibo. En caso que alguna de las
+                Partes
+                cambie su domicilio, ésta deberá notificarlo por escrito a la
+                otra
+                Parte con por lo menos quince días de anticipación del cambio
+                del
+                domicilio, de lo contrario y en tanto no se haya efectuado dicha
+                notificación en los términos de la presente cláusula, las Partes
+                aceptan que se continúen realizando las notificaciones
+                correspondientes al último domicilio que le hubiese sido
+                notificado.
+              </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            face="Calibri"><font style="font-size: 8pt" size="1"><span lang="es-MX"><b>Cláusula
+Décima
+                  </b></span></font></font><font color="#000000"><font face="Calibri"><font
+                style="font-size: 8pt" size="1"><b>Novena</b></font></font></font><font
+            face="Calibri"><font style="font-size: 8pt" size="1"><span lang="es-MX"><b>.
+                  Cesión. </b></span></font></font><font face="Calibri"><font style="font-size: 8pt"
+              size="1"><span lang="es-MX">El
+                Acreditado no podrá ceder las obligaciones y/o derechos del
+                presente
+                instrumento a persona alguna, no obstante lo anterior la
+                Financiera
+                podrá ceder, cuando así lo considere pertinente, los derechos de
+                cobro respecto de las obligaciones a cargo del Acreditado
+                derivadas
+                por el presente Contrato. </span></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Vigésima.
+                  Modificaciones.</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+                La Financiera podrá modificar los términos y/o condiciones del
+                Contrato y los documentos que lo integren de conformidad con lo
+                siguiente: i) La Financiera notificará al Acreditado con al
+                menos
+                cuarenta y cinco días de anticipación a la fecha deseada en que
+                surta efectos la modificación, en el entendido que tal periodo
+                deberá computarse a partir de la fecha de corte respecto del
+                Estado
+                de Cuenta en el que la Financiera le notifique al Acreditado
+                tales
+                modificaciones; ii) El Acreditado podrá solicitar por escrito la
+                terminación del Contrato dentro de los treinta días siguientes a
+                la
+                fecha de la notificación de las modificaciones, sin
+                responsabilidad
+                ni comisión alguna a su cargo, debiendo cubrir, en su caso, los
+                adeudos que ya se hubieren generado a la fecha en que solicite
+                la
+                terminación del Contrato; iii) En caso que la Financiera no
+                reciba
+                comunicación alguna por parte del Acreditado y una vez
+                transcurrido
+                el plazo establecido en el inciso inmediato anterior, las Partes
+                acuerdan que se entenderá como una aceptación tácita por parte
+                del
+                Acreditado a las modificaciones al Contrato, obligándose a
+                sujetarse
+                a los nuevos términos y condiciones aplicables al Contrato y/o
+                los
+                documentos que lo integren. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">Lo
+anterior,
+                de conformidad con lo dispuesto en la “Disposición Única
+                de la CONDUSEF aplicables a las Entidades Financieras”.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Vigésima
+                  Primera. Consultas y Reclamaciones.- </b></font></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">En
+caso
+                de que el Acreditado desee presentar a la Financiera alguna
+                aclaración o queja respecto del Contrato, podrá presentarla por
+                escrito a la Unidad Especializada de la Financiera con domicilio
+                en
+                retorno quinto edificio 10 col. reserva territorial Atlixcayotl, C.P. 72810 o
+                vía
+                telefónica al teléfono 2222141200 ext. 22o bien mediante correo
+                electrónico a </font></font></font><a href="mailto:smartquo.atencionaclientes@gmail.com"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">smartquo.atencionaclientes@gmail.com</font></font></a><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">.
+                El proceso y los requisitos para la presentación de solicitudes,
+                consultas, aclaraciones, inconformidades y quejas relacionadas
+                con el
+                presente Contrato será el siguiente: i) Cuando el Acreditado no
+                esté
+                de acuerdo con alguno de los movimientos que se reflejen en el
+                Estado
+                de Cuenta, podrá presentar una solicitud de aclaración dentro
+                del
+                plazo de noventa días naturales contados a partir de la fecha de
+                corte, o en su caso, de la realización de la operación; ii) Una
+                vez
+                entregada la solicitud de aclaración, la Financiera le
+                proporcionará
+                al Acreditado un acuse de recibo de la solicitud de aclaración y
+                un
+                folio, el cual el Acreditado debe conservar para futuras
+                aclaraciones. Tratándose de cantidades que tenga que pagar el
+                Acreditado, éste no tendrá el derecho de no realizar el pago por
+                la
+                cantidad cuya aclaración solicita, así como de cualquier otra
+                cantidad que se relacione con la misma, hasta que dicha
+                aclaración
+                no haya sido resuelta por la Financiera en términos de la
+                presente
+                cláusula, siempre y cuando dicha aclaración cumpla con las
+                formalidades necesarias para poder ser tramitada ante la Unidad
+                Especializada de la Financiera; iii) Una vez recibida la
+                solicitud de
+                aclaración, la Financiera contará con un plazo máximo de
+                cuarenta
+                y cinco días para entregar al Acreditado el dictamen
+                correspondiente, al cual anexará copia simple del documento o
+                evidencia que se tomó en consideración para la emisión de dicho
+                dictamen, con base en la información que obren en su poder, así
+                como un informe detallado en el que se respondan todos los
+                hechos
+                contenidos en la solicitud presentada por el Acreditado. El
+                dictamen
+                e informe, antes mencionados, serán entregados al Acreditado en
+                el
+                domicilio de la Financiera. En caso que el dictamen determine
+                que
+                procede el cargo, así como sus accesorios, el Acreditado deberá
+                realizar dicho pago de inmediato, a más tardar de dentro de los
+                dos
+                días hábiles siguientes, sin embargo, en ningún momento causará
+                intereses moratorios. En caso que el Acreditado presente una
+                aclaración que resulte improcedente, por cada evento, éste se
+                obliga a pagar a la Financiera una comisión por la cantidad de
+                $1,500.00 M.N. (mil quinientos pesos 00/100 Moneda Nacional),
+                cantidad que deberá ser cubierta por el Acreditado a más tardar
+                dentro de los dos Días Hábiles siguientes a la fecha en que se
+                le
+                notifique el respectivo dictamen al Acreditado; iv) Dentro del
+                plazo
+                de cuarenta y cinco días naturales, contados a partir de la
+                entrega
+                del dictamen, la Financiera pondrá a disposición del Acreditado
+                el
+                expediente en el que conste todo el proceso de investigación
+                realizado con motivo de la aclaración, asimismo, dicho
+                expediente
+                contendrá toda aquella documentación que se haya tomado en
+                consideración para la emisión del dictamen.</font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            face="Calibri"><font style="font-size: 8pt" size="1">Hasta
+              que el procedimiento de aclaración no quede resuelto, la
+              Financiera
+              no reportará como vencidas las cantidades sujetas a dicha
+              aclaración
+              a las sociedades de información crediticia. El procedimiento
+              descrito en esta cláusula, es sin perjuicio del derecho que tiene
+              el
+              Acreditado de acudir ante la CONDUSEF o ante la autoridad
+              jurisdiccional competente. Sin embargo, cabe mencionar que el
+              procedimiento anteriormente descrito quedara sin efectos a partir
+              del
+              momento en que el Acreditado presente, ya sea su demanda ante el
+              órgano jurisdiccional o su reclamación ante la CONDUSEF. </font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">De
+conformidad
+                con lo dispuesto por el artículo 23 de la Ley para la
+                Transparencia y Ordenamiento de los Servicios Financieros, en la
+                que
+                el Acreditado no está de acuerdo con alguno de los movimientos
+                que
+                aparezcan en el Estado de Cuenta que emita la Financiera, podrá
+                presentar una aclaración, inconformidad o queja dentro del plazo
+                de
+                90 (noventa) días naturales contados a partir de la fecha de
+                corte
+                o, en su caso, de la realización de la operación, de lo
+                contrario,
+                en caso que dicha reclamación sea presentada fuera del
+                mencionado
+                término, las Partes acuerdan que no será procedente la
+                tramitación
+                de tal reclamación. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Vigésima
+                  Segunda. Datos Personales.</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+                El Acreditado podrá solicitar, en cualquier momento, el acceso,
+                rectificación, cancelación y/u oposición respecto de los Datos
+                Personales que le conciernen y a los que la Financiera tuvo
+                acceso en
+                virtud del presente Contrato. La solicitud que el Acreditado
+                quiera
+                realizar, deberá efectuarla por escrito, notificándole a la
+                Financiera, de conformidad con la cláusula del Contrato
+                referente a
+                las notificaciones, o bien vía correo electrónico dirigido al
+                departamento de Datos Personales de la Financiera a la dirección
+                de
+                correo electrónico </font></font></font><a href="mailto:smartquo.atencionaclientes@gmail.com"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">smartquo.atencionaclientes@gmail.com</font></font></a><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">.
+                La solicitud del ejercicio que el Acreditado haga respecto de
+                los
+                derechos antes referidos, deberá contener la especificación del
+                derecho a ejercer por parte de la Financiera relativo a sus
+                Datos
+                Personales. No obstante lo anterior, la Financiera no podrá
+                transmitir a empresas oferentes de bienes o servicios mediante
+                medios
+                masivos impresos, electrónicos o telefónicos, los Datos
+                Personales
+                referentes al objeto, montos, plazos, intereses y/o cualquier
+                dato o
+                condición pactada en este Contrato, la Carátula del Contrato y/o
+                sus respectivos Anexos, salvo que medie autorización expresa por
+                parte del Acreditado. </font></font></font></font></font>
+    </p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Vigésima
+                  Tercera. CONDUSEF.</b></font></font></font><font color="#000000"><font
+              face="Calibri"><font style="font-size: 8pt" size="1">
+                En caso que el Acreditado tenga alguna duda, queja o reclamación
+                que
+                no deseé presentar directamente ante la Financiera de
+                conformidad
+                con lo dispuesto </font></font></font><font face="Calibri"><font
+              style="font-size: 8pt" size="1"><span style="letter-spacing: 0.2pt">en
+la
+                cláusula del Contrato relativa las consultas y reclamaciones</span></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">,
+                podrá acudir ante la CONDUSEF, con domicilio en Boulevard
+                Libramiento San Juan, número 2702, Local B, de la Colonia
+                Ampliación
+                Reforma Sur, Puebla, Pue., C.P. 72160; o vía telefónica a los
+                teléfonos (222) 230 31 79, (222) 230 31 78, (222) 249 11 50 o al
+                teléfono LADA sin costo 01800 999 80 80, o vía electrónica a la
+                dirección de correo electrónico <a href="mailto:puecond@condusef.gob.mx">puecond@condusef.gob.mx</a>
+                o consultar la página electrónica en Internet <a href="http://www.condusef.gob.mx/">www.condusef.gob.mx</a></font></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1"><b>Cláusula
+Vigésima
+                  Cuarta. Competencia y Jurisdicción.</b></font></font></font><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">
+                Para la ejecución y cumplimiento del Contrato, las Partes
+                acuerdan
+                someterse a la jurisdicción de los jueces y tribunales de la
+                Ciudad
+                de Puebla, Puebla, renunciando expresamente a cualquier otro
+                fuero
+                que pudiera corresponderles en razón de sus domicilios presentes
+                o
+                futuros o por cualquier otra causa.</font></font></font></font></font></p>
+                
+                <br />
+				<br />
+
+                <p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0" align="justify">
+      <font face="Times New Roman"><font style="font-size: 10pt" size="2"><font
+            color="#000000"><font face="Calibri"><font style="font-size: 8pt" size="1">Leído
+que
+                fue el presente Contrato, se le hace entrega al Acreditado una
+                copia del mismo y enteradas las Partes de su contenido y alcance
+                en términos de lo dispuesto por el artículo 78 del Código de
+                Comercio, mismo que a la letra se transcribe en el Anexo “E” del
+                presente instrumento, lo firman por duplicado en la Ciudad de
+                Puebla, Puebla, el día <t t-esc="o.fecha_contrato"></t></font></font></font></font></font></p>
+                
+                 <h6 class="western" style="margin-top: 0cm; margin-bottom: 0cm" align="center"><br />
+      <font style="font-size: 8pt" size="1"><span lang="es-MX"></span></font></h6>
+    <h6 class="western" style="margin-top: 0cm; margin-bottom: 0cm" align="center"><br />
+    </h6>
+    <h6 class="western" style="margin-top: 0cm; margin-bottom: 0cm" align="center"><font
+        style="font-size: 8pt" size="1"><span lang="es-MX">La Financiera</span></font></h6>
+    <h6 class="western" style="margin-top: 0cm; margin-bottom: 0cm" align="center">
+      <br />
+    </h6>
+    <p class="western" style="margin-bottom: 0cm" align="center"><br />
+    </p>
+    <p style="margin-bottom: 0cm" align="center"><font face="Calibri"><font style="font-size: 12pt"
+          size="3"><font style="font-size: 8pt" size="1"><span lang="es-MX"><span
+                style="font-style: normal">Lic. Carlos Eduardo Tapia Camino</span></span></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm" align="center"> <font face="Times New Roman"><font
+          style="font-size: 10pt" size="2"><font face="Calibri"><font style="font-size: 8pt"
+              size="1">Apoderado Legal</font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm" align="center"><font face="Times New Roman"><font
+          style="font-size: 10pt" size="2"><font face="Calibri"><font style="font-size: 8pt"
+              size="1"><b>Smart Quo, S.A. de C.V. SOFOM E.N.R.</b></font></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm" align="left"><br />
+       </p>
+    <p class="western" style="margin-bottom: 0cm" align="left"><br />
+    </p>
+    <h6 class="western" style="margin-top: 0cm; margin-bottom: 0cm" align="center">
+      <font style="font-size: 8pt" size="1"><span lang="es-MX">El Acreditado</span></font></h6>
+      <br />
+      <br />
+    <p style="margin-bottom: 0cm" align="center"><font face="Calibri"><font style="font-size: 12pt"
+          size="3"><font style="font-size: 8pt" size="1"><span lang="es-MX"><span
+                style="font-style: normal"><t t-esc="o.partner_id.name"></t></span></span></font></font></font></p>
+    <p class="western" style="margin-bottom: 0cm" align="center"> <font face="Times New Roman"><font
+          style="font-size: 10pt" size="2"><font face="Calibri"><font style="font-size: 8pt"
+              size="1">Por su propio derecho</font></font></font></font></p>
+  </t>
+                    </div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="sofom_contrato_nomina_report"
+    		model="crm.lead"
+    		string="Contrato"
+    		report_type="qweb-html"
+    		name="sofom.sofom_contrato_nomina_repo"
+    		file="Contrato.pdf"
+    		attachment_use="False"
+		/>
+	</data>
+</openerp>

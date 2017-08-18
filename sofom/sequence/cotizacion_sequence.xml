@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>		
+	<data noupdate="1">
+        <record id="seq_sofom_calculator" model="ir.sequence">
+            <field name="name">Calculo</field>
+            <field name="code">sofom.calculator</field>
+            <field name="prefix">COT</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</openerp>

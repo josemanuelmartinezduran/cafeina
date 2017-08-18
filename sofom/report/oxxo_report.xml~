@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="oxxo_repo">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<h2>Hoja de referencia y guía para transferencias o depósitos bancarios</h2>
+                    		<hr />
+                    		
+                    		<table width="100%">
+                    			<tr>
+                    				<td>Descripción: </td>
+                    				<td>Crédito</td>
+                    				<td>Fecha Límite de Pago: </td>
+									<td> <t t-esc="o.fecha_vencimiento"/> </td>
+									<td>Total: </td>
+									<td> $ <t t-esc="round(o.total_parcialidad, 2)"/> </td>
+                    			</tr>
+                    			<tr>
+                    				<td colspan="2" > Estimado(a): </td>
+                    				<td colspan="4" > <t t-esc="o.titular.name"/> </td>
+                    			</tr>
+                    		</table>
+                    		<div>
+                    		<br />
+                    		A continuación te presentamos los datos de cuenta para que puedas efectuar tu 
+                    		pago en el lugar de tu preferencia.
+                    		</div>
+                    		<br />
+                    		<div style="display:block; margin-left:auto; margin-right: auto; width: 900px; text-align:center;">
+                    			Razon Social: Smart Quo S.A. de C.V. SOFOM ENR <br />
+                    			RFC: SQU110929NZ0
+                    			<br />
+                    			<img src="/sofom/static/img/banorte.jpg" width="500px" style="display: block; margin-left:auto; margin-right:auto"/>
+                    			<br />
+                    			Número de Cuenta: 0897684574 <br />
+                    			CLABE Interbancaria: 072650008976845740
+                    			<br />
+                    			<img src="/sofom/static/img/oxxo.png" style="display: block; margin-left:auto; margin-right:auto"/> <br />
+                    			
+                    			<br />
+                    			<img t-att-src="'/report/barcode/Code128/%s' % o.oxxo_barcode"/> <br />
+                    			<t t-esc="o.oxxo_barcode"/>
+                    			<br /> <br /> <br />
+                    			<span>NOTA: Para el pago en OXXO plica una comision adicional de $9.00 MN + IVA </span>
+                    			<br />
+                    			<br />
+								<br />
+								<strong>No olvides conservar tu comprobante de pago para futuras aclaraciones</strong>           			
+                    		</div> <br />
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		
+		<report
+    		id="oxxo_report"
+    		model="sofom.credito"
+    		string="Formato De Pago"
+    		report_type="qweb-html"
+    		name="sofom.oxxo_repo"
+    		file="oxxo.pdf"
+    		attachment_use="False"
+		/>
+		
+	</data>
+</openerp>

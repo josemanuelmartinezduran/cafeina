@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="anexod_repo2">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<p> </p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0; page-break-before: always"
+      align="center"> <b>Anexo “D”</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <b>AL CONTRA</b><span style="letter-spacing: normal"><b>T</b></span><b>O</b><span
+        style="letter-spacing: 1.3pt"><b> </b></span><b>DE</b><span style="letter-spacing: 1.3pt"><b>
+        </b></span><b>CRÉDITO SIMPLE</b><span style="text-transform: uppercase"><b>,
+        </b></span><span style="letter-spacing: 0.1pt"><b>Q</b></span><b>UE</b><span
+        style="letter-spacing: 0.1pt"><b> </b></span><b>C</b><span style="letter-spacing: normal"><b>E</b></span><b>L</b><span
+        style="letter-spacing: normal"><b>E</b></span><b>BR</b><span style="letter-spacing: normal"><b>A</b></span><b>N</b><span
+        style="letter-spacing: 0.1pt"><b> </b></span><span style="text-transform: uppercase">SMART
+        QUO S.A. DE C.V.</span><b> SO</b><span style="letter-spacing: normal"><b>F</b></span><b>OM
+        </b><span style="letter-spacing: normal"><b>E</b></span><b>NR, LA
+        “Financiera”,</b><span style="letter-spacing: 0.1pt"><b> </b></span><b>Y</b><span
+        style="letter-spacing: 0.1pt"><b> </b></span><font color="#808080"><t t-esc="o.partner_id.name">.</t></font><b>,</b><span
+        style="letter-spacing: 0.1pt"><b> EL “Acreditado</b></span><b>”.</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="center"><b>Pagaré</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="center"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify">YO <font color="#808080"><t
+          t-esc="o.partner_id.name">.</t></font> (EN ADELANTE EL “DEUDOR”) EN MI
+      PROPIO DERECHO, CON DOMICILIO EN <font color="#808080"><t t-esc="o.partner_id.street"></t></font>;
+      INCONDICIONALMENTE DEBO Y PAGARÉ A LA ORDEN DE <font face="Calibri"><font
+          style="font-size: 10pt" size="2"><b><font style="font-size: 11pt" size="2">SMART
+              QUO S.A. DE C.V. SOFOM ENR</font></b></font></font><font face="Calibri"><font
+          style="font-size: 10pt" size="2"><b><font style="font-size: 11pt" size="2">
+            </font></b></font></font><font face="Calibri"><font style="font-size: 10pt"
+          size="2"><font style="font-size: 11pt" size="2"><span style="font-weight: normal">(EN
+ADELANTE
+              EL “</span></font></font></font>ACREEDOR”), EN EL DOMICILIO
+      UBICADO EN <span style="text-transform: uppercase"><font face="Calibri"><font
+            style="font-size: 11pt" size="2">QUINTO RETORNO ED.10 NL.2 COL.
+            RESERVA TERRITORIAL ATLIXCAYOTL, SAN ANDRÉS CHOLULA, PUEBLA,
+            CP.72810</font></font></span>, EL DÍA <t t-esc="o.primer_pago" /><font
+          color="#808080">.</font>, LA CANTIDAD TOTAL DE $<font color="#808080"><t
+            t-esc="o.credito_solicitado.monto">.</t> (<t
+            t-esc="o.credito_solicitado.monto_letra" /> PESOS <t
+            t-esc="o.credito_solicitado.centavos" /> / 100)</font>M.N. . ESTE PAGARÉ
+        CAUSARÁ UN INTERÉS MENSUAL DEL <font color="#808080"><t t-esc="o.credito_solicitado.tasa.name">.</t></font>%
+        <font color="#808080">.</font><font face="Calibri"><font style="font-size: 10pt"
+            size="2"><font style="font-size: 11pt" size="2"> </font></font></font>(
+            <t t-esc="o.credito_solicitado.tasa_letra" /> POR
+        CIENTO) RESPECTO DEL SALDO QUE SE ENCUENTRE INSOLUTO. EL DEUDOR ACEPTA
+        QUE PARA EFECTOS DEL PRESENTE PAGARÉ, RENUNCIA EN ESTE ACTO A CUALQUIER
+        OTRO FUERO QUE PUDIERA CORRESPONDERLES RESPECTO DE SU DOMICILIO PRESENTE
+        Y/O FUTURO O POR CUALQUIER OTRA CAUSA, SUJETÁNDOSE AL DOMICILIO
+        PREVIAMENTE SEÑALADO POR EL ACREEDOR O BIEN EN ÉL ASÍ LE REQUIERA EL
+        PAGO. EL OBLIGADO SOLIDARIO FIRMA DE ACEPTACIÓN EL PRESENTE PAGARÉ ACEPTANDO EL
+        CONTENIDO DEL MISMO Y OBLIGÁNDOSE A CUMPLIR Y RESPONDER POR EL DEUDOR
+        ANTE EL ACREEDOR RESPECTO DEL ADEUDO QUE SE DERIVE DEL PRESENTE PAGARÉ.
+      </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify">EN
+      TESTIMONIO DE LO CUAL, EL DEUDOR SUSCRIBE Y FIRMA EL PRESENTE PAGARÉ EN LA
+      CIUDAD DE PUEBLA, PUE., EL DÍA.<t t-esc="o.fecha_contrato" /></p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify"><br />
+    </p>
+      <table width="100%" cellpadding="7" cellspacing="0">
+        <tbody>
+          <tr valign="top">
+            <td style="border: none; padding: 0cm" width="274">
+              <p style="page-break-inside: avoid; page-break-after: avoid" align="center">
+                <font color="#404040"><font face="Cambria"><font style="font-size: 10pt"
+                      size="2"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><b>EL DEUDOR</b></font></font></font></font></font></p>
+            </td>
+            <td rowspan="3" style="border: none; padding: 0cm" width="5">
+              <p><br />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td style=""
+              height="14" width="274">
+              <p align="justify"><br />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td style="border: none; padding: 0cm" height="45" width="274">
+              <p style="margin-bottom: 0cm" align="center"><font color="#808080">
+                <t t-esc="o.partner_id.name" /></font></p>
+              <p align="center" style="magin-left:auto; margin-right:auto;"><b>POR MI PROPIO DERECHO</b></p>
+            </td>
+          </tr>
+          
+          <tr valign="top">
+            <td style="border: none; padding: 0cm" width="274">
+              <p style="page-break-inside: avoid; page-break-after: avoid" align="center">
+                <font color="#404040"><font face="Cambria"><font style="font-size: 10pt"
+                      size="2"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><b>EL OBLIGADO SOLIDARIO</b></font></font></font></font></font></p>
+            </td>
+            <td rowspan="3" style="border: none; padding: 0cm" width="5">
+              <p><br />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td style=""
+              height="14" width="274">
+              <p align="justify"><br />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td style="border: none; padding: 0cm" height="45" width="274">
+              <p style="margin-bottom: 0cm" align="center"><font color="#808080">
+                <t t-foreach="o.solicitud" t-as="s"> <t t-esc="s.snombre" /> </t> <t t-foreach="o.solicitudn" t-as="s"> <t t-esc="s.snombre" /> </t></font></p>
+              <p align="center" style="magin-left:auto; margin-right:auto;"><b>POR MI PROPIO DERECHO</b></p>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="center"><br />
+    </p>	
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="anexod_report"
+    		model="crm.lead"
+    		string="Anexo D"
+    		report_type="qweb-html"
+    		name="sofom.anexod_repo2"
+    		file="Anexo D"
+    		attachment_use="False"
+		/>	
+	</data>
+</openerp>

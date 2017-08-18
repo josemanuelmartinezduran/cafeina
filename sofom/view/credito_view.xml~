@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Accion -->
+		<record model="ir.actions.act_window" id="credito_actn">
+			<field name="name">Caja</field>
+			<field name="res_model">sofom.credito</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+			
+		<!-- Menu -->
+		<menuitem id="credito_menu" parent="base.menu_sales" name="Caja" action="credito_actn" />
+		
+		
+		
+		
+		
+		<!--  Formulario -->
+		<record model="ir.ui.view" id="credito_edit">
+			<field name="name">credito.edit</field>
+			<field name="model">sofom.credito</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<header>
+                		<button string="Finalizar Crédito" type="workflow" states="iniciado" name="signal_terminar" confirm="No podrá continuar si hay pagos pendientes" />
+                		<button string="Enviar a Juridico" type="workflow" states="iniciado" name="signal_juridico" confirm="¿Lo enviará al jurídico?" />
+                		<button string="Calcular Moratorios" type="object" name="calculate_cobranza" />	
+                		<field name="state" widget="statusbar" nolabel="1" />
+					</header>
+					<sheet>
+						<h1>
+							<field name="name" />
+						</h1>
+						<group>
+							<group>
+								<field name="titular" />
+							</group>
+							<group>
+								<field name="tasa" />
+								<field name="fecha_vencimiento" />
+								<field name="oxxo_barcode" />
+							</group>
+						</group>
+						<separator string="Registrar Pago" />
+						<group>
+							<field name="pagando" />
+							<field name="cobrador" invisible="True"/>
+							<field name="caja_id" domain="[('state', '=', 'open'), ('user_id', '=', uid)]" />
+							<button string="Registrar Pago" type="object" name="pagar" />
+						</group>
+						<separator string="Finiquito Anticipado" />
+						<group>
+							<field name="monto_anticipado" />
+							<field name="caja_id" domain="[('state', '=', 'open'), ('user_id', '=', uid)]" />
+							<button string="Liquidar Crédito" type="object" name="liquidar" confirm="Esto liquidará el Crédito" />
+						</group>
+						<notebook>
+							<page string="Pagos">
+								<field name="pagos">
+									<tree string="X" editable="bottom">
+										<field name="numero" readonly="True" />
+										<field name="fecha" readonly="True"/>
+										<field name="monto" readonly="True" sum="Total" />
+										<field name="capital" readonly="True" sum="Total" />
+										<field name="intereses" readonly="True" sum="Total" />
+										<field name="factura" />
+										<field name="estado" readonly="True" sum="Total"/>
+										<field name="moratorios" readonly="True" sum="Total" />
+										<field name="cobranza" sum="Total" />
+										<field name="pagado" readonly="True" sum="Total"/>
+										<field name="saldo" readonly="True" sum="Total"/>
+									</tree>
+								</field>
+							</page>
+							<page string="Abonos">
+								<field name="abono_ids" readonly="True">
+									<tree string="X">
+										<field name="name" />
+										<field name="monto" />
+										<field name="fecha" />
+										<field name="cliente_id" />
+									</tree>
+								</field>
+							</page>
+						</notebook>			
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="credito_view">
+			<field name="name">credito.view</field>
+			<field name="model">sofom.credito</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="" toolbar="1" colors="">
+					<field name="name" />
+					<field name="titular" />
+				</tree>
+			</field>
+		</record>
+		
+		<!--  Busqueda -->
+		<record model="ir.ui.view" id="saldos_busqueda">
+			<field name="name">saldos.busqueda</field>
+			<field name="model">sofom.pago</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Search">
+					<field name="name" />
+					<filter icon="terp-document-new" name="Pendientes" string="" domain="[('estado','=','draft')]" help=""/>
+					<filter icon="terp-document-new" name="Pagados" string="" domain="[('estado','=','paid')]" help=""/>
+					<filter icon="terp-document-new" string="Semana Anterior" name="thisweek" domain="[('fecha','&gt;=', ((context_today()  + relativedelta(days=-1, weeks=-1)).strftime('%Y-%m-%d'))),
+         			('fecha','&lt;=', ((context_today()  + relativedelta(days=3, weeks=-1)).strftime('%Y-%m-%d')))]"/>
+         			<filter icon="terp-document-new" string="Esta Semana" name="flastweek" domain="[('fecha','&gt;=', ((context_today()  + relativedelta(days=-3)).strftime('%Y-%m-%d'))),
+         			('fecha','&lt;=', ((context_today()  + relativedelta(days=3)).strftime('%Y-%m-%d')))]"/>
+					<group expand="0" string="Group By...">
+						<filter string="Mes" icon="terp-partner" domain="[]" context="{'group_by':'fecha'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- -->
+		<record model="ir.actions.act_window" id="saldos_actn">
+			<field name="name">Saldos</field>
+			<field name="res_model">sofom.pago</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,kanban,form</field>
+			<!-- <field name="search_view_id" ref="search_view_id"/> -->
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!--  Kanban -->
+		<record model="ir.ui.view" id="saldos_kanban">
+			<field name="name">saldos.kanaban</field>
+			<field name="model">sofom.pago</field>
+			<field name="type">kanban</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<kanban default_group_by="situacion">
+					<field name="monto" sum="SUM" />
+					<templates>
+                    	<t t-name="kanban-box">
+                    		<div class="oe_employee_vignette">
+                    			<h4>Saldo</h4>
+                    			<field name="cliente" /> <hr />
+                    			<span> Monto total: </span>
+								<field name="monto" /> <br />
+								<field name="credito_id" /> <br />
+								<field name="fecha" readonly="True"/> <br />
+								<field name="saldo" />
+                    		</div>
+                    	</t>
+                    </templates>
+				</kanban>
+			</field>
+		</record>
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="pago_view">
+			<field name="name">pago.view</field>
+			<field name="model">sofom.pago</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="" toolbar="1" colors="">
+					<field name="credito_id" />
+					<field name="cliente" />
+					<field name="numero" readonly="True" />
+					<field name="fecha" readonly="True"/>
+					<field name="monto" readonly="True"/>
+					<field name="capital" readonly="True"/>
+					<field name="intereses" readonly="True"/>
+					<field name="moratorios" readonly="True" sum="Total"/>
+					<field name="cobranza" sum="Total"/>
+					<field name="pagado" readonly="True" sum="Total"/>
+					<field name="saldo" readonly="True" sum="Total"/>
+					<field name="estado" readonly="True" sum="Total"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Grafico -->
+		<record model="ir.ui.view" id="pago_graph">
+			<field name="name">pago.graph</field>
+			<field name="model">sofom.pago</field>
+			<field name="type">graph</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<graph string="Pagos">
+					<field name="fecha" />
+					<field name="saldo" operator="+"/>
+					<field name="pagado" operator="+"/>
+				</graph>
+			</field>
+		</record>
+
+		
+		<menuitem id="saldos_menu" parent="informes_ventas_menu" name="Saldos" action="saldos_actn" />
+		
+		<!-- -->
+		<record model="ir.actions.act_window" id="saldos_actn_30">
+			<field name="name">Saldos Morosos 30</field>
+			<field name="res_model">sofom.pago</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('estado', '!=', 'paid'), ('fecha','&gt;=',(context_today()-relativedelta(months=1)).strftime('%Y-%m-01')),('fecha','&lt;',time.strftime('%Y-%m-01'))]</field>
+			<!-- <field name="search_view_id" ref="search_view_id"/> -->
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Felicidades no hay saldos
+					</p>
+			</field>
+		</record>
+
+		
+		<menuitem id="saldos_menu_30" parent="informes_ventas_menu" name="Saldos Morosos 30" action="saldos_actn_30" />
+		
+		<!-- -->
+		<record model="ir.actions.act_window" id="saldos_actn_60">
+			<field name="name">Saldos Morosos 60</field>
+			<field name="res_model">sofom.pago</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('estado', '!=', 'paid'), ('fecha','&gt;=',(context_today()-relativedelta(months=2)).strftime('%Y-%m-01')),('fecha','&lt;',time.strftime('%Y-%m-01'))]</field>
+			<!-- <field name="search_view_id" ref="search_view_id"/> -->
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Felicidades no hay saldos
+					</p>
+			</field>
+		</record>
+		
+		<menuitem id="saldos_menu_60" parent="informes_ventas_menu" name="Saldos Morosos 60" action="saldos_actn_60" />
+		
+		<!-- -->
+		<record model="ir.actions.act_window" id="saldos_actn_90">
+			<field name="name">Saldos Morosos 90</field>
+			<field name="res_model">sofom.pago</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('estado', '!=', 'paid'), ('fecha','&gt;=',(context_today()-relativedelta(months=3)).strftime('%Y-%m-01')),('fecha','&lt;',time.strftime('%Y-%m-01'))]</field>
+			<!-- <field name="search_view_id" ref="search_view_id"/> -->
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Felicidades no hay saldos
+					</p>
+			</field>
+		</record>
+		
+		<menuitem id="saldos_menu_90" parent="informes_ventas_menu" name="Saldos Morosos 90" action="saldos_actn_90" />
+		
+		
+		<!-- -->
+		<record model="ir.actions.act_window" id="saldos_actn_120">
+			<field name="name">Saldos Morosos 120</field>
+			<field name="res_model">sofom.pago</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('estado', '!=', 'paid'), ('fecha','&gt;=',(context_today()-relativedelta(months=4)).strftime('%Y-%m-01')),('fecha','&lt;',time.strftime('%Y-%m-01'))]</field>
+			<!-- <field name="search_view_id" ref="search_view_id"/> -->
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Felicidades no hay saldos
+					</p>
+			</field>
+		</record>
+		
+		<menuitem id="saldos_menu_120" parent="informes_ventas_menu" name="Saldos Morosos 120" action="saldos_actn_120" />
+		
+		
+		<!--  Formulario -->
+		<record model="ir.ui.view" id="credito_edit_repo">
+			<field name="name">credito.edit.repo</field>
+			<field name="model">sofom.credito</field>
+			<field name="type">form</field>
+			<field name="priority" eval="20"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<sheet>
+						<h1>
+							<field name="name" />
+						</h1>
+						<group>
+							<group>
+								<field name="titular" />
+							</group>
+							<group>
+								<field name="tasa" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Pagos">
+								<field name="pagos">
+									<tree string="X" editable="bottom">
+										<field name="numero" readonly="True" />
+										<field name="fecha" readonly="True"/>
+										<field name="monto" readonly="True"/>
+										<field name="capital" readonly="True"/>
+										<field name="intereses" readonly="True"/>
+										<field name="factura" />
+										<field name="estado" readonly="True" sum="Total"/>
+										<field name="moratorios" readonly="False" sum="Total"/>
+										<field name="cobranza" sum="Total"/>
+										<field name="pagado" readonly="True" sum="Total"/>
+										<field name="saldo" readonly="True" sum="Total"/>
+									</tree>
+								</field>
+							</page>
+							<page string="Abonos">
+								<field name="abono_ids" readonly="True">
+									<tree string="X">
+										<field name="name" />
+										<field name="monto" />
+										<field name="fecha" />
+										<field name="cliente_id" />
+									</tree>
+								</field>
+							</page>
+						</notebook>			
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!-- -->
+		<record model="ir.actions.act_window" id="repo_estadocuenta_actn">
+			<field name="name">Estados de Cuenta</field>
+			<field name="view_id" ref="credito_edit_repo"/>
+			<field name="res_model">sofom.credito</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<menuitem id="estadcuenta_menu" parent="informes_ventas_menu" name="Estados de Cuenta" action="repo_estadocuenta_actn" />
+		
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="vencimientos_view">
+			<field name="name">vencimientos.view</field>
+			<field name="model">sofom.credito</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="X" toolbar="1" colors="">
+					<field name="name" />
+					<field name="titular" />
+					<field name="tasa" />
+					<field name="fecha_vencimiento" />
+					<field name="ultima_fecha" />
+					<field name="monto_credito" />
+					<field name="monto_vencido" sum="Total"/> 
+				</tree>
+			</field>
+		</record>		
+		
+		<!-- -->
+		<record model="ir.actions.act_window" id="repo_vencimientos_actn">
+			<field name="name">Cartera Vencida</field>
+			<field name="view_id" ref="vencimientos_view"/>
+			<field name="res_model">sofom.credito</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<menuitem id="vencimientos_menu" parent="informes_ventas_menu" name="Cartera Vencida" action="repo_vencimientos_actn" />		
+	</data>
+</openerp>

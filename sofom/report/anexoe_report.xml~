@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="anexoe_repo">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		 <p>
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0; page-break-before: always"
+      align="center">
+      <b>Anexo “E”</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <b>AL CONTRA</b><span style="letter-spacing: normal"><b>T</b></span><b>O</b><span
+        style="letter-spacing: 1.3pt"><b>
+        </b></span><b>DE</b><span style="letter-spacing: 1.3pt"><b> </b></span><b>CRÉDITO
+        SIMPLE</b><span style="text-transform: uppercase"><b>, </b></span><span
+        style="letter-spacing: 0.1pt"><b>Q</b></span><b>UE</b><span style="letter-spacing: 0.1pt"><b>
+        </b></span><b>C</b><span style="letter-spacing: normal"><b>E</b></span><b>L</b><span
+        style="letter-spacing: normal"><b>E</b></span><b>BR</b><span style="letter-spacing: normal"><b>A</b></span><b>N</b><span
+        style="letter-spacing: 0.1pt"><b>
+        </b></span><span style="text-transform: uppercase">SMART QUO S.A. DE
+        C.V.</span><b> SO</b><span style="letter-spacing: normal"><b>F</b></span><b>OM
+      </b><span style="letter-spacing: normal"><b>E</b></span><b>NR, LA
+        “Financiera”,</b><span style="letter-spacing: 0.1pt"><b> </b></span><b>Y</b><span
+        style="letter-spacing: 0.1pt"><b>
+      </b></span><font color="#808080"><t t-esc="o.partner_id.name" />.</font><b>,</b><span style="letter-spacing: 0.1pt"><b> EL
+          “Acreditado</b></span><b>”.</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="center"><b>Disposiciones
+        Legales</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="center"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" lang="es-ES" align="justify">
+      <font face="Arial"><font style="font-size: 9pt" size="2"><font face="Calibri"><font
+              style="font-size: 11pt" size="2"><span lang="es-MX"><b>Ley
+                  General de Organizaciones y Actividades Auxiliares del Crédito</b></span></font></font></font></font></p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify"><br />
+    </p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" lang="es-ES"
+      align="justify">
+      <font face="Arial"><font style="font-size: 9pt" size="2"><font face="Calibri"><font
+              style="font-size: 11pt" size="2"><span lang="es-MX"><b>Artículo
+                  87-F.-</b></span></font></font><font face="Calibri"><font style="font-size: 11pt"
+              size="2"><span lang="es-MX">
+                El contrato en que se haga constar el crédito, arrendamiento
+                financiero o factoraje financiero que otorguen las sociedades
+                financieras de objeto múltiple, siempre que dicho instrumento
+                vaya
+                acompañado de la certificación del estado de cuenta respectivo a
+                que se refiere el artículo anterior, será título ejecutivo
+                mercantil, sin necesidad de reconocimiento de firma ni de otro
+                requisito alguno.</span></font></font></font></font></p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" align="justify">
+      <br />
+    </p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" lang="es-ES"
+      align="justify">
+      <font face="Arial"><font style="font-size: 9pt" size="2"><font face="Calibri"><font
+              style="font-size: 11pt" size="2"><span lang="es-MX">Tratándose
+                del factoraje financiero, además del contrato respectivo, las
+                sociedades financieras de objeto múltiple deberán contar con los
+                documentos que demuestren los derechos de crédito transmitidos
+                por
+                virtud de dicha operación, así como la notificación al deudor de
+                dicha transmisión cuando ésta deba realizarse de acuerdo con las
+                disposiciones aplicables.</span></font></font></font></font></p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" align="justify">
+      <br />
+    </p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" lang="es-ES"
+      align="justify">
+      <font face="Arial"><font style="font-size: 9pt" size="2"><font face="Calibri"><font
+              style="font-size: 11pt" size="2"><span lang="es-MX">El
+                estado de cuenta citado en el primer párrafo de este artículo
+                deberá contener los datos sobre la identificación del contrato o
+                convenio en donde conste el crédito, el factoraje financiero o
+                el
+                arrendamiento financiero que se haya otorgado; el capital
+                inicial
+                dispuesto o, en su caso, el importe de las rentas determinadas;
+                el
+                capital o, en su caso, las rentas vencidas no pagadas; el
+                capital o,
+                en su caso, las rentas pendientes por vencer; las tasas de
+                interés
+                del crédito o, en su caso, la variabilidad de la renta aplicable
+                a
+                las rentas determinables a cada período de pago; los intereses
+                moratorios generados; la tasa de interés aplicable a intereses
+                moratorios, y el importe de accesorios generados.</span></font></font></font></font></p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" align="justify">
+      <br />
+    </p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" lang="es-ES"
+      align="justify">
+      <font face="Arial"><font style="font-size: 9pt" size="2"><font face="Calibri"><font
+              style="font-size: 11pt" size="2"><span lang="es-MX"><b>Artículo
+                  87-J.- </b></span></font></font><font face="Calibri"><font style="font-size: 11pt"
+              size="2"><span lang="es-MX">En
+                los contratos de arrendamiento financiero, factoraje financiero
+                y
+                crédito que celebren las sociedades financieras de objeto
+                múltiple,
+                éstas deberán señalar expresamente que, para su constitución y
+                operación con tal carácter, no requieren de autorización de la
+                Secretaría de Hacienda y Crédito Público. Igual mención deberá
+                señalarse en cualquier tipo de información que, para fines de
+                promoción de sus operaciones y servicios, utilicen las
+                sociedades
+                financieras de objeto múltiple.</span></font></font></font></font></p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" align="justify">
+      <br />
+    </p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" lang="es-ES"
+      align="justify">
+      <font face="Arial"><font style="font-size: 9pt" size="2"><font face="Calibri"><font
+              style="font-size: 11pt" size="2"><span lang="es-MX">En
+                adición a lo anterior, las sociedades financieras de objeto
+                múltiple
+                no reguladas, en la documentación e información a que se refiere
+                el
+                párrafo anterior, deberán expresar que, para la realización de
+                las
+                operaciones señaladas en ese mismo párrafo, no están sujetas a
+                la
+                supervisión y vigilancia de la Comisión Nacional Bancaria y de
+                Valores.</span></font></font></font></font></p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><b>Disposición
+        Única de la CONDUSEF aplicable a Instituciones Financieras</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify"><br />
+    </p>
+    <p style="text-indent: 0.75cm; margin-bottom: 0cm; line-height: 100%" align="justify">
+      <b>Artículo 5. </b>Los Contratos de Adhesión, que las Entidades
+      Financieras celebren con los Usuarios, deben contener como mínimo:</p>
+    <p style="text-indent: 0.75cm; margin-bottom: 0cm; line-height: 100%" align="justify">
+      <br />
+    </p>
+    <ol type="I">
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> <b>El
+            objeto</b></p>
+      </li>
+    </ol>
+    <ol type="a">
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> La
+          descripción detallada de la operación o servicio, características,
+          términos, condiciones, así como los derechos y obligaciones que
+          adquieren cada una de las partes y la mención de los Medios de
+          Disposición vinculados a la operación o servicio contratado.</p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> Las
+          Entidades Financieras podrán documentar, en un mismo contrato,
+          productos financieros que involucren la prestación de dos o más
+          operaciones o servicios, siempre que se separen claramente los
+          elementos esenciales de cada producto.</p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> Fechas
+          de corte de la operación de que se trate o el lugar en donde las podrá
+          consultar el Usuario, para efectos del cómputo de los intereses en su
+          caso.</p>
+      </li>
+    </ol>
+    <ol start="2" type="I">
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> <b>Los
+            sujetos:</b></p>
+        <ol type="a">
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> La
+              denominación social y domicilio de la Entidad Financiera
+              contratante, así como su dirección en Internet, de contar con
+              ésta.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> El
+              nombre completo del Usuario y, en su caso, obligado solidario,
+              avalista, fiador o coacreditado, en los términos proporcionados
+              por éstos. Para tales efectos, las Entidades Financieras pueden
+              adjuntar al Contrato de Adhesión los formularios especiales que
+              elaboren al respecto.</p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <p style="margin-left: 0.75cm; margin-bottom: 0cm; line-height: 100%" align="justify">
+      <br />
+    </p>
+    <ol start="3" type="I">
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> <b>Las
+            Comisiones y tasas de interés:</b></p>
+        <ol type="a">
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> El
+              concepto, monto o, en su caso, el método usado para el cálculo de
+              cada una de las Comisiones que cobrarán a los Usuarios, así como
+              todos los eventos que las generen, especificando su periodicidad.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify">
+              Las tasas de interés, de rendimiento o descuento expresadas en
+              términos anuales simples, incluyendo las tasas de interés
+              ordinaria y moratoria. Tratándose de tasas variables se deberá
+              expresar en los términos que determine el Banco de México.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> La
+              metodología usada para el cálculo de intereses ordinarios y
+              moratorios.</p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify"><br />
+    </p>
+    <ol start="4" type="I">
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> <b>La
+            vigencia, modificaciones y terminación:</b></p>
+        <ol type="a">
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> El
+              plazo de vigencia del Contrato de Adhesión cuando resulte
+              aplicable, especificando si puede o no ser prorrogable y, en su
+              caso, el plazo de las prórrogas, indicando los requisitos para
+              solicitarlas.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify">
+              Las condiciones y procedimientos para la modificación del Contrato
+              de Adhesión, en el entendido de que cualquier modificación a las
+              Comisiones se sujetará a lo dispuesto por el artículo 7 de la Ley
+              para la Transparencia.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> La
+              descripción de los requisitos y procedimientos para la cancelación
+              de los servicios, así como para la terminación anticipada del
+              contrato, debiendo observarse lo dispuesto por el artículo 16 de
+              la presente Disposición Única.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify">
+              Los datos de inscripción en el RECA.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> La
+              posibilidad de que el Usuario, en un periodo de diez días hábiles
+              posteriores a la firma de un Contrato de Adhesión, con excepción
+              de los créditos con garantía hipotecaria, lo cancele sin
+              responsabilidad alguna para el mismo, en cuyo caso, las Entidades
+              no podrán cobrar Comisión alguna, siempre y cuando el Usuario no
+              haya utilizado u operado los productos o servicios financieros
+              contratados, conforme a lo dispuesto en el artículo 11 Bis 1 de la
+              Ley para la Transparencia.</p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify"><br />
+    </p>
+    <ol start="5" type="I">
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> <b>Los
+            servicios de atención al Usuario:</b></p>
+        <ol type="a">
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> La
+              periodicidad y medios a través de los cuales la Entidad Financiera
+              proporcionará o pondrá a disposición de los Usuarios el estado de
+              cuenta respectivo, cuando sea aplicable.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify">
+              Los requisitos para realizar consultas de saldos, transacciones y
+              movimientos, en los lugares y a través de los medios pactados,
+              cuando sea aplicable.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> La
+              descripción del proceso y los medios para la presentación de
+              aclaraciones e inconformidades, relacionadas con la operación o
+              servicio contratado.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify">
+              Tratándose de las operaciones establecidas en las fracciones I,
+              II, III y VII del artículo 3 de la presente Disposición Única, que
+              no excedan de 20,000 UDI, una explicación del proceso de
+              aclaración establecido en el artículo 23 de la Ley para la
+              Transparencia.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> La
+              facultad del Usuario para solicitar, en cualquier momento, la
+              cancelación del servicio de domiciliación del pago de bienes y
+              servicios con cargo a sus cuentas, de conformidad con las
+              disposiciones del Banco de México, sin que se requiera de la
+              previa autorización de los respectivos proveedores de bienes o
+              servicios.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify"> El
+              momento a partir del cual cesa la responsabilidad del Usuario por
+              el uso de Medios de Disposición, en caso de defunción, robo,
+              extravío o realización de hechos ilícitos, en perjuicio del
+              Usuario.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify">
+              Los datos de localización y contacto de la UNE, incluidos número
+              telefónico y correo electrónico, para efectos de consultas y
+              reclamaciones.</p>
+          </li>
+          <li>
+            <p style="margin-bottom: 0cm; line-height: 100%" align="justify">
+              Los números de atención telefónica de la CONDUSEF, así como su
+              dirección en Internet y correo electrónico.</p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify">...</p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify">Las
+      Entidades Financieras, en sus oficinas o sucursales, deben
+      proporcionar al público que así se los requiera, ejemplares
+      vigentes de los Contratos de Adhesión y entregarán a los Usuarios
+      un ejemplar del Contrato de Adhesión que hayan celebrado, y de los
+      documentos que formen parte integrante del mismo. </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" lang="es-ES" align="justify">
+      <br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" lang="es-ES" align="justify">
+      <br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" lang="es-ES" align="justify">
+      <font face="Courier New"><font style="font-size: 10pt" size="2"><font face="Calibri"><font
+              style="font-size: 11pt" size="2"><b>Código
+                de Comercio</b></font></font></font></font></p>
+    <p style="margin-bottom: 0cm; line-height: 100%" lang="es-ES" align="justify">
+      <br />
+    </p>
+    <p style="text-indent: 0.51cm; margin-bottom: 0cm; line-height: 100%" lang="es-ES"
+      align="justify">
+      <font face="Courier New"><font style="font-size: 10pt" size="2"><font face="Calibri"><font
+              style="font-size: 11pt" size="2"><b>Artículo
+                78</b></font></font><font face="Calibri"><font style="font-size: 11pt"
+              size="2"><b>.-
+              </b></font></font><font face="Calibri"><font style="font-size: 11pt"
+              size="2">En
+              las convenciones mercantiles cada uno se obliga en la manera y
+              términos que aparezca que quiso obligarse, sin que la validez del
+              acto comercial dependa de la observancia de formalidades o
+              requisitos
+              determinados.</font></font></font></font></p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font
+          face="Bookman Old Style"><font style="font-size: 12pt" size="3"><font
+              face="Calibri"><font style="font-size: 11pt" size="2"><b>Código
+                  Civil para el Estado de Puebla</b></font></font></font></font></font></p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font
+          face="Bookman Old Style"><font style="font-size: 12pt" size="3"><font
+              face="Calibri"><font style="font-size: 11pt" size="2"><b>Artículo
+                  2754.- </b></font></font><font face="Calibri"><font style="font-size: 11pt"
+                size="2">Son
+                beneficios del fiador los de orden, excusión y división. </font></font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font
+          face="Bookman Old Style"><font style="font-size: 12pt" size="3"><font
+              face="Calibri"><font style="font-size: 11pt" size="2"><b>Artículo
+                  2755.- </b></font></font><font face="Calibri"><font style="font-size: 11pt"
+                size="2">Son
+                aplicables, a los beneficios del fiador, entre otras, las
+                siguientes
+                disposiciones: </font></font></font></font></font>
+    </p>
+    <ol type="I">
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font
+              face="Bookman Old Style"><font style="font-size: 12pt" size="3"><font
+                  face="Calibri"><font style="font-size: 11pt" size="2">Los
+                    beneficios de orden y excusión operan por ministerio de la
+                    ley y sólo pueden perderse por disposición de ésta o por
+                    renuncia que legalmente haga el fiador; </font></font></font></font></font>
+        </p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font
+              face="Bookman Old Style"><font style="font-size: 12pt" size="3"><font
+                  face="Calibri"><font style="font-size: 11pt" size="2">El
+                    beneficio de división sólo opera cuando se ha convenido
+                    expresamente, a efecto de dividir la deuda entre los
+                    fiadores. </font></font></font></font></font> </p>
+      </li>
+    </ol>
+    <p style="margin-bottom: 0cm; line-height: 100%"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font
+          face="Bookman Old Style"><font style="font-size: 12pt" size="3"><font
+              face="Calibri"><font style="font-size: 11pt" size="2"><b>Artículo
+                  2756.- </b></font></font><font face="Calibri"><font style="font-size: 11pt"
+                size="2">El
+                fiador no puede ser compelido a pagar al acreedor, sin que
+                previamente se exija el pago al deudor. Este es el beneficio de
+                orden. </font></font></font></font></font>
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><b>Artículo 2757.-
+      </b>El beneficio de excusión consiste en aplicar todo el valor libre
+      de los bienes del deudor a pago de la obligación, que quedará
+      extinguida o reducida a la parte que no se cubra.</p>
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="anexoe_report"
+    		model="crm.lead"
+    		string="Anexo E"
+    		report_type="qweb-html"
+    		name="sofom.anexoe_repo"
+    		file="Anexo E"
+    		attachment_use="False"
+		/>	
+	</data>
+</openerp>

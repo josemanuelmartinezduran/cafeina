@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--  Busqueda Obra  -->
+		<record model="ir.ui.view" id="cf_obra_search">
+			<field name="name">cf.obra.search</field>
+			<field name="model">cf.obra</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Buscar">
+					<filter icon="terp-document-new" name="" string="" domain="[('','','')]" help=""/>
+					<group expand="0" string="Agrupar por...">
+						<filter string="" icon="terp-partner" domain="[]" context="{'group_by':''}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- Accion  Obra -->
+		<record model="ir.actions.act_window" id="cf_obra_actn">
+			<field name="name">Obra</field>
+			<field name="res_model">cf.obra</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!--  Formulario  Obra -->
+		<record model="ir.ui.view" id="cf_obra_edit">
+			<field name="name">cf.obra.edit</field>
+			<field name="model">cf.obra</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<header>
+						<button name="calculate" string="Calcular" type="object" /> 
+					</header>
+					<sheet>
+						<h1>
+							<field name="name" />
+						</h1>
+						<group>
+							<group>
+								<field name="inicio" />
+							</group>
+							<group>
+								<field name="fin" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Conceptos">
+								<field name="concepto_ids">
+									<tree string="X" editable="bottom">
+										<field name="name" />
+										<field name="categoria" />
+										<field name="clave" />
+										<field name="unidad" />
+										<field name="cantidad" />
+										<field name="punit" />
+										<field name="avance" readonly="True" />
+										<field name="porcentaje" readonly="True" />
+										<field name="total" />
+										<field name="costo_real" readonly="True"/>
+										<field name="pgasto" readonly="True" />
+									</tree>
+								</field>
+							</page>
+							<page string="Estimacion">
+								<field name="estimacion_ids">
+									<tree string="X">
+										<field name="name" />
+										<field name="fecha" />
+										<field name="total" />
+									</tree>
+								</field>
+							</page>							
+						</notebook>			
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!--  Lista   Obra -->
+		<record model="ir.ui.view" id="cf_obra_view">
+			<field name="name">cf.obra.view</field>
+			<field name="model">cf.obra</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="">
+					<field name="name" />
+					<field name="inicio" />
+					<field name="fin" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Menu  Obra -->
+		<menuitem id="cf_obra_menu" parent="obra_sub" name="Estimaciones" action="cf_obra_actn" />
+		
+		<!--  Formulario Estimaciones -->
+		<record model="ir.ui.view" id="cf_estimacion">
+			<field name="name">cf.estimacion</field>
+			<field name="model">cf.estimacion</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<sheet>
+						<h1>
+							<field name="name" />
+						</h1>
+						<group>
+							<group>
+								<field name="fecha" />								
+								<field name="total" />
+							</group>
+							<group>
+								<field name="validada" />
+								<field name="junta" />
+								<field name="inspeccion_id" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Detalles">
+								<field name="linea_ids">
+									<tree string="X" editable="bottom">
+										<field name="name" />
+										<field name="concepto_id" />
+										<field name="clave" /> 
+										<field name="cantidad" />
+										<field name="hecho" />
+										<field name="costo" />
+										<field name="finalizada" />
+										
+									</tree>
+								</field>
+							</page>							
+						</notebook>			
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

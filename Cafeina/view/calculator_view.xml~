@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--  Busqueda Tipo de proyecto  -->
+		<record model="ir.ui.view" id="cf_tipoproyecto_search">
+			<field name="name">cf.tipoproyecto.search</field>
+			<field name="model">cf.tipoproyecto</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Buscar">
+					<filter icon="terp-document-new" name="" string="" domain="[('','','')]" help=""/>
+					<group expand="0" string="Agrupar por...">
+						<filter string="" icon="terp-partner" domain="[]" context="{'group_by':''}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- Accion  Tipo de proyecto -->
+		<record model="ir.actions.act_window" id="cf_tipoproyecto_actn">
+			<field name="name">Tipo de Proyecto</field>
+			<field name="res_model">cf.tipoproyecto</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!--  Formulario  Tipo de proyecto -->
+		<record model="ir.ui.view" id="cf_tipoproyecto_edit">
+			<field name="name">cf.tipoproyecto.edit</field>
+			<field name="model">cf.tipoproyecto</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<sheet>
+						<h1>
+							<field name="name" placeholder="Nombre"/>
+							<field name="fijos" placeholder="Costos fijos por metro cuadrado"/>
+						</h1>
+						<notebook>
+							<page string="">
+								<field name="variable_ids">
+									<tree string="X">
+										<field name="name" />
+										<field name="categoria" />
+										<field name="asignado_id" />
+									</tree>
+								</field>
+							</page>							
+						</notebook>			
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!--  Lista   Tipo de proyecto -->
+		<record model="ir.ui.view" id="cf_tipoproyecto_view">
+			<field name="name">cf.tipoproyecto.view</field>
+			<field name="model">cf.tipoproyecto</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		
+		
+		<!-- Menu  Tipo de proyecto -->
+		<menuitem id="cf_tipoproyecto_menu" parent="base.menu_sales" name="Tipo de Proyecto" action="cf_tipoproyecto_actn" />
+		
+		<!--  Busqueda Calculadora  -->
+		<record model="ir.ui.view" id="cf_calculator_search">
+			<field name="name">cf.calculator.search</field>
+			<field name="model">cf.calculator</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Buscar">
+					<filter icon="terp-document-new" name="" string="" domain="[('','','')]" help=""/>
+					<group expand="0" string="Agrupar por...">
+						<filter string="" icon="terp-partner" domain="[]" context="{'group_by':''}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- Accion  Calculadora -->
+		<record model="ir.actions.act_window" id="cf_calculator_actn">
+			<field name="name">Calculadora</field>
+			<field name="res_model">cf.calculator</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!--  Formulario  Calculadora -->
+		<record model="ir.ui.view" id="cf_calculator_edit">
+			<field name="name">cf.calculator.edit</field>
+			<field name="model">cf.calculator</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<header>
+						<button name="populate" string="Cargar conceptos" type="object" />
+						<button name="calculate" string="Calcular costo" type="object" />
+						<button name="create_quotation" string="Generar cotización" type="object" />
+						<button name="create_project" string="Crear proyecto" type="object" />
+					</header>
+					<sheet>
+						<h1>
+							<field name="name" required="True"/>
+						</h1>
+						<group>
+							<group>
+								<field name="tipo" />
+								<field name="cliente" />
+								<field name="servicio" />
+								<field name="plantilla_proyecto" />
+								<field name="metros_construccion" />
+								<button name="aplicar_metros" string="Aplicar" type="object" />
+							</group>
+							<group>
+								<field name="negociable" />
+								<field name="utilidad" />
+								<field name="fijos" />
+								<field name="total_fijos" />
+								<field name="tasa_impuestos" />
+								<field name="impuestos" />
+								<field name="total" />
+								<field name="fcalidad_id" />
+							</group>
+						</group>
+						<separator string="Reemplazo de Nombres" />
+						<group>
+							<group>
+								<field name="original_id" />
+							</group>
+							<group>
+								<field name="nuevo_id" />
+							</group>
+						</group>
+						<button name="reemplazar" string="Reemplazar" type="object" />
+						<notebook>
+							<page string="Lineas del Cálculo">
+								<field name="linea_ids">
+									<tree string="X" editable="bottom">
+										<field name="name" />
+										<field name="horas" />
+										<field name="persona" />
+										<field name="horas_totales" sum="Suma"/>
+										<field name="total" sum="Suma"/>
+									</tree>
+								</field>
+							</page>							
+						</notebook>			
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!--  Lista   Calculadora -->
+		<record model="ir.ui.view" id="cf_calculator_view">
+			<field name="name">cf.calculator.view</field>
+			<field name="model">cf.calculator</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="">
+					<field name="name" />
+					<field name="tipo" />
+				</tree>
+			</field>
+		</record>
+		
+		<!--  Formulario cf.variable -->
+		<record model="ir.ui.view" id="cf_variable">
+			<field name="name">cf.variable</field>
+			<field name="model">cf.variable</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<sheet>
+						<h1>
+							<field name="name" />
+						</h1>
+						<group>
+							<group>
+								<field name="uom" />
+								<field name="aplica_taza" />
+							</group>
+							<group>
+								<field name="categoria" />
+								<field name="asignado_id" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Tipo de Proyecto">
+								<field name="valor_ids">
+									<tree string="X" editable="bottom">
+										<field name="name" />
+										<field name="minimo" />
+										<field name="maximo" />
+										<field name="factor" />
+										<field name="valor_base" />
+									</tree>
+								</field>
+							</page>							
+						</notebook>			
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!-- Menu  Calculadora -->
+		<menuitem id="cf_calculator_menu" parent="base.menu_sales" name="Calculadora" action="cf_calculator_actn" />
+		
+		<!-- Accion Money Range -->
+		<record model="ir.actions.act_window" id="cf_money_range_actn">
+			<field name="name">Rango de Calidad</field>
+			<field name="res_model">cf.moneyrange</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!--  Lista  Money Range -->
+		<record model="ir.ui.view" id="cf_moneyrange_edit">
+			<field name="name">cf.moneyrange.edit</field>
+			<field name="model">cf.moneyrange</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="X" editable="bottom">
+					<field name="name" />
+					<field name="minimo" />
+					<field name="maximo" />
+					<field name="factor" />
+				</tree>
+			</field>
+		</record>
+		
+		<!--  Formulario Rango Form -->
+		<record model="ir.ui.view" id="cf_moneyrangeedit">
+			<field name="name">cf.moneyrange.edit</field>
+			<field name="model">cf.moneyrange</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<sheet>
+						<h1>
+							<field name="name" />
+						</h1>
+						<group>
+							<group>
+								<field name="maximo" />
+								<field name="minimo" />
+							</group>
+							<group>
+								<field name="factor" />
+							</group>
+						</group>	
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!-- Menu  Calculadora -->
+		<menuitem id="cf_range_menu" parent="base.menu_sales" name="Rangos de Calidad" action="cf_money_range_actn" />
+		
+	</data>
+</openerp>

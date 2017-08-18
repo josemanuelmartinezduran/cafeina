@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="caratula_report">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<h2>Carátula de Contrato de Crédito Simple</h2>
+                    		<p>Contrato No. <span t-field="o.name"/></p>
+                    		<hr />
+                    		<table width="100%" border="1">
+                    				<tr>
+                    					<td colspan="4" align="center" style="background-color: #DDD">
+                    						Datos del Acreditado
+                    					</td>
+                    				</tr>
+									<tr style="backgound-color:'#EEEEEE'">
+										<td width="25%">Nombre</td>
+										<td width="25%"><span t-field="o.partner_id.name" /></td>
+										<td width="25%">Fecha de Nacimiento</td>
+										<td width="25%">
+											<t t-foreach="o.solicitud" t-as="j"><span t-field="j.nacimiento" /></t>
+											<t t-foreach="o.solicitudn" t-as="j"><span t-field="j.nacimiento" /></t>
+										</td>
+									</tr>
+									<tr style="backgound-color:'#EEEEEE'">
+										<td>Domicilio</td>
+										<td><span t-field="o.partner_id.street" /> <span t-field="o.partner_id.street2" /> </td>
+										<td>Estado Civil</td>
+										<td>
+											<t t-foreach="o.solicitud" t-as="j"><span t-field="j.estadoc" /></t>
+											<t t-foreach="o.solicitudn" t-as="j"><span t-field="j.estadoc" /></t>
+										</td>
+									</tr>
+									<tr style="backgound-color:'#EEEEEE'">
+										<td>Empresa Donde Labora</td>
+										<td><t t-foreach="o.solicitud" t-as="j"><span t-field="j.nnombre" /></t></td>
+										<td>Fecha de Ingreso</td>
+										<td>N/A</td>
+									</tr>
+									<tr style="backgound-color:'#EEEEEE'">
+										<td>Ingresos que Percibe (Mensual)</td>
+										<td><t t-foreach="o.solicitud" t-as="j"><span t-field="j.imensual" /></t></td>
+										<td>Número de Seguridad Social</td>
+										<td>N/A</td>
+									</tr>
+									<tr style="backgound-color:'#EEEEEE'">
+										<td>Dependientes Económicos</td>
+										<td>
+											<t t-foreach="o.solicitud" t-as="j"><t t-esc="j.dependientes" /></t>
+											<t t-foreach="o.solicitudn" t-as="j"><span t-field="j.dependientes" /></t>
+										</td>
+										<td>Teléfono FIjo</td>
+										<td>
+											<t t-foreach="o.solicitud" t-as="j"><span t-field="j.tel" /></t>
+											<t t-foreach="o.solicitudn" t-as="j"><span t-field="j.tel" /></t>
+										</td>
+									</tr>
+									<tr style="backgound-color:'#EEEEEE'">
+										<td>Casa Donde Habita</td>
+										<td><t t-foreach="o.solicitud" t-as="j"><t t-esc="j.tviv" /></t></td>
+										<td>Telefono Celular</td>
+											
+										<td>
+											<t t-foreach="o.solicitud" t-as="j"><span t-field="j.cel" /></t>
+											<t t-foreach="o.solicitudn" t-as="j"><span t-field="j.cel" /></t>
+										</td>
+									</tr>
+									<tr style="backgound-color:'#EEEEEE'">
+										<td>Identificación Oficial</td>
+										<td>
+											<t t-foreach="o.solicitud" t-as="j"><span t-field="j.tipoid" /></t>
+											<t t-foreach="o.solicitudn" t-as="j"><span t-field="j.tipoid" /></t>
+										</td>
+										<td>Número de Identificación</td>
+										<td>
+											<t t-foreach="o.solicitud" t-as="j"><span t-field="j.identificacion" /></t>
+											<t t-foreach="o.solicitudn" t-as="j"><span t-field="j.identificacion" /></t>
+										</td>
+									</tr>
+							</table>
+							<br />
+							<br />
+							<br />
+							<table width="100%" border="1">
+							<tr>
+								<td colspan="4" align="center">
+									 Características del Crédito 
+								</td>
+							</tr>
+								<tr>
+									<td width="25%">Monto Principal del Crédito</td>
+									<td width="25%"> $ <t t-esc="round(o.credito_solicitado.monto, 2)" />
+										</td>
+									<td width="25%">Comisión por apertura</td>
+									<td width="25%"> $ <t t-esc="round(o.credito_solicitado.comision, 2)" /> </td>
+								</tr>
+								<tr>
+									<td>Monto del Crédito</td>
+									<td>$ <t t-esc="round(o.credito_solicitado.total, 2)" /></td>
+									<td>Tasa de Interés Mensual</td>
+									<td><span t-field="o.credito_solicitado.tasa" /> %</td>
+								</tr>
+								<tr>
+									<td>Forma de disposición</td>
+									<td><span t-field="o.forma_disposicion" /></td>
+									<td>Costo Anual Total (CAT)</td>
+									<td><span t-field="o.cat" /> % </td>
+								</tr>
+								<tr>
+									<td>Plazo Forzoso</td>
+									<td><span t-field="o.credito_solicitado.plazo.name" /></td>
+									<td>Fechas de pago:</td>
+									<td>DE ACUERDO A TABLA DE AMORTIZACION</td>
+								</tr>
+								<tr>
+									<td>Interés Moratorio</td>
+									<td>Tasa contractual mas 8 puntos</td>
+									<td>Destino del Crédito</td>
+									<td><span t-field="o.credito_solicitado.destino.name" /> ( <t t-esc="o.credito_solicitado.destino.destino" /> )</td>
+								</tr>
+							</table>
+							<h3> Advertencias </h3>
+							<ul>
+								<li>“Incumplir tus obligaciones te puede generar comisiones e intereses moratorios.” </li>
+								<li> “Contratar créditos por arriba de tu capacidad de pago puede afectar tu historial crediticio.” </li>
+								<li> “El Obligado Solidario responderá como obligado principal frente al Arrendador.” </li>
+							</ul>
+							<h3> Estado de Cuenta </h3>
+							<div>
+								Enviar a Domicilio
+							</div>
+							<h3> Aclaraciones y Reclamaciones </h3>
+							<div> Dirección: 5to. Retorno Edificio 10, Nivel 2 Circuito Osa Menor, Col. Reserva Territorial Atlixcayotl C.P. 72810, San Andrés Cholula, Puebla. </div>
+							<div> Teléfono: 01 (222) 2 14 12 00 ext. 22 </div>
+							<div> Horario de atención: De lunes a viernes de 8:00 a 14:00 hrs. y de 15:00 a 18:00 hrs.</div>
+							<div> Email: smartquo.atencionaclientes@gmail.com </div>
+							<div> Titular UNE: Lic. Alejandro Durán Velarde </div>
+							<div> <strong>Registro de Contrato de Adhesión Núm. 5860-140-018034/03-04373-0515 </strong>
+							<br />
+							Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF)
+							<br />
+							Teléfono: 01 800 999 8080 y 53400999. Página de Internet www.condusef.gob.mx</div>
+							<br />
+							
+						<table width="100%">
+						  	<tr>
+						  		<td width="25%">
+						  		</td>
+						  		<td style="text-align: center" width="25%">
+						  			La Financiera
+						  			<br />
+						  			<br />
+						  			<br />
+						  			<br />
+						  			Lic. Carlos Eduardo Tapia Camino
+						  			<br />
+						 			Apoderado Legal
+						 			<br />
+									Smart Quo, S.A. de C.V. SOFOM E.N.R.
+									<br />
+						
+						  		</td>
+						  		<td style="text-align: center" width="25%">
+						  		El Acreditado
+						  		<br />
+						  		<br />
+						  		<br />
+						  		<t t-esc="o.partner_id.name" />
+						  		<br />
+						  		Por Su Propio Derecho
+						  		</td>
+						  		<td width="25%">
+						  		</td>
+						  	</tr>
+						  </table>
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="caratula_repo"
+    		model="crm.lead"
+    		string="Carátula del Contrato"
+    		report_type="qweb-html"
+    		name="sofom.caratula_report"
+    		file="Caratula"
+    		attachment_use="False"
+		/>
+	</data>
+</openerp>

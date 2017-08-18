@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="estadocuenta_report">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<h2>Estado de Cuenta</h2>
+                    		<p>Crédito <span t-field="o.name"/></p>
+                    		<p>Solicitante <span t-field="o.titular.name"/></p>
+                    		<hr />
+                    		<table width="100%" border="2">
+									<tr style="backgound-color='#EEEEEE'">
+										<td>Fecha</td>
+										<td>Monto</td>
+										<td>Capital</td>
+										<td>Intereses</td>
+										<td>Moratorios</td>
+										<td>Gastos de Cobranza</td>
+										<td>Monto Pagado</td>
+										<td>Saldo</td>
+									</tr>
+                    		<t t-foreach="o.pagos" t-as="i">
+									<tr>
+										<td><t t-esc="i.fecha"/></td>
+										<td>$<t t-esc="i.monto"/></td>
+										<td>$<t t-esc="i.capital"/></td>
+										<td>$<t t-esc="i.intereses"/></td>
+										<td>$<t t-esc="i.moratorios"/></td>
+										<td>$<t t-esc="i.cobranza"/></td>
+										<td>$<t t-esc="i.pagado"/></td>
+										<td>$<t t-esc="i.saldo"/></td>
+									</tr>    							
+							</t>
+							</table>
+							<br />
+							<br />
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="estadosuenta_repo"
+    		model="sofom.credito"
+    		string="Estado de Cuenta"
+    		report_type="qweb-html"
+    		name="sofom.estadocuenta_report"
+    		file="EstadoCuenta"
+    		attachment_use="False"
+		/>
+	</data>
+</openerp>

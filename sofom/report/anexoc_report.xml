@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="anexoc_repo">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		 <p> </p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0; page-break-before: always"
+      align="center"> <b>Anexo “C”</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <b>AL CONTRA</b><span style="letter-spacing: normal"><b>T</b></span><b>O</b><span
+        style="letter-spacing: 1.3pt"><b> </b></span><b>DE</b><span style="letter-spacing: 1.3pt"><b>
+        </b></span><b>CRÉDITO SIMPLE</b><span style="text-transform: uppercase"><b>,
+        </b></span><span style="letter-spacing: 0.1pt"><b>Q</b></span><b>UE</b><span
+        style="letter-spacing: 0.1pt"><b> </b></span><b>C</b><span style="letter-spacing: normal"><b>E</b></span><b>L</b><span
+        style="letter-spacing: normal"><b>E</b></span><b>BR</b><span style="letter-spacing: normal"><b>A</b></span><b>N</b><span
+        style="letter-spacing: 0.1pt"><b> </b></span><span style="text-transform: uppercase">SMARTQUO
+        S.A. DE C.V.</span><b> SO</b><span style="letter-spacing: normal"><b>F</b></span><b>OM
+        </b><span style="letter-spacing: normal"><b>E</b></span><b>NR, LA
+        “Financiera”,</b><span style="letter-spacing: 0.1pt"><b> </b></span><b>Y</b><span
+        style="letter-spacing: 0.1pt"><b> <t t-esc="o.partner_id.name"><b>,</b><span
+              style="letter-spacing: 0.1pt"><b> EL “Acreditado</b></span><b>”.</b></t></b></span></p>
+    <b>
+      <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+        <br />
+      </p>
+      <p style="margin-bottom: 0cm; line-height: 100%" align="center"><b>Tabla
+          de Amortización </b> </p>
+    </b> 
+    <table width="100%" border="1">
+      <tbody>
+        <tr>
+          <td style="background-color:#111; color:#FFF" width="12.5%">Fecha de Pago</td>
+          <td style="background-color:#111; color:#FFF" width="12.5%">Periodo</td>
+          <td style="background-color:#111; color:#FFF" width="12.5%">Capital</td>
+          <td style="background-color:#111; color:#FFF" width="12.5%">Intereses</td>
+          <td style="background-color:#111; color:#FFF" width="12.5%">Importe</td>
+          <td style="background-color:#111; color:#FFF" width="12.5%">IVA</td>
+		  <td style="background-color:#111; color:#FFF" width="12.5%">Pago Total</td>  
+        </tr>
+        <t t-foreach="o.credito_solicitado.lineas" t-as="i"> 
+        <tr>
+          <td><t t-esc="i.fecha"></t></td>
+          <td><t t-esc="i.npago"></t></td>
+		  <td>$ <t t-esc="round(i.capital, 2)"></t></td>
+		  <td>$ <t t-esc="round(i.intereses, 2)"></t></td>
+          <td>$ <t t-esc="round(i.intereses - i.iva, 2)"></t></td>
+          <td>$ <t t-esc="round(i.iva, 2)"></t></td>
+          <td>$ <t t-esc="round(i.total, 2)"></t></td>
+        </tr>
+        </t>
+        <tr>
+          <td colspan="2" style="background-color:#111; color:#FFF">Total</td>
+		  <td style="background-color:#111; color:#FFF">$ <t t-esc="round(o.credito_solicitado.monto, 2)"></t></td>
+		  <td style="background-color:#111; color:#FFF">$ <t t-esc="round(o.credito_solicitado.total_intereses, 2)"></t></td>
+          <td style="background-color:#111; color:#FFF">$ <t t-esc="round(o.credito_solicitado.total_intereses - o.credito_solicitado.total_iva, 2)"></t></td>
+          <td style="background-color:#111; color:#FFF">$ <t t-esc="round(o.credito_solicitado.total_iva, 2)"></t></td>
+          <td style="background-color:#111; color:#FFF">$ <t t-esc="round(o.credito_solicitado.total, 2)"></t></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="anexoc_report"
+    		model="crm.lead"
+    		string="Anexo C"
+    		report_type="qweb-html"
+    		name="sofom.anexoc_repo"
+    		file="Anexo C"
+    		attachment_use="False"
+		/>
+	</data>
+</openerp>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Modificaciones a la vista	Prospectos -->
+		<record id="lead_edit" model="ir.ui.view">
+			<field name="name">lead.edit</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='email_from']" position="after">
+					<field name="interesado" />
+					<field name="producto" required="True" />
+					<field name="giro" attrs="{'invisible': [('producto','!=', 'micro')]}"/>
+					<field name="subgiro" domain="[('giro','=', giro)]" attrs="{'invisible': [('producto','!=', 'micro')]}"/>
+					<field name="monto" />
+				</xpath>
+				
+				<xpath expr="//page[@string='Extra Info']" position="after">
+					<page string="Cotizaciones">
+						<field name="cotizaciones">
+							<tree string="X">
+								<field name="name" />
+								<field name="monto" />
+								<field name="frecuencia" />
+								<field name="pagos" />
+							</tree>
+						</field>
+					</page>
+					
+				</xpath>		
+			</field>
+		</record>
+		
+		<!-- Modificaciones a la vista	Oportunidades -->
+		<record id="oport_inh" model="ir.ui.view">
+			<field name="name">opor.inh</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='case_mark_won']" position="attributes">
+					<attribute name="invisible">True</attribute>
+				</xpath>
+				<xpath expr="//button[@name='case_mark_lost']" position="attributes">
+					<attribute name="invisible">True</attribute>
+				</xpath>
+				<xpath expr="//button[@name='case_mark_lost']" position="after">
+					<button name="generate_payment" string="Generar Crédito" attrs="{'invisible': [('stage_id', '!=', 11)]}" type="object" class="oe_highlight" />
+					<button name="restart" string="Reiniciar Solicitud" type="object" />
+					<button name="goto_solicitud" string="Llenar Solicitud" type="object"  attrs="{'invisible': [('stage_id', '!=', 10)]}"/>
+					<button name="goto_documentos" string="Escanear Documentacion" type="object"  attrs="{'invisible': [('stage_id', '!=', 1)]}"/>
+					<button name="goto_analisis" string="Enviar a Análisis" type="object"  attrs="{'invisible': [('stage_id', '!=', 4)]}"/>
+					<button name="goto_impresion" string="Enviar a Impresión de Documentos" type="object"  attrs="{'invisible': [('stage_id', '!=', 5)]}"/>
+					<button name="goto_autorizacion" string="Enviar a Autorizacion" type="object"  attrs="{'invisible': [('stage_id', '!=', 6)]}"/>
+				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="producto" />
+					<field name="giro" attrs="{'invisible': [('producto','!=', 'micro')]}"/>
+					<field name="subgiro" domain="[('giro','=', giro)]" attrs="{'invisible': [('producto','!=', 'micro')]}"/>
+					<field name="id" invisible="True" />
+					<field name="credito_solicitado" domain="[('lead.id', '=', id)]"/>
+					<field name="credito_id" string="Crédito Asignado" readonly="True" />
+					<field name="puntaje" invisible="True" />
+					<field name="ingreso" invisible="True" />
+					<field name="oxxo_barcode" />
+					<field name="fecha_vencimiento" />
+					<field name="pago_mensual" />
+				</xpath>
+				<xpath expr="//page[@string='Lead']" position="attributes">
+					<attribute name="invisible">True</attribute>
+				</xpath>
+				<xpath expr="//page[@string='Lead']" position="after">
+					<page string="Cotizaciones" >
+						<field name="cotizaciones">
+							<tree string="X">
+								<field name="name" />
+								<field name="monto" />
+								<field name="frecuencia" />
+								<field name="pagos" />
+							</tree>
+						</field>
+					</page>
+					<page string="Solicitud" attrs="{'invisible': [('stage_id','in', [10])]}">
+						<group>
+							<field name="solicitud" attrs="{'invisible': [('producto','!=', 'micro')]}"/>
+							<field name="solicitudn" attrs="{'invisible': [('producto','!=', 'nom')]}"/>
+						</group>
+						<group string="Importar">
+							<field name="isolicitud" attrs="{'invisible': [('producto','!=', 'micro')]}"/>
+							<field name="isolicitudn" attrs="{'invisible': [('producto','!=', 'nom')]}"/>
+							<button name="importar" string="Importar" type="object" />
+						</group>
+					</page> 
+					<page string="Documentos Operativos" attrs="{'invisible': [('stage_id','in', [10,1])]}">
+						<group>
+							<group string="Documentos Escaneados">
+								<field name="ife" filename="nife"/>
+								<field name="nife" invisible="True" />
+								<field name="cd" filename="ncd"/>
+								<field name="ncd" invisible="True" />
+								<field name="ci" filename="nci"/>
+								<field name="nci" invisible="True" />
+								<field name="ac" filename="nac" />
+								<field name="nac" invisible="True" />
+								<field name="sol" filename="nsol" />
+								<field name="nsol" invisible="True" />
+								<field name="ing" filename="ning" />
+								<field name="ning" invisible="True" />
+								<field name="curp" filename="ncurp" />
+								<field name="ncurp" invisible="True" />
+							</group>
+						</group>
+					</page>
+					
+					
+					
+					<page string = "Análisis de Crédito" attrs="{'invisible': [('stage_id','in', [10,1,4])]}">
+						<div>
+							<a href="https://www.circulodecredito.com.mx/"> Círculo de Crédito </a>
+						</div>
+						<group>
+							<group string="Resultados Circulo de Crédito" attrs="{'invisible': [('stage_id','=', 1)]}">
+								<field name="ccpdf" filename="nccpdf" />
+								<field name="nccpdf" invisible="True" />
+							</group>
+							<group string="FICO SCORE" attrs="{'invisible': [('stage_id','=', 1)]}">
+								<field name="puntaje" />
+							</group>
+						</group>
+					</page>
+					
+					<page string="Supervision">
+						<group>						
+						<group string="Inspección">
+								<field name="visita" />
+								<field name="avisita" filename="navisita"/>
+								<field name="navisita" invisible="True" />
+							</group>
+						</group>
+						<group>
+							<group string="Fotografías">
+								<field name="ffachada" filename="nffachada" />
+								<field name="nffachada" invisible="True" />
+								<field name="finteriora" filename="nfinteriora" />
+								<field name="nfinteriora" invisible="True" />
+								<field name="finteriorb" filename="nfinteriorb" />
+								<field name="nfinteriorb" invisible="True" />
+								<field name="fvehiculo" filename="nfvehiculo" />
+								<field name="nfvehiculo" invisible="True" />
+								<field name="fotro" filename="nfotro" />
+								<field name="nfotro" invisible="True" />
+							</group>
+						</group>
+					</page>
+					
+					<page string = "Evaluación" attrs="{'invisible': [('stage_id','in', [10,1,4])]}">
+						<separator string="Evaluación Cualitativa" />
+						<field name="evaluacion_ids" attrs="{'invisible': [('producto','!=', 'micro')]}">
+							<tree string="X">
+								<field name="name" />
+								<field name="total" />
+							</tree>
+						</field>
+						<field name="evaluacionn_ids" attrs="{'invisible': [('producto','!=', 'nom')]}">
+							<tree string="X">
+								<field name="name" />
+								<field name="total" />
+							</tree>
+						</field>
+						<separator string="Evaluación Cuantitativa" />
+						<field name="cuanti" attrs="{'invisible': [('producto','!=', 'nom')]}">
+							<tree string="X" editable="botom">
+								<field name="name" />
+								<field name="ingresos" readnly="True" />
+								<field name="egresos" readnly="True" />
+								<field name="utilidad" readnly="True" />
+								<field name="capacidad" readnly="True" />
+								<button name="calculate_payment" type="object" string="Calcular"/>
+							</tree>
+						</field>
+						<field name="cuantim" attrs="{'invisible': [('producto','!=', 'micro')]}">
+							<tree string="X" editable="botom">
+								<field name="name" />
+								<field name="ingresos" readnly="True" />
+								<field name="egresos" readnly="True" />
+								<field name="utilidad" readnly="True" />
+								<field name="capacidad" readnly="True" />
+								<button name="calculate_payment" type="object" string="Calcular"/>
+							</tree>
+						</field>
+					</page>
+					
+					<page string="Autorización" attrs="{'invisible': [('stage_id','in', [10,1,4,5])]}">
+						<group>
+							<group>
+								<field name="aceptado" />
+								<field name="cat" />
+								<field name="fecha_contrato" />
+								<field name="forma_disposicion" />
+								<field name="numero_cheque" attrs="{'invisible': [('forma_disposicion','!=', 'Cheque')]}"/>
+								<field name="primer_pago" />
+								<field name="asignacion" />								
+								<field name="fuente_id" attrs="{'invisible': [('asignacion','!=', 'Otros')]}"/>
+								<button type="object" name="change_primer" string="Asignar" />
+							</group>
+						</group>
+					</page>
+					
+					<page string="Documentos Legales" attrs="{'invisible': [('stage_id','in', [10,1,4,5,6])]}">
+						<group>
+							<group string="Documentos Escaneados">
+								<field name="caratula" filename="ncaratula"/>
+								<field name="ncaratula" invisible="True" />
+								<field name="contrato" filename="ncontrato" />
+								<field name="ncontrato" invisible="True" />
+								<field name="resumen" filename="nresumen" />
+								<field name="nresumen" invisible="True" />
+								<field name="anexos" filename="nanexos"/>
+								<field name="nanexos" invisible="True" />
+							</group>
+						</group>
+					</page>
+					
+					
+				</xpath>		
+			</field>
+		</record>
+		
+		<!-- -->
+
+		<record model="ir.actions.act_window" id="giro_actn">
+			<field name="name">Giros</field>
+			<field name="res_model">sofom.giro</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="subgiro_actn">
+			<field name="name">Subgiros</field>
+			<field name="res_model">sofom.subgiro</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+	
+		<!--  -->
+		<menuitem id="giro_menu" parent="base.menu_base_config" name="Giro" action="giro_actn" />
+		<menuitem id="subgiro_menu" parent="base.menu_base_config" name="Sub Giro" action="subgiro_actn" />
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="giro_view">
+			<field name="name">giro.view</field>
+			<field name="model">sofom.giro</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="X" toolbar="1" editable="bottom">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="subgiro_view">
+			<field name="name">subgiro.view</field>
+			<field name="model">sofom.subgiro</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="X" toolbar="1" editable="bottom">
+					<field name="name" />
+					<field name="giro" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Formulario -->
+		<record model="ir.ui.view" id="giro_edit">
+			<field name="name">giro.edit</field>
+			<field name="model">sofom.giro</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="" version="7.0">
+					<sheet>
+						<h1>
+							<h4>
+								<label for="name" />
+							</h4>
+							<field name="name" required="True" />
+						</h1>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="subgiro_edit">
+			<field name="name">subgiro.edit</field>
+			<field name="model">sofom.subgiro</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="" version="7.0">
+					<sheet>
+						<h1>
+							<h4>
+								<label for="name" />
+							</h4>
+							<field name="name" required="True" />
+							<field name="giro" required="True" />
+						</h1>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		
+	   <menuitem id="crm.menu_crm_leads" parent="" name="" action="crm.crm_case_category_act_leads_all" /> 
+	   
+	   <!-- Modificaciones a la vista	-->
+		<record id="jmd_kanban_lead" model="ir.ui.view">
+			<field name="name">jmd.kaban.lead</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+			<field name="arch" type="xml">
+				<xpath expr="//kanban" position="attributes">
+					<attribute name="edit">false</attribute>
+				</xpath>		
+			</field>
+		</record>
+		
+		<!-- Modificaciones a la vista	-->
+		<record id="jmd_lead_list" model="ir.ui.view">
+			<field name="name">jmd.lead.list</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='country_id']" position="after">
+					<field name="visita" />
+					<field name="fuente_id" />
+				</xpath>		
+			</field>
+		</record>
+		
+				<!--  Lista -->
+		<record model="ir.ui.view" id="colocacion_view">
+			<field name="name">colocacion.view</field>
+			<field name="model">crm.lead</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="" toolbar="1" colors="">
+					<field name="name" string="Clave"/>
+					<field name="producto" />
+					<field name="user_id" string="Promotor"/>
+					<field name="stage_id" string="Etapa"/>
+					<field name="fuente_id" />
+					<field name="monto" />
+					<field name="fecha_contrato" />
+				</tree>
+			</field>
+		</record>
+
+		<!--  Busqueda -->
+		<record model="ir.ui.view" id="colocacion_search">
+			<field name="name">colocacion.search</field>
+			<field name="model">crm.lead</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Search">
+					<field name="name" />
+					<filter icon="terp-document-new" name="colocados" string="Colocados" domain="[('stage_id','=','Autorización')]" help=""/>
+					<group expand="0" string="Group By...">
+						<filter string="Promotor" icon="terp-partner" domain="[]" context="{'group_by':'user_id'}"/>
+						<filter string="Producto" icon="terp-partner" domain="[]" context="{'group_by':'producto'}"/>
+						<filter string="Etapa" icon="terp-partner" domain="[]" context="{'group_by':'stage_id'}"/>
+						<filter string="Mes" icon="terp-partner" domain="[]" context="{'group_by':'fecha_contrato'}"/>
+						<filter string="Fuente" icon="terp-partner" domain="[]" context="{'group_by':'fuente_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>		
+		
+		<!-- -->
+		<record model="ir.actions.act_window" id="colocacion_actn">
+			<field name="name">Reporte de Colocación</field>
+			<field name="view_id" ref="colocacion_view"/>
+			<field name="res_model">crm.lead</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,graph</field>
+			<field name="search_view_id" ref="colocacion_search"/>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!-- Grafico -->
+		<record model="ir.ui.view" id="lead_graph">
+			<field name="name">lead.graph</field>
+			<field name="model">crm.lead</field>
+			<field name="type">graph</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<graph string="Pagos">
+					<field name="user_id" />
+					<field name="planned_revenue" string="Monto del Crédito Solicitado" operator="+" />
+				</graph>
+			</field>
+		</record>
+
+		
+		<menuitem id="colocacion_menu" parent="informes_ventas_menu" name="Colocación" action="colocacion_actn" />	
+		
+		<!-- Accion Fuente de Ingresos -->
+		<record model="ir.actions.act_window" id="fuente_actn">
+			<field name="name">Lineas de Fondeo</field>
+			<field name="res_model">sofom.fuente</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!--  Formulario Fuentes -->
+		<record model="ir.ui.view" id="fuentes_edit">
+			<field name="name">fuentes.edit</field>
+			<field name="model">sofom.fuente</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<sheet>
+						<h1>
+							<field name="name" />
+						</h1>
+						<group>
+							<group>
+								<field name="actual" />
+							</group>
+							<group>
+								<field name="nomina" />
+								<field name="micro" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Pagos">
+								<field name="pagos_ids">
+									<tree string="X" editable="bottom">
+										<field name="name" />
+										<field name="fecha" />
+										<field name="monto" sum="Total"/>
+										<field name="intereses" sum="Total"/>
+										<field name="iva"  sum="Total"/>
+										
+									</tree>
+								</field>
+							</page>							
+						</notebook>			
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<!-- Menu -->
+		<menuitem id="fuente_menu" parent="base.menu_base_config" name="Lineas de Fondeo" action="fuente_actn" />
+
+	</data>
+</openerp>

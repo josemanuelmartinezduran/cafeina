@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>		
+	<data noupdate="1">
+	
+        <!-- Secuencia de mi.objeto -->
+        <record id="seq_no_conformidad" model="ir.sequence">
+            <field name="name">No Conformidad</field>
+            <field name="code">no_conformidad</field>
+            <field name="prefix">NC</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</openerp>

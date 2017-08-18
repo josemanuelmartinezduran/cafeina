@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sofom_solicitud_repo">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<h2>Solicitud de Crédito</h2>
+                    		<hr />
+                    		<section>
+                    			<h3>
+                    				Datos Generales
+                    			</h3>
+                    			<span>Fecha : <t t-esc="o.fecha"/> </span>
+                    			<span>Lugar de Llenado : <t t-esc="o.lugar"/> </span>
+								<span>Oficina : <t t-esc="o.oficina"/> </span>
+								<span>Ciclo : <t t-esc="o.ciclo"/> </span>
+								<span>Asesor : <t t-esc="o.asesor.name"/> </span>
+								<span>Monto : <t t-esc="o.monto"/> </span>
+								<span>Tasa : <t t-esc="o.tasa"/> </span>
+								<span>Plazo : <t t-esc="o.plazo"/> </span>
+								<span>Tipo : <t t-esc="o.tipo"/> </span>
+                    		</section>
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="solicitud_report"
+    		model="sofom.solicitud"
+    		string="Solicitud"
+    		report_type="qweb-html"
+    		name="sofom.sofom_solicitud_repo"
+    		file="Solicitud de Crédito"
+    		attachment_use="False"
+		/>
+	</data>
+</openerp>

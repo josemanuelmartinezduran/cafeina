@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--  Formulario -->
+		<record model="ir.ui.view" id="abono_edit">
+			<field name="name">abono.edit</field>
+			<field name="model">sofom.abono</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="X" version="7.0">
+					<sheet>
+						<h1>
+							<field name="name" invisible="False"/>
+						</h1>
+						<group>
+							<group>
+								<field name="monto" />
+								<field name="fecha" />
+							</group>
+							<group>
+								<field name="cliente_id" />
+								<field name="credito_id" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Detalle del Pago">
+								<field name="lineas_ids">
+									<tree string="X">
+										<field name="numero_pago" />
+										<field name="name" />
+										<field name="monto" sum="Total de los Montos"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="abono_view">
+			<field name="name">abono.view</field>
+			<field name="model">sofom.abono</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="X" >
+					<field name="name" invisible="True"/>
+					<field name="fecha" />
+					<field name="monto" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Sofom Abono Line -->
+		
+		<!--  Busqueda -->
+		<record model="ir.ui.view" id="abono_search">
+			<field name="name">abono.search</field>
+			<field name="model">sofom.abono.line</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Search">
+					<field name="name" />
+					<group expand="0" string="Group By...">
+						<filter string="Concepto" icon="terp-partner" context="{'group_by':'name'}"/>
+						<filter string="Pago" icon="terp-partner" context="{'group_by':'abono_id'}"/>
+						<filter string="Mes" icon="terp-partner" context="{'group_by':'fecha'}"/>
+						<filter string="Crédito" icon="terp-partner" context="{'group_by':'credito'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!--  Lista -->
+		<record model="ir.ui.view" id="abono_line_tree">
+			<field name="name">abono.line.tree</field>
+			<field name="model">sofom.abono.line</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="X" toolbar="1" colors="">
+					<field name="name" />
+					<field name="monto" />
+					<field name="numero_pago" />
+					<field name="abono_id" />
+					<field name="fecha" />
+					<field name="folio" />
+					<field name="cliente" />
+					<field name="credito" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Sofom Abono Line Action-->
+
+		<record model="ir.actions.act_window" id="abono_report_actn">
+			<field name="name">Desglose de Pagos</field>
+			<field name="view_id" ref=""/>
+			<field name="res_model">sofom.abono.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,graph</field>
+			<field name="search_view_id" ref="abono_search"/>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		
+		<!-- Grafico -->
+		<record model="ir.ui.view" id="abono_graph">
+			<field name="name">abono.graph</field>
+			<field name="model">sofom.abono.line</field>
+			<field name="type">graph</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<graph string="Pagos">
+					<field name="name" />
+					<field name="monto" operator=""/>
+				</graph>
+			</field>
+		</record>
+		
+		
+		<menuitem id="abono_repo_menu" parent="informes_ventas_menu" name="Desglose de Pagos" action="abono_report_actn" />
+		
+	</data>
+</openerp>

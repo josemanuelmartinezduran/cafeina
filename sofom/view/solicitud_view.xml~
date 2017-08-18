@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Accion -->
+		<record model="ir.actions.act_window" id="actn_solicitud">
+			<field name="name">Solicitud Microcrédito</field>
+			<field name="res_model">sofom.solicitud</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		<!--  
+		<menuitem id="menu_solicitud" parent="" name="Solicitudes Micocrédito" action="" sequence="5" />--> 
+		<!-- Formulario -->
+		<record model="ir.ui.view" id="solicitud_edit">
+			<field name="name">solicitud.edit</field>
+			<field name="model">sofom.solicitud</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="" version="7.0">
+					<sheet>
+						<h1>
+							<h4>
+								<label for="name" />
+							</h4>
+							<field name="name" required="True" />
+						</h1>
+						<group>
+							<group string="">
+								<field name="lead_id" invisible="True" />
+								<field name="fecha" />
+								<field name="lugar" />
+								<field name="oficina" />
+								<field name="ciclo" readonly="True" />
+								<field name="asesor" />
+							</group>
+							<group string="">								
+								<field name="monto" readonly="True"/>
+								<field name="tasa" readonly="True"/>
+								<field name="plazo" readonly="True"/>
+								<field name="tipo" invisible="True" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Datos Personales">
+								<group>
+									<group>
+										<field name="paterno" required="True"/>
+										<field name="materno" required="True"/>
+										<field name="nombre" required="True"/>
+										<field name="genero" required="True"/>
+										<field name="nacimiento" required="True"/>
+										<field name="pais" required="True"/>
+										<field name="entidad" required="True"/>
+										<field name="nacionalidad" required="True"/>
+									</group>
+									<group>
+										<field name="curp" required="True"/>
+										<field name="rfc" required="True"/>
+										<field name="tipoid" required="True"/>
+										<field name="identificacion" required="True"/>
+										<field name="clave" attrs="{'invisible': [('tipoid','!=', 'ine')]}"/>
+										<field name="estadoc" required="True"/>
+										<field name="regimen" attrs="{'invisible': [('estadoc','!=', 'casado')]}"/>
+										<field name="hijos" required="True"/>
+										<field name="dependientes" required="True"/>
+										<field name="estudios" required="True"/>
+										<field name="experiencia" required="True"/>
+									</group>
+								</group>
+							</page>
+							<page string="Domicilio Actual">
+								<group>
+									<group>
+										<field name="calle" required="True"/>
+										<field name="ext" required="True"/>
+										<field name="inte" required="True"/>
+										<field name="col" required="True"/>
+										<field name="cp" required="True"/>
+										<field name="ciudad" required="True"/>
+										<field name="estado" required="True"/>
+										<field name="entrec" required="True"/>
+										<field name="ares" invisible="True"/>
+										<field name="tel" />
+										<field name="cel" />
+										<field name="email" />
+									</group>
+									<group>
+										<field name="ttviv" />
+										<field name="tviv" />
+										<field name="dueno" attrs="{'invisible': [('tviv','not in', ['ren', 'fam'])]}" />
+										<field name="telarr" />
+										<field name="renta" />
+										<field name="tasen" />
+										<field name="agua" />
+										<field name="drenaje" />
+										<field name="gas" />
+										<field name="internet" />
+										<field name="luz" />
+										<field name="cable" />
+										<field name="telefono" />
+										<field name="nttelefono" />
+									</group>
+								</group>
+							</page>
+							<page string="Datos del Conyuge">
+								<group>
+									<group>
+										<field name="cnombre" />
+										<field name="ctrabaja" />
+										<field name="cocupacion" />
+										<field name="cempresa" />
+										<field name="cpuesto" />
+									</group>
+									<group>
+										<field name="csueldo" />
+										<field name="cdom" />
+										<field name="ctel" />
+										<field name="ccel" />
+									</group>
+								</group>
+							</page>
+							<page string="Datos del Negocio">
+								<group>
+									<group>
+										<field name="sector" />
+										<field name="rama" />
+										<field name="nnombre" />
+										<field name="ntiempo" />
+										<field name="nntiempo" />
+										<field name="ngiro" />
+										<field name="nlocal" />
+										<field name="npropio" />
+										<field name="nrentado" />
+										<field name="nrenta" />
+										<field name="nfamiliar" />
+										<field name="nhipoteca" />
+										<field name="ndueno" />
+										<field name="ntelefono" />
+										<field name="nemp" />
+										<field name="neemp" />
+									</group>
+									<group>
+										<field name="nmismo" />
+										<field name="ncalle" />
+										<field name="nnext" />
+										<field name="nint" />
+										<field name="ncp" />
+										<field name="ncol" domain="[('cp', '=', ncp)]"/>
+										<field name="ncuidad" />
+										<field name="nestado" />
+										<field name="nref" />
+										<field name="nsalario" />
+										<field name="npension" />
+										<field name="napoyo" />
+										<field name="notro" />
+										<field name="nmonto" />
+									</group>
+								</group>
+							</page>
+							<page string="Datos del Obligado Solidario y Garantía">
+								<group>
+									<group>
+										<field name="garantia" />
+										<field name="snombre" />
+										<field name="strabaja" />
+										<field name="socupacion" />
+										<field name="ssector" />
+										<field name="srama" />
+										<field name="snnombre" />
+										<field name="spuesto" />
+										<field name="ssueldo" />
+										<field name="sdom" />
+										<field name="stel" />
+										<field name="scel" />
+										<field name="scurp" />
+										<field name="srfc" />
+										<field name="stipoid" />
+										<field name="sidentificacion" />
+										<field name="sclave" attrs="{'invisible': [('stipoid','!=', 'ine')]}"/>
+										<field name="sedad" />
+									</group>
+									<group>
+										<field name="sestadoc" />
+										<field name="sregimen" attrs="{'invisible': [('sestadoc','!=', 'casado')]}"/>
+										<field name="shijos" />
+										<field name="sdependientes" />
+										<field name="scalle" />
+										<field name="sext" />
+										<field name="sinte" />
+										<field name="scol" />
+										<field name="scp" />
+										<field name="sciudad" />
+										<field name="sestado" />
+										<field name="sentrec" />
+										<field name="stviv" />
+										<field name="sdueno" />
+										<field name="sarrtel" />
+										<field name="stasen" />
+									</group>
+								</group>
+							</page>
+							<page string="Croquis">
+								<group>
+									<field name="croquis" filename="ncroquis"/>
+									<field name="ncroquis" invisible="True" />
+									<field name="indicaciones" />
+								</group>
+							</page>
+							<page string="Resultado">
+								<group>
+									<group string="Resultado">
+										<div>
+											1. ¿Usted desempeña o ha desempeñado funciones publicas destacadas en un país extranjero o en territorio nacional, considerado entro otros, a los jefes de estado o de gobierno, líderes funcionarios gubernamentales, judiciales o militares de alta jerarquía, altos ejecutivos de empresas estatales o funcionarios o miembros importantes de partidos políticos?
+										</div>
+										<newline />
+										<field name="q1" />
+										<field name="q1puesto" attrs="{'invisible': [('q1','!=', True)]}"/>
+										<field name="q1periodo" attrs="{'invisible': [('q1','!=', True)]}"/>
+									</group>
+									<group>
+										<div>
+											2. ¿Algun familiar de usted hasta segundo grado de consanguinidad o afinidad(conyugue, concubina, concubinario, padre, madre, hijos, hermanos, abuelos, tíos, primos, cuñados, suegros, yernos o nueras), se encuentra en el puesto mencionado?
+										</div>
+										<newline />
+										<field name="q2" />
+										<field name="q2paterno" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2materno" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2nombre" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2parentesco" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2puesto" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2periodo" attrs="{'invisible': [('q2','!=', True)]}"/>
+									</group>
+								</group>
+							</page>
+							<page string="Ingresos">
+								<group>
+									<field name="imensual" />
+									<field name="iotros" />
+									<field name="iconyuge" />
+								</group>
+							</page>
+							<page string="Egresos">
+								<group>
+									<group string="Del Negocio">
+										<field name="enrenta" />
+										<field name="enelectricidad" />
+										<field name="engas" />
+										<field name="enagua" />
+										<field name="entelefono" />
+										<field name="enimpuestos" />
+										<field name="ensueldos" />
+										<field name="enmaterial" />
+										<field name="eninventario" />
+										<field name="entransporte" />
+										<field name="emcomisiones" />
+									</group>
+									<group string="Personales">
+										<field name="eprenta" />
+										<field name="epgas" />
+										<field name="epluz" />
+										<field name="eptelefono" />
+										<field name="epagua" />
+										<field name="epeducacion" />
+										<field name="epfamilia" />
+										<field name="epcable" />
+										<field name="epalimentos" />
+									</group>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+						<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+						</div>
+				</form>
+			</field>
+		</record>
+		<!--  Lista -->
+		<record model="ir.ui.view" id="solicitud_view">
+			<field name="name">solicitud.view</field>
+			<field name="model">sofom.solicitud</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="Solicitud" toolbar="1" colors="">
+					<field name="name" />
+					<field name="monto" />
+					<field name="asesor" />
+					<field name="ciclo" />
+					<field name="tasa" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Accion -->
+		<record model="ir.actions.act_window" id="actn_solicitudn">
+			<field name="name">Solicitud Nómina</field>
+			<field name="res_model">sofom.solicitudn</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+					<p class="oe_view_nocontent_create">
+						Haga clic aquí para crear un nuevo registro
+					</p>
+			</field>
+		</record>
+		<!--  
+		<menuitem id="menu_solicitudn" parent="" name="Solicitudes Nómina" action="" sequence="5" />-->
+		<!-- Formulario -->
+		<record model="ir.ui.view" id="solicitudn_edit">
+			<field name="name">solicitudn.edit</field>
+			<field name="model">sofom.solicitudn</field>
+			<field name="type">form</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<form string="" version="7.0">
+					<sheet>
+						<h1>
+							<h4>
+								<label for="name" />
+							</h4>
+							<field name="name" required="True" />
+						</h1>
+						<group>
+							<group string="">
+								<field name="fecha" />
+								<field name="lugar" />
+								<field name="oficina" />
+								<field name="clave" />
+								<field name="asesor" />
+							</group>
+							<group string="">								
+								<field name="monto" readonly="True"/>
+								<field name="tasa" readonly="True"/>
+								<field name="plazo" readonly="True"/>
+								<field name="frecuencia" readonly="True"/>
+								<field name="lead_id" invisible="True" />
+								<field name="experiencia" required="True"/>
+								<field name="estado_credito" required="True"/>
+							</group>
+						</group>
+						<notebook>
+							<page string="Datos Personales">
+								<group>
+									<group>
+										<field name="paterno" required="True"/>
+										<field name="materno" required="True"/>
+										<field name="nombre" required="True"/>
+										<field name="genero" required="True"/>
+										<field name="nacimiento" required="True"/>
+										<field name="pais" required="True"/>
+										<field name="entidad" required="True"/>
+										<field name="nacionalidad" required="True"/>
+									</group>
+									<group>
+										<field name="curp" required="True"/>
+										<field name="rfc" required="True"/>
+										<field name="identificacion" required="True"/>
+										<field name="tipoid" required="True"/>
+										<field name="pclave" attrs="{'invisible': [('tipoid','!=', 'ine')]}"/>
+										<field name="estadoc" required="True"/>
+										<field name="regimen" attrs="{'invisible': [('estadoc','!=', 'casado')]}"/>
+										<field name="hijos" required="True"/>
+										<field name="dependientes" required="True"/>
+										<field name="estudios" required="True"/>
+									</group>
+								</group>
+							</page>
+							<page string="Domicilio Actual">
+								<group>
+									<group>
+										<field name="calle" required="True"/>
+										<field name="ext" required="True"/>
+										<field name="inte" required="True"/>
+										<field name="col" required="True"/>
+										<field name="cp" required="True"/>
+										<field name="ciudad" required="True"/>
+										<field name="estado" required="True"/>
+										<field name="entrec" required="True"/>
+										<field name="ares" invisible="True" />
+										<field name="tel" />
+										<field name="cel" />
+										<field name="email" />
+									</group>
+									<group>
+										<field name="tviv" />
+										<field name="ttviv" />
+										<field name="dueno" attrs="{'invisible': [('tviv','not in', ['ren', 'fam'])]}" />
+										<field name="telarr" />
+										<field name="renta" />
+										<field name="tasen" />
+										<field name="agua" />
+										<field name="drenaje" />
+										<field name="gas" />
+										<field name="internet" />
+										<field name="luz" />
+										<field name="cable" />
+										<field name="telefono" />
+									</group>
+								</group>
+							</page>
+							<page string="Información Laboral">
+								<group>
+									<group>
+										<field name="empresa" />
+										<field name="ldepto" />
+										<field name="puesto" />
+										<field name="ttempleo" />
+										<field name="templeo" />
+										<field name="ingreso" />
+										<field name="jefe" />
+										<field name="lmail" />
+									</group>
+									<group>
+										<field name="lcalle" />
+										<field name="lext" />
+										<field name="lint" />
+										<field name="lcp" />
+										<field name="lcol" />										
+										<field name="lcuidad" />
+										<field name="lestado" />
+										<field name="ltel" />
+										<field name="lextension" />
+									</group>
+								</group>
+							</page>
+							<page string="Datos del Obligado Solidario y Garantía">
+								<group>
+									<group>
+										<field name="garantia" />
+										<field name="snombre" />
+										<field name="strabaja" />
+										<field name="socupacion" />
+										<field name="ssector" />
+										<field name="srama" />
+										<field name="snnombre" />
+										<field name="spuesto" />
+										<field name="ssueldo" />
+										<field name="sdom" />
+										<field name="stel" />
+										<field name="scel" />
+										<field name="scurp" />
+										<field name="srfc" />
+										<field name="stipoid" />
+										<field name="sidentificacion" />
+										<field name="sclave" attrs="{'invisible': [('stipoid','!=', 'ine')]}"/>
+										<field name="sedad" />
+									</group>
+									<group>
+										<field name="sestadoc" />
+										<field name="sregimen" attrs="{'invisible': [('sestadoc','!=', 'casado')]}"/>
+										<field name="shijos" />
+										<field name="sdependientes" />
+										<field name="scalle" />
+										<field name="sext" />
+										<field name="sinte" />
+										<field name="scol" />
+										<field name="scp" />
+										<field name="sciudad" />
+										<field name="sestado" />
+										<field name="sentrec" />
+										<field name="stviv" />
+										<field name="sdueno" />
+										<field name="sarrtel" />
+										<field name="stasen" />
+									</group>
+								</group>
+							</page>
+							<page string="Referencias">
+								<group>
+									<group string="Referencia 1">
+										<field name="r1nombre" />
+										<field name="r1dir" />
+										<field name="r1cel" />
+										<field name="r1par" />
+										<field name="r1tiempo" />
+										<field name="r1mail" />
+									</group>
+									<group string="Referencia 2">
+										<field name="r2nombre" />
+										<field name="r2dir" />
+										<field name="r2cel" />
+										<field name="r2par" />
+										<field name="r2tiempo" />
+										<field name="r2mail" />
+									</group>
+								</group>
+							</page>
+							<page string="Croquis">
+								<group>
+									<field name="croquis" filename="ncroquis"/>
+									<field name="ncroquis" invisible="True" />
+									<field name="indicaciones" />
+								</group>
+							</page>
+							<page string="Resultado">
+								<group>
+									<group string="Resultado">
+										<div>
+											1. ¿Usted desempeña o ha desempeñado funciones publicas destacadas en un país extranjero o en territorio nacional, considerado entro otros, a los jefes de estado o de gobierno, líderes funcionarios gubernamentales, judiciales o militares de alta jerarquía, altos ejecutivos de empresas estatales o funcionarios o miembros importantes de partidos políticos?
+										</div>
+										<newline />
+										<field name="q1" />
+										<field name="q1puesto" attrs="{'invisible': [('q1','!=', True)]}"/>
+										<field name="q1periodo" attrs="{'invisible': [('q1','!=', True)]}"/>
+									</group>
+									<group>
+										<div>
+											2. ¿Algun familiar de usted hasta segundo grado de consanguinidad o afinidad(conyugue, concubina, concubinario, padre, madre, hijos, hermanos, abuelos, tíos, primos, cuñados, suegros, yernos o nueras), se encuentra en el puesto mencionado?
+										</div>
+										<newline />
+										<field name="q2" />
+										<field name="q2paterno" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2materno" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2nombre" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2parentesco" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2puesto" attrs="{'invisible': [('q2','!=', True)]}"/>
+										<field name="q2periodo" attrs="{'invisible': [('q2','!=', True)]}"/>
+									</group>
+								</group>
+							</page>
+							
+					<page string="Ingreso Mensual Neto">
+						<group>
+							<group>
+								<field name="salario" />
+								<field name="industrial_comercial" />
+								<field name="servicios_profesionales" />
+								<field name="venta" />
+								<field name="actividad_financiera" />
+								<field name="otros_ingresos" />
+								<field name="conyugue" />
+							</group>
+						</group>
+					</page>
+					<page string="Aplicación de los Ingresos">
+						<group>
+							<group>
+								<field name="hipoteca" />
+								<field name="automotriz" />
+								<field name="personal" />
+								<field name="tarjeta" />
+								<field name="telecomunicaciones" />
+							</group>
+						</group>
+					</page>
+						</notebook>
+					</sheet>
+						<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+						</div>
+				</form>
+			</field>
+		</record>
+		<!--  Lista -->
+		<record model="ir.ui.view" id="solicitudn_view">
+			<field name="name">solicitudn.view</field>
+			<field name="model">sofom.solicitudn</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="Solicitud" toolbar="1" colors="">
+					<field name="name" />
+					<field name="monto" />
+					<field name="asesor" />
+					<field name="tasa" />
+				</tree>
+			</field>
+		</record>
+	</data>
+</openerp>

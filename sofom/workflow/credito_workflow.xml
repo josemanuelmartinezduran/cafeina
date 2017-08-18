@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Flujo -->
+		<record id="credito_wkf" model="workflow">
+			<field name="name">credito.workflow</field>
+			<field name="osv">sofom.credito</field>
+			<field name="on_create">True</field>
+		</record>
+		
+		<!-- Nodo Inicial -->
+		<record id="credito_wkf_iniciado" model="workflow.activity">
+			<field name="name">credito.wkf.iniciado</field>
+			<field name="wkf_id" ref="credito_wkf"/>
+			<field name="kind">function</field>
+			<field name="action">action_iniciado()</field>
+			<field name="flow_start">True</field>
+		</record>
+		
+		<!-- Nodo -->
+		<record id="credito_wkf_terminado" model="workflow.activity">
+			<field name="name">credito.wkf.terminado</field>
+			<field name="wkf_id" ref="credito_wkf"/>
+			<field name="kind">function</field>
+			<field name="action">action_terminado()</field>
+			<field name="flow_stop">True</field>
+		</record>
+		
+		<!-- Nodo Final -->
+		<record id="credito_wkf_juridico" model="workflow.activity">
+			<field name="name">credito.wkf.juridico</field>
+			<field name="wkf_id" ref="credito_wkf"/>
+			<field name="kind">function</field>
+			<field name="action">action_juridico()</field>
+			<field name="flow_stop">True</field>
+		</record>
+		
+		<!-- Transición -->
+		<record id="credito_wkf_inicio_terminado" model="workflow.transition">
+			<field name="act_from" ref="credito_wkf_iniciado"/>
+			<field name="act_to" ref="credito_wkf_terminado"/>
+			<field name="signal">signal_terminar</field>
+			<field name="condition">True</field>
+		</record>
+		
+		<!-- Transición -->
+		<record id="credito_wkf_inicio_juridico" model="workflow.transition">
+			<field name="act_from" ref="credito_wkf_iniciado"/>
+			<field name="act_to" ref="credito_wkf_juridico"/>
+			<field name="signal">signal_juridico</field>
+			<field name="condition">True</field>
+		</record>
+	
+	</data>
+</openerp>

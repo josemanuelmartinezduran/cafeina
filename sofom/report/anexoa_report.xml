@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="anexoa_repo">
+   	 		<t t-call="report.html_container">
+        		<t t-foreach="docs" t-as="o">
+            		<t t-call="report.external_layout">
+                		<div class="page">
+                    		<p>
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="center">
+      <b>Anexo “A”</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%; orphans: 0; widows: 0" align="justify">
+      <b>AL CONTRA</b><span style="letter-spacing: normal"><b>T</b></span><b>O</b><span
+        style="letter-spacing: 1.3pt"><b>
+        </b></span><b>DE</b><span style="letter-spacing: 1.3pt"><b> </b></span><b>CRÉDITO
+        SIMPLE</b><span style="text-transform: uppercase"><b>, </b></span><span
+        style="letter-spacing: 0.1pt"><b>Q</b></span><b>UE</b><span style="letter-spacing: 0.1pt"><b>
+        </b></span><b>C</b><span style="letter-spacing: normal"><b>E</b></span><b>L</b><span
+        style="letter-spacing: normal"><b>E</b></span><b>BR</b><span style="letter-spacing: normal"><b>A</b></span><b>N</b><span
+        style="letter-spacing: 0.1pt"><b>
+        </b></span><span style="text-transform: uppercase">SMART QUO S.A. DE
+        C.V.</span><b> SO</b><span style="letter-spacing: normal"><b>F</b></span><b>OM
+      </b><span style="letter-spacing: normal"><b>E</b></span><b>NR, LA
+        “Financiera”,</b><span style="letter-spacing: 0.1pt"><b> </b></span><b>Y</b><span
+        style="letter-spacing: 0.1pt"><b>
+        </b></span><font color="#808080"><span t-field="o.partner_id.name"/>
+        </font><b>,</b><span style="letter-spacing: 0.1pt"><b> EL
+          “Acreditado</b></span><b>”.</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%"><br />
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="center"><b>Datos
+        del Obligado Solidario</b></p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify">El
+      Obligado Solidario, quien responderá por cualquiera de las
+      obligaciones a cargo del Acreditado, manifiesta bajo protesta de
+      decir verdad que los datos señalados a continuación son verdaderos:</p>
+    <p style="margin-bottom: 0cm; line-height: 100%" align="justify"><br />
+    </p>
+    <t t-foreach="o.solicitud" t-as="i">
+    <table width="598" cellpadding="5" cellspacing="0">
+      <tbody>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="11" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Nombre: </font></font></font></font></font></font>
+            </p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.snombre"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="9" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Domicilio: </font></font></font></font></font></font>
+            </p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.scalle"/> <span t-field="i.sext"/> <span t-field="i.sinte"/> <span t-field="i.scol"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="8" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font face="Calibri"><font style="font-size: 11pt"
+                        size="2">Teléfono de Casa u oficina:</font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.stel"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="8" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Identificación Oficial:</font></font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.sidentificacion"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="12" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Edad:</font></font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.sedad"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="9" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Estado Civil:</font></font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.sestadoc"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="8" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font face="Calibri"><font style="font-size: 11pt"
+                        size="2">Teléfono celular:</font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.scel"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="7" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font face="Calibri"><font style="font-size: 11pt"
+                        size="2">No. de Identificación Oficial: </font></font></font></font></font>
+            </p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.sidentificacion"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </t>
+    
+    
+    <t t-foreach="o.solicitudn" t-as="i">
+    <table width="598" cellpadding="5" cellspacing="0">
+      <tbody>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="11" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Nombre: </font></font></font></font></font></font>
+            </p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.snombre"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="9" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Domicilio: </font></font></font></font></font></font>
+            </p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.scalle"/> <span t-field="i.sext"/> <span t-field="i.sinte"/> <span t-field="i.scol"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="8" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font face="Calibri"><font style="font-size: 11pt"
+                        size="2">Teléfono de Casa u oficina:</font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.stel"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="8" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Identificación Oficial:</font></font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.sidentificacion"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="12" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Edad:</font></font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.sedad"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="9" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2">Estado Civil:</font></font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.sestadoc"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="8" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font face="Calibri"><font style="font-size: 11pt"
+                        size="2">Teléfono celular:</font></font></font></font></font></p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.scel"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            height="7" width="169">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font face="Calibri"><font style="font-size: 11pt"
+                        size="2">No. de Identificación Oficial: </font></font></font></font></font>
+            </p>
+          </td>
+          <td style="border: 1px solid #00000a; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.13cm; padding-right: 0.12cm"
+            width="407">
+            <p><font color="#000000"><font face="Bookman Old Style"><font style="font-size: 12pt"
+                    size="3"><font color="#00000a"><font face="Calibri"><font style="font-size: 11pt"
+                          size="2"><span t-field="i.sidentificacion"/></font></font></font></font></font></font></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </t>
+    
+    
+    <p style="margin-bottom: 0cm; line-height: 100%"><br />
+    </p>
+                		</div>
+            		</t>
+        		</t>
+    		</t>
+		</template>
+		<report
+    		id="anexoa_report"
+    		model="crm.lead"
+    		string="Anexo A"
+    		report_type="qweb-html"
+    		name="sofom.anexoa_repo"
+    		file="AnexoA"
+    		attachment_use="False"
+		/>
+	</data>
+</openerp>

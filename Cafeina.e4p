@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-5.1.dtd">
+<!-- eric project file for project Cafeina -->
+<!-- Saved: 2017-07-12, 18:01:39 -->
+<!-- Copyright (C) 2017 ,  -->
+<Project version="5.1">
+  <Language>en_US</Language>
+  <Hash>e1b15b7887ca9a9af25255019951997b2be268dc</Hash>
+  <ProgLanguage mixed="0">Python2</ProgLanguage>
+  <ProjectType>Other</ProjectType>
+  <Version>0.1</Version>
+  <Author></Author>
+  <Email></Email>
+  <Eol index="0"/>
+  <Sources>
+    <Source>Cafeina/__init__.py</Source>
+    <Source>Cafeina/__openerp__.py</Source>
+    <Source>Cafeina/calculator.py</Source>
+    <Source>Cafeina/financiera.py</Source>
+    <Source>Cafeina/minuta.py</Source>
+    <Source>Cafeina/obra.py</Source>
+    <Source>Cafeina/project.py</Source>
+  </Sources>
+  <Forms/>
+  <Translations/>
+  <Resources/>
+  <Interfaces/>
+  <Others/>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES"/>
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py2" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw2" type="SOURCES"/>
+  </FiletypeAssociations>
+</Project>

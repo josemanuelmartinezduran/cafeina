@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Vista tree para no_conformidad-->
+        <record model='ir.ui.view' id='no_conformidad_view_tree'>
+            <field name='name'>view.no_conformidad_view_tree</field>
+            <field name='model'>no_conformidad</field>
+            <field name='type'>tree</field>
+            <field name='arch' type='xml'>
+                <tree string='Auditoria'>
+					<field name='name'/>
+					<field name='tipo'/>
+					<field name="auditoria_id" />
+					<field name='pregunta' />
+					<field name="descripcion" />
+                </tree>
+            </field>
+        </record>
+		
+        <!-- Vista form para no_conformidad-->
+        <record model='ir.ui.view' id='no_conformidad_view_form'>
+            <field name='name'>view.no_conformidad_view_form</field>
+            <field name='model'>no_conformidad</field>
+            <field name='type'>form</field>
+            <field name='arch' type='xml'>
+                <form string='No conformidad' version='7.0'>
+					<header> 
+					</header>
+					<sheet>
+						<group>
+								<h1>
+									<field name='name' placeholder='Clave de la no conformidad'/>
+								</h1>	
+						</group>
+						<group>
+							<group>
+								<field name="tipo" />
+								<field name='auditoria_id' />
+							</group>
+							<group>
+								<field name='pregunta'/>
+								<field name='descripcion'/>
+							</group>
+						</group>
+						<footer>
+							<button name="save" string="Guardar"  type="object" class="oe_highlight"/>
+					   		o
+					   		<button string="Cancelar" class="oe_link" special="cancel"/>
+					   </footer>
+					</sheet>
+						<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" />
+							<field name="message_ids" widget="mail_thread" />
+						</div>
+                </form>
+            </field>
+        </record>		
+		
+		<!-- action para no conformidad -->
+        <record id="no_conformidad_action_fve" model="ir.actions.act_window">
+            <field name="name">No Conformidad</field>
+            <field name="res_model">no_conformidad</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+			<!-- Menu -->
+			<menuitem id="sb_noconf" parent="menu_auditoria" name="No Conformidad" action="no_conformidad_action_fve" groups="group_auditor,group_auditado" sequence="10" />
+		
+		
+        <!-- Vista tree para no_conformidad acciones-->
+        <record model='ir.ui.view' id='no_conformidad_acciones_view_tree'>
+            <field name='name'>view.no_conformidad_acciones_view_tree</field>
+            <field name='model'>no_conformidad.acciones</field>
+            <field name='type'>tree</field>
+            <field name='arch' type='xml'>
+                <tree string='Auditoria'>
+					<field name='persona' string='Persona'/>
+					<field name="nombre" />
+					<field name='accion' string='Acción'/>
+					<field name='fecha'/>
+					<field name='horas_dedicas'/>
+                </tree>
+            </field>
+        </record>		
+
+		
+        <!-- Vista form para no_conformidad acciones-->
+        <record model='ir.ui.view' id='no_conformidad_acciones_view_form'>
+            <field name='name'>view.no_conformidad_acciones_view_form</field>
+            <field name='model'>no_conformidad.acciones</field>
+            <field name='type'>form</field>
+            <field name='arch' type='xml'>
+                <form string='Auditoria' version='7.0'>
+					<group>
+						<field name='persona' string='Persona'/>
+						<field name="nombre" />
+						<field name='accion' string='Acción'/>
+						<field name='fecha'/>
+						<field name='horas_dedicas'/>
+					</group>
+                </form>
+            </field>
+        </record>
+	</data>
+</openerp>
